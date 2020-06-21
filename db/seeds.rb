@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Dealer.create(name: "Railsland Jaguar")
+puts "Dealer successfully created" if Dealer.first
