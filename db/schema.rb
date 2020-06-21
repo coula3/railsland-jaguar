@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_21_031324) do
+ActiveRecord::Schema.define(version: 2020_06_21_040309) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "date"
+    t.datetime "time"
+    t.string "veh_model"
+    t.string "model_year"
+    t.string "status", default: "open"
+    t.integer "customer_id", null: false
+    t.integer "service_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_appointments_on_customer_id"
+    t.index ["service_id"], name: "index_appointments_on_service_id"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "first_name"
@@ -53,6 +67,8 @@ ActiveRecord::Schema.define(version: 2020_06_21_031324) do
     t.index ["dealer_id"], name: "index_users_on_dealer_id"
   end
 
+  add_foreign_key "appointments", "customers"
+  add_foreign_key "appointments", "services"
   add_foreign_key "customers", "dealers"
   add_foreign_key "services", "dealers"
   add_foreign_key "users", "dealers"
