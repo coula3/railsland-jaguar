@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-06-21 00:03:09
+  time: 2020-06-21 00:03:09
+  veh_model: MyString
+  model_year: MyString
+  status: MyString
+  customer: one
+  service: one
+
+two:
+  date: 2020-06-21 00:03:09
+  time: 2020-06-21 00:03:09
+  veh_model: MyString
+  model_year: MyString
+  status: MyString
+  customer: two
+  service: two
