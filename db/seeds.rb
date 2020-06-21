@@ -15,9 +15,15 @@
 # puts "User successfully created" if User.first
 
 # SERVICE ***
-services = ["routine maintenance", "inspection", "electronics-system", "air-conditioning"]
+# services = ["routine maintenance", "inspection", "electronics-system", "air-conditioning"]
 
-services.each do |service|
-    Service.create(name: service, dealer_id: Dealer.first.id)
+# services.each do |service|
+#     Service.create(name: service, dealer_id: Dealer.first.id)
+# end
+# puts "#{Service.count} services successfully created!" if Service.count == services.count
+
+c = 4
+c.times do
+    Customer.create(first_name: Faker::Name.unique.first_name, last_name: Faker::Name.unique.last_name, telephone: "555-#{rand(100..999)}-#{rand(1000..9999)}", dealer_id: Dealer.first.id)
 end
-puts "#{Service.count} services successfully created!" if Service.count == services.count
+puts "#{Customer.count} users successfully created!" if Customer.count == c
