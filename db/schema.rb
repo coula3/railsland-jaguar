@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_21_025523) do
+ActiveRecord::Schema.define(version: 2020_06_21_031324) do
+
+  create_table "customers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "telephone"
+    t.integer "dealer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dealer_id"], name: "index_customers_on_dealer_id"
+  end
 
   create_table "dealers", force: :cascade do |t|
     t.string "name"
@@ -42,6 +53,7 @@ ActiveRecord::Schema.define(version: 2020_06_21_025523) do
     t.index ["dealer_id"], name: "index_users_on_dealer_id"
   end
 
+  add_foreign_key "customers", "dealers"
   add_foreign_key "services", "dealers"
   add_foreign_key "users", "dealers"
 end
