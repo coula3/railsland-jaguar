@@ -1,2 +1,11 @@
-<h1>Session#signin</h1>
-<p>Find me in app/views/session/signin.html.erb</p>
+<h1>Signin</h1>
+
+<%= form_tag session_path do %>
+    <%= label_tag 'eMail: ' %>
+    <%= text_field_tag :email %>
+
+    <%= label_tag 'Password: ' %>
+    <%= password_field_tag :password %>
+
+    <%= submit_tag 'Sign In'%>
+<% end %>
