@@ -6,6 +6,9 @@
             <th>&nbsp;</th>
             <th style="text-align: left">Name</th>
             <th style="text-align: left">Email</th>
+            <th style="text-align: left">Position</th>
+            <th style="text-align: left">Status</th>
+            <th style="text-align: left">Admin</th>
            
         </tr
     </thead>
@@ -15,9 +18,16 @@
                 <td style="text-align: left"><%= index%></td>
                 <td style="text-align: left"><%= link_to user.full_name, user_path(user) %></td>
                 <td style="text-align: left"><%= user.email %></td>
+                <td style="text-align: left"><%= user.position %></td>
+                <td style="text-align: left"><%= user.status %></td>
+                <td style="text-align: left"><%= user.admin? %></td>
                 <td style="text-align: left"><%= link_to 'Edit', edit_user_path(user) %></td>
-                <td style="text-align: left"><a href="/users/user.id">Delete</a></td>
+                <% if !user.admin %>
+                <td style="text-align: left"><%= link_to "Delete", user, method: :delete, data: { confirm: "Do you want to continue with delete?" } %></td>
+                <% end %>
             </tr
         </tbody>
     <% end %>
 </table>
+
+<p><%= link_to 'My Workspace', user_workspace_path %></p>
