@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def show
@@ -34,10 +34,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    # byebug
+    user = User.find_by(id: params[:id])
+    user.destroy
+    redirect_to users_path
+  end
+
   def workspace
     @user = current_user
   end
-  
+
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password)
