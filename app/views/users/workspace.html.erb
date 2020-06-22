@@ -2,8 +2,8 @@
     <h2 style="color: blue"><%= @user.first_name %>'s Workspace</h2>
 
     <%= link_to 'My Profile', user_path(@user) %><br>
-    <%= link_to 'Edit My Profile', edit_user_path(@user) %>
-
+    <%= link_to 'Edit My Profile', edit_user_path(@user) %><br>
+    <%= link_to 'System Users', users_path %>
 
     <p><%= link_to 'Sign Out', signout_path %></p>
 </div>
