@@ -1,0 +1,17 @@
+<%= form_tag signin_path do %>
+    <%= label_tag 'eMail: ' %>
+    <%= text_field_tag :email %>
+
+    <%= label_tag 'Password: ' %>
+    <%= password_field_tag :password %>
+
+    <%= submit_tag 'Sign In'%>
+<% end %>
+
+<br>
+<p><%= link_to 'Sign Up', signup_path %></p>
+<!--<form action="/signup" method="GET">
+    <button class="button">Signup</button>
+</form>-->
+
+<p><%= link_to 'Continue with Facebook', signup_path %></p>
