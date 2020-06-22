@@ -1,3 +1,8 @@
-<h1><%= @user.first_name %>'s Workspace</h1>
 
-<%= @user.full_name %>
+<h1 style="color: blue"><%= @user.first_name %>'s Workspace</h1>
+
+<%= link_to 'My Profile', user_path(@user) %><br>
+<%= link_to 'Edit My Profile', edit_user_path(@user) %>
+
+
+<p><%= link_to 'Sign Out', signout_path %></p>
