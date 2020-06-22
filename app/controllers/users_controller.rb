@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = Dealer.first.users.build(user_params)
     if @user.save
       session[:id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to user_workspace_path
     else
       render :new
     end
@@ -24,6 +24,10 @@ class UsersController < ApplicationController
   end
 
   def update
+  end
+
+  def workspace
+    @user = current_user
   end
   
   private
