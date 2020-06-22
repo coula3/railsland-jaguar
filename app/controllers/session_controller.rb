@@ -3,9 +3,9 @@ class SessionController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password])
-      session[:id] = @user.id
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       redirect_to user_workspace_path
     else
       render :signin
@@ -13,5 +13,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
+    session.delete(:user_id)
+    redirect_to signin_path
   end
 end
