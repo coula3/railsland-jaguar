@@ -4,10 +4,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    # raise params.inspect
     @user = Dealer.first.users.build(user_params)
     if @user.save
-      session[:id] = @user.id
+      session[:user_id] = @user.id
       redirect_to user_workspace_path
     else
       render :new
@@ -18,9 +17,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by(id: params[:id])
   end
 
   def edit
+    @user = User.find_by(id: params[:id])
   end
 
   def update
