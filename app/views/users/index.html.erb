@@ -1,2 +1,23 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h2>System Users</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th style="text-align: left">Name</th>
+            <th style="text-align: left">Email</th>
+           
+        </tr
+    </thead>
+    <% @users.each.with_index(1) do |user, index| %>
+        <tbody>
+            <tr>
+                <td style="text-align: left"><%= index%></td>
+                <td style="text-align: left"><%= link_to user.full_name, user_path(user) %></td>
+                <td style="text-align: left"><%= user.email %></td>
+                <td style="text-align: left"><%= link_to 'Edit', edit_user_path(user) %></td>
+                <td style="text-align: left"><a href="/users/user.id">Delete</a></td>
+            </tr
+        </tbody>
+    <% end %>
+</table>
