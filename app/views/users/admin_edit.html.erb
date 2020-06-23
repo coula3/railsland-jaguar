@@ -1,0 +1,23 @@
+<h1>Edit User - Admin</h1>
+
+<%= form_for(@user) do |f| %>
+   
+    <% if @user != current_user %>
+        <%= f.text_field :full_name, :readonly => true %>
+        <%= f.text_field :email, :readonly => true %>
+    <% else %>
+        <%= f.text_field :full_name, :readonly => true %>
+        <%= f.text_field :email %>
+    <% end %>
+
+    <%= f.text_field :position, placeholder: "position" %>
+    <% if @user != current_user %>
+        <%= f.select :status, user_status %>
+        <%= f.check_box :admin %>
+        <%= f.label 'Admin' %>
+    <% end %>
+
+    <%= f.submit %>
+<% end %>
+
+<p><%= link_to 'My Workspace', user_workspace_path %></p>
