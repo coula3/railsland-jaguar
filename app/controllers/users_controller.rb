@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   def update  
     @user = User.find_by(id: params[:id])
     if @user.update(user_params)
+      @user.update(admin: true) if User.count == 1
       redirect_to user_path(@user)
     else
       render :edit
