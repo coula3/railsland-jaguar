@@ -22,7 +22,7 @@
                 <td style="text-align: left"><%= user.status %></td>
                 <td style="text-align: left"><%= user.admin? %></td>
                 <td style="text-align: left"><%= link_to 'Edit', edit_user_path(user) %></td>
-                <% if !user.admin %>
+                <% if user != current_user %>
                 <td style="text-align: left"><%= link_to "Delete", user, method: :delete, data: { confirm: "Do you want to continue with delete?" } %></td>
                 <% end %>
             </tr
