@@ -12,20 +12,20 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
+  
   def index
     @users = User.all
   end
-
+  
   def show
     @user = User.find_by(id: params[:id])
   end
-
+  
   def edit
     @user = User.find_by(id: params[:id])
   end
-
-  def update
+  
+  def update  
     @user = User.find_by(id: params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user)
@@ -33,23 +33,28 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
+  
   def destroy
     @user = User.find_by(id: params[:id])
-    if @user.admin && !@user.is_deletable?
+    if @user.admin && !@user.admin_deletable?
       redirect_to users_path
     else
       @user.destroy
       redirect_to users_path
     end
   end
-
+  
   def workspace
     @user = current_user
   end
 
+  def admin_edit
+    @user = User.find_by(id: params[:id])
+  end
+
   private
+  
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :position, :email, :password)
+    params.require(:user).permit(:first_name, :last_name, :position, :email, :password, :status, :admin)
   end
 end
