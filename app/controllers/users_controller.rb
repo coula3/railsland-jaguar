@@ -35,10 +35,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    # byebug
-    user = User.find_by(id: params[:id])
-    user.destroy
-    redirect_to users_path
+    @user = User.find_by(id: params[:id])
+    if @user.admin && !@user.is_deletable?
+      redirect_to users_path
+    else
+      @user.destroy
+      redirect_to users_path
+    end
   end
 
   def workspace
@@ -47,6 +50,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password)
+    params.require(:user).permit(:first_name, :last_name, :position, :email, :password)
   end
 end
