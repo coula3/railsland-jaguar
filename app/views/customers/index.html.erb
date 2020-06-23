@@ -1,3 +1,4 @@
+<h2 style="color: blue">Customers</h2>
 
 <table>
     <thead>
@@ -10,12 +11,14 @@
     <tbody>
         <% @customers.each do |customer| %>
             <tr>
-            <td><%= link_to customer.full_name, customer_path(customer) %></td>
-            <td><%= customer.email %></td>
-            <td><%= customer.telephone %></td>
-            <td><%= link_to 'View', customer_path(customer) %></td>
-            <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-            <td style="text-align: left"><%= link_to "Delete", customer, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                <td><%= link_to customer.full_name, customer_path(customer) %></td>
+                <td><%= customer.email %></td>
+                <td><%= customer.telephone %></td>
+                <td><%= link_to 'View', customer_path(customer) %></td>
+                <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+                <% if current_user.admin %>
+                    <td style="text-align: left"><%= link_to "Delete", customer, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                <% end %>
             </tr>
         <% end %>
     </tbody>
@@ -23,3 +26,4 @@
 
 
 <p><%= link_to 'My Workspace', user_workspace_path %></p>
+<%= link_to 'New Customer', new_customer_path %>
