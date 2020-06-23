@@ -1,0 +1,9 @@
+
+<ul>
+    <% @customers.each do |customer| %>
+        <li><%= customer.first_name %></li>
+    <% end %>
+</ul>
+
+
+<p><%= link_to 'My Workspace', user_workspace_path %></p>
