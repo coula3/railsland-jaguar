@@ -3,7 +3,9 @@
 
     <%= link_to 'My Profile', user_path(@user) %><br>
     <%= link_to 'Edit My Profile', edit_user_path(@user) %><br>
-    <%= link_to 'System Users', users_path %>
+    <% if @user.admin%>
+        <%= link_to 'System Users', users_path %>
+    <% end %>
 
     <p><%= link_to 'Sign Out', signout_path %></p>
 </div>
