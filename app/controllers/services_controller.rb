@@ -13,6 +13,7 @@ class ServicesController < ApplicationController
   end
 
   def index
+    @services = Service.all
   end
 
   def show

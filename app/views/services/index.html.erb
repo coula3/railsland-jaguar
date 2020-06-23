@@ -1,2 +1,22 @@
-<h1>Services#index</h1>
-<p>Find me in app/views/services/index.html.erb</p>
+<h2>Vehicle Services</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <% @services.each.with_index(1) do |service, index| %>
+        <tbody>
+            <tr>
+                <td><%= index %></td>
+                <td><%= service.name %></td>
+                <td><%= link_to 'Edit', edit_service_path(service) %></td>
+                <td><%= link_to 'Delete', services_path %></td>
+            </tr>
+        </tbody>
+    <% end %>
+</table>
+
+<p><%= link_to 'My Workspace', user_workspace_path %></p>
