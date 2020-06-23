@@ -15,7 +15,7 @@ class User < ApplicationRecord
     self.admin ? "Admin" : "User"
   end
 
-  def is_deletable?
-    User.count { |u| u.admin == true } > 2 ? true : false
+  def admin_deletable?
+    User.count { |u| u.admin == true && u.status == "active"} > 2 ? true : false
   end
 end
