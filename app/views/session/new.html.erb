@@ -6,12 +6,19 @@
     <%= password_field_tag :password %>
 
     <%= submit_tag 'Sign In'%>
+    
 <% end %>
 
 <br>
 <p><%= link_to 'Sign Up', signup_path %></p>
+
+<a href="/auth/facebook"><img src="/assets/fb_logo.png"></a>
+
+
 <!--<form action="/signup" method="GET">
     <button class="button">Signup</button>
+
+        <%#= link_to image_tag('fb_logo.png'), auth_facebook_callback_path %>
 </form>-->
 
-<p><%= link_to 'Continue with Facebook', '/auth/facebook' %></p>
+
