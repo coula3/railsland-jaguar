@@ -3,9 +3,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :first_name, :last_name, presence: true, on: :update
 
-  def full_name
-    self.first_name + " " + self.last_name
-  end
+  include FullName::InstanceMethods
 
   def admin?
     self.admin ? "Yes" : "No"
