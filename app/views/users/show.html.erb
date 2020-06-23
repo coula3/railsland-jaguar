@@ -1,7 +1,8 @@
 <label>Name: </label><%= @user.full_name %><br>
+<label>Email: </label><%= @user.email %><br>
 <label>Position: </label><%= @user.position %><br>
 <label>System Role: </label><%= @user.sys_role %><br>
-<label>Email: </label><%= @user.email %>
+<label>Account created at: </label><%= @user.created_at.strftime("%b %d, %Y") %>
 
 <p><%= link_to 'My Workspace', user_workspace_path %></p>
 
