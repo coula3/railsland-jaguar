@@ -34,6 +34,11 @@ class CustomersController < ApplicationController
   end
 
   def destroy
+    # raise "...at customers destroy!".inspect
+    @customer = Customer.find(params[:id])
+    # byebug
+    @customer.destroy
+    redirect_to customers_path
   end
 
   private
