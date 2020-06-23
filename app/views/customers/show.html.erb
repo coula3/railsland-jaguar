@@ -1,5 +1,8 @@
-<h1>Customers#show</h1>
+<h2>Customer - <%= link_to @customer.full_name, edit_customer_path %></h2>
+<p><label>Email: </label><%= @customer.email %></p>
+<p><label>Telephone: </label><%= @customer.telephone %></p>
+<p><label>Account created on: </label><%= @customer.created_at.strftime("%b %d, %Y") %></p>
 
-<%= @customer.first_name%>-<%= @customer.telephone %>
 
 <p><%= link_to 'My Workspace', user_workspace_path %></p>
+<%= link_to 'Our Service Customers', customers_path %>
