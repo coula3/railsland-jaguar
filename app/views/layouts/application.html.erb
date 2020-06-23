@@ -11,7 +11,7 @@
 
   <body>
     <h1 style="font-size: 60px; color: #C0C0C0">Railsland Jaguar</h1>
-    <% if logged_in? %>
+    <% if logged_in? && current_user.first_name %>
       <h4><%= current_user.full_name %> - <%= current_user.sys_role %></h4>
     <% end %>
     <div class="main-container" style="margin-top: 75px; margin-left: 200px">

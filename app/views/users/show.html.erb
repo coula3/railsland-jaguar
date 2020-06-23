@@ -1,8 +1,10 @@
-<label>Name: </label><%= @user.full_name %><br>
-<label>Email: </label><%= @user.email %><br>
-<label>Position: </label><%= @user.position %><br>
-<label>System Role: </label><%= @user.sys_role %><br>
-<label>Account created at: </label><%= @user.created_at.strftime("%b %d, %Y") %>
+<h2>User - <%= link_to @user.full_name, edit_user_path %></h2>
+<p><label>Email: </label><%= @user.email %></p>
+<p><label>Position: </label><%= @user.position %></p>
+<p><label>System Role: </label><%= @user.sys_role %></p>
+<p><label>Account Status: </label><%= @user.status %></p>
+<p><label>Account created on: </label><%= @user.created_at.strftime("%b %d, %Y") %></p>
+
 
 <p><%= link_to 'My Workspace', user_workspace_path %></p>
-
+<%= link_to 'System Users', users_path %>
