@@ -5,7 +5,7 @@ class User < ApplicationRecord
   def full_name
     self.first_name + " " + self.last_name
   end
-  
+
   def admin?
     self.admin ? "Yes" : "No"
   end
@@ -14,4 +14,7 @@ class User < ApplicationRecord
     self.admin ? "Admin" : "User"
   end
 
+  def is_deletable?
+    User.count { |u| u.admin == true } > 2 ? true : false
+  end
 end
