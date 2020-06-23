@@ -6,7 +6,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Dealer.first.customers.build(customer_params)
     if @customer.save
-      redirect_to customers_path
+      redirect_to customer_path(@customer)
     else
       render :new
     end
