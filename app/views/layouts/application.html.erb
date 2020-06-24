@@ -10,10 +10,16 @@
   </head>
 
   <body>
-    <h1 style="font-size: 60px; color: #C0C0C0">Railsland Jaguar</h1>
-    <% if logged_in? && current_user.first_name %>
-      <h4><%= current_user.full_name %> - <%= current_user.sys_role %></h4>
-    <% end %>
+    <h1 style="font-size: 75px; margin-left: 75px; margin-top: 50px;  color: #C0C0C0">Railsland Jaguar</h1>
+    <div style="float: right; margin-right: 350px">
+      <% if logged_in? && current_user.first_name %>
+        <%= link_to current_user.full_name, user_path(current_user) %>
+      <% end %>
+      <% if logged_in?%>
+        <%= link_to 'My Workspace', user_workspace_path %>
+        <%= link_to 'Sign Out', '/signout' %>
+      <% end %>
+    </div>
     <div class="main-container" style="margin-top: 75px; margin-left: 200px">
       <%= yield %>
     </div>

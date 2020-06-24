@@ -1,24 +1,37 @@
+
 <div style="margin: 30px 60px">
-    <h2 style="color: blue"><%= @user.first_name %>'s Workspace</h2>
+   
+    <img src="<%= user_image %>">
 
-    <%= link_to 'My Profile', user_path(@user) %><br>
-    <% if @user.admin%>
-        <%= link_to 'System Users', users_path %>
-    <% end %>
+    <h1 style="color: blue; display: inline; padding-left: 5px"><%= user_first_name %> Workspace</h1>
+</div>
 
-    <br><br>
-    <%= link_to 'New Customer', new_customer_path %><br>
-    <%= link_to 'Valued Service Customers', customers_path %>
+<% if !@user.first_name || !@user.last_name %>
+    <div style="margin: 30px 60px">
+        <p>You are required to provide your <strong><%= link_to 'first name',  edit_user_path(@user) %></strong> and <strong><%= link_to 'last name',  edit_user_path(@user) %></strong> to proceed</p>
+    </div>
+<% end %>
 
-    <br><br>
-    <% if current_user.admin %>
-        <%= link_to 'New Vehicle Service', new_service_path %><br>
-    <% end %>
-    <%= link_to 'Vehicle Services', services_path %><br>
+<% if @user.first_name || @user.last_name %>
+    <div style="margin: 30px 60px">
+        <%= link_to 'My Profile', user_path(@user) %><br>
+        <p><% if @user.admin%>
+            <%= link_to 'System Users', users_path %>
+        <% end %></p>
 
+        <%= link_to 'New Customer', new_customer_path %><br>
+        <%= link_to 'Valued Service Customers', customers_path %>
 
-    <p><%= link_to 'Sign Out', '/signout' %></p>
+        <br><br>
+        <% if current_user.admin %>
+            <%= link_to 'New Vehicle Service', new_service_path %><br>
+        <% end %>
+        <%= link_to 'Vehicle Services', services_path %><br>
+    </div>
+<% end %>
+
+<div style="margin: 30px 60px">
+   
 </div>
 
 
-<img src="<%= @user.image %>">
