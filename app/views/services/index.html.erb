@@ -12,11 +12,14 @@
             <tr>
                 <td><%= index %></td>
                 <td><%= service.name %></td>
-                <td><%= link_to 'Edit', edit_service_path(service) %></td>
-                <td><%= link_to 'Delete', services_path %></td>
+                <% if current_user.admin %>
+                    <td><%= link_to 'Edit', edit_service_path(service) %></td>
+                    <td style="text-align: left"><%= link_to "Delete", service, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                <% end %>
             </tr>
         </tbody>
     <% end %>
 </table>
 
 <p><%= link_to 'My Workspace', user_workspace_path %></p>
+<%= link_to 'New Service', new_service_path %>
