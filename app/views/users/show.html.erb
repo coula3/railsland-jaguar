@@ -8,4 +8,6 @@
 <br>
 <p><%= link_to 'My Workspace', user_workspace_path %></p>
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
-<%= link_to 'System Users', users_path %>
+<% if current_user.admin %>
+    <%= link_to 'System Users', users_path %>
+<% end %>
