@@ -27,10 +27,10 @@ class AppointmentsController < ApplicationController
       if @customer.nil?
         redirect_to appointments_path, alert: "Customer does not exist"
       else
-        @appointments = @customer.appointments
+        @appointments = @customer.appointments.order(:date)
       end
     else
-      @appointments = Appointment.all
+      @appointments = Appointment.all.order(:date)
     end
   end
 
