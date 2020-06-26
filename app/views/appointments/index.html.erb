@@ -21,6 +21,7 @@
             <th>Service</th>
             <% if  @appointments.distinct.count(:customer_id) > 1 %>
             <th>Customer</th>
+            <th>Service Insurance</th>
             <% end %>
         <tr>
     </thead>
@@ -34,7 +35,10 @@
                 <td><%= appointment.model_year %></td>
                 <td><%= appointment.status %></td>
                 <td><%= appointment.service.name %></td>
-                <td><%= link_to appointment.customer.full_name, customer_appointments_path(appointment.customer) if @appointments.distinct.count(:customer_id) > 1 %></td>
+                <% if @appointments.distinct.count(:customer_id) > 1 %>
+                    <td><%= link_to appointment.customer.full_name, customer_appointments_path(appointment.customer) %></td>
+                    <td><%= appointment.customer.has_service_insurance? %></td>
+                <% end %>
                 <td><%= link_to 'Edit', edit_customer_path(appointment.customer) %></td>
                 <% if current_user.admin && @appointments.distinct.count(:customer_id) == 1 %>
                     <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
