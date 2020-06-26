@@ -1,3 +1,13 @@
+<% if  @appointments.distinct.count(:customer_id) == 1 %>
+
+<h2>Customer - <%= link_to @appointments.first.customer.full_name, customer_path(@appointments.first.customer) %></h2>
+<p><label>Email: </label><%= @appointments.first.customer.email %></p>
+<p><label>Telephone: </label><%= @appointments.first.customer.telephone %></p>
+<p><label>Service Insurance: </label><%= @appointments.first.customer.has_service_insurance? %></p>
+<p><label>Account created on: </label><%= @appointments.first.customer.created_at.strftime("%b %d, %Y") %></p>
+
+<% end %>
+
 <h2>Appointments</h2>
 
 <table>
@@ -9,7 +19,9 @@
             <th>Model Year</th>
             <th>Status</th>
             <th>Service</th>
+            <% if  @appointments.distinct.count(:customer_id) > 1 %>
             <th>Customer</th>
+            <% end %>
         <tr>
     </thead>
     
@@ -22,8 +34,9 @@
                 <td><%= appointment.model_year %></td>
                 <td><%= appointment.status %></td>
                 <td><%= appointment.service.name %></td>
-                <td><%= appointment.customer.full_name %></td>
-                <% if current_user.admin %>
+                <td><%= link_to appointment.customer.full_name, customer_appointments_path(appointment.customer) if @appointments.distinct.count(:customer_id) > 1 %></td>
+                <td><%= link_to 'Edit', edit_customer_path(appointment.customer) %></td>
+                <% if current_user.admin && @appointments.distinct.count(:customer_id) == 1 %>
                     <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
                 <% end %>
             </tr>
