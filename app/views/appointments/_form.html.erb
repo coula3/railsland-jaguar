@@ -10,7 +10,7 @@
     <%= f.time_field :time %>
     <%= f.select  :veh_model, veh_models, {:include_blank => "--select vehicle model--"} %>
     <%= f.select  :model_year, model_years, {:include_blank => "--select model year--"} %>
-    <%= f.select :status, app_status %>
+    <%= f.select :status, select_status %>
     <!--<%= f.hidden_field :customer_id, :value => :customer_id %>-->
     <%= f.hidden_field :customer_id %>
     <%= f.submit %>

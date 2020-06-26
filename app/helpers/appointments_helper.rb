@@ -1,5 +1,5 @@
 module AppointmentsHelper
-    def app_status
+    def select_status
         status ||= ["open", "rescheduled", "cancelled", "no-show", "service completed"]
     end
 
