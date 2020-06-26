@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get '/users/:id/admin_edit', to: 'users#admin_edit', as: 'admin_edit'
 
   resources :users, only: [:create, :show, :index, :edit, :update, :destroy]
-  resources :customers
+  resources :customers do 
+    resources :appointments, only: [:new, :show, :index]
+  end
   resources :services
   resources :appointments
 end
