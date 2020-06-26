@@ -15,12 +15,13 @@
 # puts "User successfully created" if User.first
 
 ## SERVICE ***
-# services = ["routine maintenance", "inspection", "electronics-system", "air-conditioning"]
+Service.destroy_all
+services = ["Routine Maintenance", "Tire Pressure Light", "5000 Miles Service", "Major Service", "Recall", "State Inspection", "Electronics System", "Air-Conditioning"]
 
-## services.each do |service|
-#     Service.create(name: service, dealer_id: Dealer.first.id)
-# end
-# puts "#{Service.count} services successfully created!" if Service.count == services.count
+services.each do |service|
+    Service.create(name: service, dealer_id: Dealer.first.id)
+end
+puts "#{Service.count} services successfully created!" if Service.count == services.count
 
 ## CUSTOMER ***
 # c = 4
@@ -40,7 +41,7 @@
 # end
 # puts "#{Appointment.count} appointments successfully created!" if Appointment.count == a
 
-Customer.all.each do |cust|
-    cust.update(email: cust.first_name.slice(0).downcase.concat("@").concat(cust.last_name.downcase).concat(".com"))
-end
-puts "#{Customer.count} appointments successfully updated!" if Customer.count == Customer.count {|cust| cust.email}
+# Customer.all.each do |cust|
+#     cust.update(email: cust.first_name.slice(0).downcase.concat("@").concat(cust.last_name.downcase).concat(".com"))
+# end
+# puts "#{Customer.count} appointments successfully updated!" if Customer.count == Customer.count {|cust| cust.email}
