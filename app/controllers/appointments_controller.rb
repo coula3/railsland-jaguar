@@ -19,13 +19,24 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+    # /customers/:customer_id/appointments/:id(.:format)
+    if params[:customer_id]
+      @customer = Customer.find_by(id: params[:customer_id])
+      if @customer.nil?
+        redirect_to customers_path, alert: "Customer does not exist"
+      else
+        @appointment = @customer.appointments.find_by(id: params[:id])
+      end  
+    else
+      @appointment = Appointment.find_by(id: params[:id])
+    end
   end
 
   def index
     if params[:customer_id]
       @customer = Customer.find_by(id: params[:customer_id])
       if @customer.nil?
-        redirect_to appointments_path, alert: "Customer does not exist"
+        redirect_to customers_path, alert: "Customer does not exist"
       else
         @appointments = @customer.appointments.order(:date)
       end
