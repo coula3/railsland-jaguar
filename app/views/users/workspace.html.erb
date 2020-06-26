@@ -26,7 +26,10 @@
         <% if current_user.admin %>
             <%= link_to 'New Vehicle Service', new_service_path %><br>
         <% end %>
-        <%= link_to 'Vehicle Services', services_path %><br>
+        <%= link_to 'Vehicle Services', services_path %>
+        
+        <br><br>
+        <%= link_to 'Vehicle Service Appointments', appointments_path %>
     </div>
 <% end %>
 
