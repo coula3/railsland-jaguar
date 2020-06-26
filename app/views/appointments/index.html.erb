@@ -49,3 +49,6 @@
 </table>
 
 <p><%= link_to 'My Workspace', user_workspace_path %></p>
+<% if @appointments.distinct.count(:customer_id) == 1 %>
+        <%=  link_to 'Create New Appointment', new_customer_appointment_path(@appointments.first.customer) %>
+<% end %>
