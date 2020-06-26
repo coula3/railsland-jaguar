@@ -22,6 +22,16 @@ class AppointmentsController < ApplicationController
   end
 
   def index
+    if params[:customer_id]
+      @customer = Customer.find_by(id: params[:customer_id])
+      if @customer.nil?
+        redirect_to appointments_path, alert: "Customer does not exist"
+      else
+        @appointments = @customer.appointments
+      end
+    else
+      @appointments = Appointment.all
+    end
   end
 
   def edit
