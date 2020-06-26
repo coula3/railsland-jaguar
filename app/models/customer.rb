@@ -3,4 +3,8 @@ class Customer < ApplicationRecord
   has_many :appointments
   
   include FullName::InstanceMethods
+
+  def has_service_insurance?
+    self.service_insurance ? "Yes" : "No"
+  end
 end
