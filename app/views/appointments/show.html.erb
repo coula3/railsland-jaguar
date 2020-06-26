@@ -1,2 +1,30 @@
-<h1>Appointments#show</h1>
-<p>Find me in app/views/appointments/show.html.erb</p>
+<h2>Customer - <%= link_to @appointment.customer.full_name, customer_path(@appointment.customer) %></h2>
+<p><label>Email: </label><%= @appointment.customer.email %></p>
+<p><label>Telephone: </label><%= @appointment.customer.telephone %></p>
+<p><label>Service Insurance: </label><%= @appointment.customer.has_service_insurance? %></p>
+<p><label>Account created on: </label><%= @appointment.customer.created_at.strftime("%b %d, %Y") %></p>
+
+<br>
+<h2>Appointment</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Vehicle Model</th>
+            <th>Model Year</th>
+            <th>Status</th>
+            <th>Service</th>
+        <tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= @appointment.date.strftime("%b %d, %Y") %></td>
+            <td><%= @appointment.time.strftime("%H:%M") %></td>
+            <td><%= @appointment.veh_model %></td>
+            <td><%= @appointment.model_year %></td>
+            <td><%= @appointment.status %></td>
+            <td><%= @appointment.service.name %></td>
+        </tr>
+    </tbody>
+</table>
