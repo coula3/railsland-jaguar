@@ -13,16 +13,16 @@
         <tr>
     </thead>
     
-    <% @appointments.each do |app| %>
+    <% @appointments.each do |appointment| %>
         <tbody>
             <tr>
-                <td><%= app.date.strftime("%b %d, %Y") %></td>
-                <td><%= app.time.strftime("%H:%M") %></td>
-                <td><%= app.veh_model %></td>
-                <td><%= app.model_year %></td>
-                <td><%= app.status %></td>
-                <td><%= app.service.name %></td>
-                <td><%= app.customer.full_name %></td>
+                <td><%= appointment.date.strftime("%b %d, %Y") %></td>
+                <td><%= appointment.time.strftime("%H:%M") %></td>
+                <td><%= appointment.veh_model %></td>
+                <td><%= appointment.model_year %></td>
+                <td><%= appointment.status %></td>
+                <td><%= appointment.service.name %></td>
+                <td><%= appointment.customer.full_name %></td>
             </tr>
         </tbody>
      <% end %>
