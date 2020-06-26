@@ -23,6 +23,9 @@
                 <td><%= appointment.status %></td>
                 <td><%= appointment.service.name %></td>
                 <td><%= appointment.customer.full_name %></td>
+                <% if current_user.admin %>
+                    <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                <% end %>
             </tr>
         </tbody>
      <% end %>
