@@ -1,18 +1,19 @@
-<h3>Appointment Details</h3>
+<%= render 'customers/customer' %>
 
-<%= form_for(@appointment) do |f| %>
-    <label style="color: blue">Select Vehicle Service</label>
-    <br><br>
-    <%= service_select(@appointment, @path) %><br><br>
+<div>
+    <%= form_for(@appointment) do |f| %>
+        <label style="color: blue"> <%=!f.object.id ? "Select" : "Edit"%> Vehicle Service</label>
 
-    <label style="color: blue">Enter Appointment Details</label><br><br>
-    <%= f.date_field :date %>
-    <%= f.time_field :time %>
-    <%= f.select  :veh_model, veh_models, {:include_blank => "--select vehicle model--"} %>
-    <%= f.select  :model_year, model_years, {:include_blank => "--select model year--"} %>
-    <%= f.select :status, select_status %>
-    <!--<%= f.hidden_field :customer_id, :value => :customer_id %>-->
-    <%= f.hidden_field :customer_id %>
-    <%= f.submit %>
+        <br><br>
+        <%= f.collection_radio_buttons :service_id, Service.all, :id, :name %><br><br>
 
-<% end %>
+        <label style="color: blue"><%=!f.object.id ? "Enter" : "Edit"%> Appointment Details</label><br><br>
+        <%= f.date_field :date %>
+        <%= f.time_field :time %>
+        <%= f.select  :veh_model, veh_models, {:include_blank => "--select vehicle model--"} %>
+        <%= f.select  :model_year, model_years, {:include_blank => "--select model year--"} %>
+        <%= f.select :status, select_status %>
+        <%= f.hidden_field :customer_id %>
+        <%= f.submit %>
+    <% end %>
+</div>
