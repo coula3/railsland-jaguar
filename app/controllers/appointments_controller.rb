@@ -46,10 +46,25 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
-    @appointment = Appointment.find_by(id: params[:id])
+    if params[:customer_id]
+      @customer = Customer.find_by(id: params[:customer_id])
+      if @customer.nil?
+        redirect_to customers_path, alert: "Customer does not exist"
+      else
+        @appointment = @customer.appointments.find_by(id: params[:id])
+      end  
+    else
+      @appointment = Appointment.find_by(id: params[:id])
+    end
   end
 
   def update
+    @appointment = Appointment.find_by(id: params[:id])
+    if @appointment.update(appointment_params)
+      redirect_to customer_appointments_path(@appointment.customer)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -60,11 +75,11 @@ class AppointmentsController < ApplicationController
 
   private
 
-  def appt_params
-    params.require(:appointment).permit(:date, :time, :veh_model, :model_year, :status, :customer_id) 
+  def appointment_params
+    params.require(:appointment).permit(:date, :time, :veh_model, :model_year, :status, :customer_id, :service_id) 
   end
 
-  def serv_params
-    params.require(:service).permit(:service_id)
-  end
+  # def serv_params
+  #   params.require(:service).permit(:service_id)
+  # end
 end
