@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  before_action :require_login
+  
   def new
     @customer = Customer.new
   end
@@ -42,7 +44,12 @@ class CustomersController < ApplicationController
   end
 
   private
+
   def customer_params
     params.require(:customer).permit(:first_name, :last_name, :email, :telephone, :service_insurance)
+  end
+
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
   end
 end

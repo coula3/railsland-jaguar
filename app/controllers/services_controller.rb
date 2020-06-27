@@ -1,4 +1,6 @@
 class ServicesController < ApplicationController
+  before_action :require_login
+  
   def new
     @service = Service.new
   end
@@ -43,5 +45,9 @@ class ServicesController < ApplicationController
 
   def service_params
     params.require(:service).permit(:name)
+  end
+
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
   end
 end

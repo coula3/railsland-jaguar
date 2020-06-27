@@ -1,4 +1,6 @@
 class AppointmentsController < ApplicationController
+  before_action :require_login
+
   def new
     if params[:customer_id] && !Customer.exists?(params[:customer_id])
       redirect_to customers_path, alert: "Customer does not exist"
@@ -79,7 +81,7 @@ class AppointmentsController < ApplicationController
     params.require(:appointment).permit(:date, :time, :veh_model, :model_year, :status, :customer_id, :service_id) 
   end
 
-  # def serv_params
-  #   params.require(:service).permit(:service_id)
-  # end
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
+  end
 end
