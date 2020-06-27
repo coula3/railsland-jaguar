@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create, :show, :index, :edit, :update, :destroy]
   resources :customers do 
-    resources :appointments, only: [:new, :show, :index]
+    resources :appointments, only: [:new, :show, :index, :edit]
   end
   resources :services
   resources :appointments
