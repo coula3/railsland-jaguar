@@ -13,6 +13,7 @@
 <table>
     <thead>
         <tr>
+            <th>&nbsp</th>
             <th>Date</th>
             <th>Time</th>
             <th>Vehicle Model</th>
@@ -26,10 +27,11 @@
         <tr>
     </thead>
     
-    <% @appointments.each do |appointment| %>
+    <% @appointments.each.with_index(1) do |appointment, index| %>
         <tbody>
             <tr>
-                <td><%= appointment.date.strftime("%b %d, %Y") %></td>
+                <td><%= index%></td>
+                <td><%= link_to appointment.date.strftime("%b %d, %Y"), customer_appointment_path(appointment.customer, appointment) %></td>
                 <td><%= appointment.time.strftime("%H:%M") %></td>
                 <td><%= appointment.veh_model %></td>
                 <td><%= appointment.model_year %></td>
@@ -39,7 +41,7 @@
                     <td><%= link_to appointment.customer.full_name, customer_appointments_path(appointment.customer) %></td>
                     <td><%= appointment.customer.has_service_insurance? %></td>
                 <% end %>
-                <td><%= link_to 'Edit', edit_customer_path(appointment.customer) %></td>
+                <td><%= link_to 'Edit', edit_customer_appointment_path(appointment.customer, appointment) %></td>
                 <% if current_user.admin && @appointments.distinct.count(:customer_id) == 1 %>
                     <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
                 <% end %>
@@ -50,5 +52,7 @@
 
 <p><%= link_to 'My Workspace', user_workspace_path %></p>
 <% if @appointments.distinct.count(:customer_id) == 1 %>
-        <%=  link_to 'Create New Appointment', new_customer_appointment_path(@appointments.first.customer) %>
+    <%=  link_to 'Create New Appointment', new_customer_appointment_path(@appointments.first.customer) %>
+    <%= link_to 'Service Appointments', appointments_path %>
 <% end %>
+
