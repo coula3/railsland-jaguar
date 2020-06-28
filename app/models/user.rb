@@ -16,4 +16,8 @@ class User < ApplicationRecord
   def admin_deletable?
     User.count { |u| u.admin == true && u.status == "active"} > 2 ? true : false
   end
+
+  def full_name
+    ["#{self.first_name}", "#{self.last_name}"].join(" ")
+  end
 end
