@@ -27,8 +27,12 @@ class UsersController < ApplicationController
   def edit
   end
   
-  def update  
-    if @user.update(user_params)
+  def update
+    if (!@user.first_name || !@user.last_name) && params[:user][:password].empty?
+      @user.first_name, @user.last_name = params[:user][:first_name], params[:user][:last_name]
+      # flash [:msg]
+      render :edit
+    elsif @user.update(user_params)
       @user.update(admin: true) if User.count == 1
       redirect_to user_path(@user)
     else
