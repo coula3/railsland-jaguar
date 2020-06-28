@@ -6,7 +6,7 @@
 <p><label>Account created on: </label><%= @user.created_at.strftime("%b %d, %Y") %></p>
 
 <br>
-<p><%= link_to 'My Workspace', user_workspace_path %></p>
+<%= link_to 'My Workspace', user_workspace_path %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
 <% if current_user.admin %>
     <%= link_to 'System Users', users_path %>
