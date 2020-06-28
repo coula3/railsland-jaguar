@@ -1,2 +1,21 @@
-<h1>Dealers#edit</h1>
-<p>Find me in app/views/dealers/edit.html.erb</p>
+<h2>Edit Dealer Info</h2>
+
+<%= form_for(@dealer) do |f| %>
+    <p><%= f.label 'Name' %>
+    <%= f.text_field :name %></p>
+    <%= f.label 'Address' %>
+    <%= f.text_field :address %></p>
+    <p><%= f.label 'City' %>
+    <%= f.text_field :city %></p>
+    <p><%= f.label 'State' %>
+    <%= f.text_field :state %></p>
+    <p><%= f.label 'Zip' %>
+    <%= f.text_field :zip %></p>
+    <p><%= f.label 'Telephone' %>
+    <%= f.text_field :telephone, placeholder: "555-555-5555" %></p>
+
+    <%= f.submit %>
+<% end %>
+
+<br>
+<%= link_to 'Back', user_workspace_path %>
