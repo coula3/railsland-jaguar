@@ -36,11 +36,13 @@ class CustomersController < ApplicationController
   end
 
   def destroy
-    # raise "...at customers destroy!".inspect
     @customer = Customer.find(params[:id])
-    # byebug
     @customer.destroy
     redirect_to customers_path
+  end
+
+  def with_service_insurance
+    @customers_with_service_insurance = Customer.with_service_insurance
   end
 
   private
