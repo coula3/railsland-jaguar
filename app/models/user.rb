@@ -2,6 +2,8 @@ class User < ApplicationRecord
   belongs_to :dealer
   has_secure_password
   validates :first_name, :last_name, presence: true, on: :update
+  validates :email, presence: true
+  validates :email, uniqueness: true
 
   include FullName::InstanceMethods
 
