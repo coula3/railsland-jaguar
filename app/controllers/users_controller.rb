@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_login
   skip_before_action :require_login, only: [:new, :create]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :admin_edit]
 
   def new
     @user = User.new
@@ -21,15 +22,12 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find_by(id: params[:id])
   end
   
   def edit
-    @user = User.find_by(id: params[:id])
   end
   
   def update  
-    @user = User.find_by(id: params[:id])
     if @user.update(user_params)
       @user.update(admin: true) if User.count == 1
       redirect_to user_path(@user)
@@ -39,7 +37,6 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    @user = User.find_by(id: params[:id])
     if @user.admin && !@user.admin_deletable?
       redirect_to users_path
     else
@@ -53,7 +50,6 @@ class UsersController < ApplicationController
   end
 
   def admin_edit
-    @user = User.find_by(id: params[:id])
   end
 
   private
@@ -64,5 +60,9 @@ class UsersController < ApplicationController
 
   def require_login
     return head(:forbidden) unless session.include? :user_id
+  end
+
+  def set_user
+    @user = User.find_by(id: params[:id])
   end
 end
