@@ -1,4 +1,4 @@
-<h2>User - <%= link_to @user.full_name, edit_user_path, :title => 'Edit User Profile' %></h2>
+<h2>User - <%= link_to full_name(@user), edit_user_path, :title => 'Edit User Profile' %></h2>
 <p><label>Email: </label><%= @user.email %></p>
 <p><label>Position: </label><%= @user.position %></p>
 <p><label>System Role: </label><%= @user.sys_role %></p>

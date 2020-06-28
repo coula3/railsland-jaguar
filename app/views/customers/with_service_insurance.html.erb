@@ -12,7 +12,7 @@
         <% @customers_with_service_insurance.each.with_index(1) do |customer, index| %>
             <tr>
                 <td><%= index %></td>
-                <td><%= customer.full_name %></td>
+                <td><%= full_name(customer) %></td>
                 <td><%= customer.appointments.count %></td>
             </tr>
         <% end %>
