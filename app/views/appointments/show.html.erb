@@ -2,7 +2,7 @@
 <p><label>Email: </label><%= @appointment.customer.email %></p>
 <p><label>Telephone: </label><%= @appointment.customer.telephone %></p>
 <p><label>Service Insurance: </label><%= @appointment.customer.has_service_insurance? %></p>
-<p><label>Account created on: </label><%= @appointment.customer.created_at.strftime("%b %d, %Y") %></p>
+<p><label>Account created on: </label><%= readable_created_at(@appointment.date) %></p>
 
 <br>
 <h2>Appointment</h2>
@@ -19,8 +19,8 @@
     </thead>
     <tbody>
         <tr>
-            <td><%= @appointment.date.strftime("%b %d, %Y") %></td>
-            <td><%= @appointment.time.strftime("%H:%M") %></td>
+            <td><%= readable_date(@appointment.date) %></td>
+            <td><%= readable_time(@appointment.time) %></td>
             <td><%= @appointment.veh_model %></td>
             <td><%= @appointment.model_year %></td>
             <td><%= @appointment.status %></td>

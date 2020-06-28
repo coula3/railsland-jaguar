@@ -4,7 +4,7 @@
 <p><label>Email: </label><%= @appointments.first.customer.email %></p>
 <p><label>Telephone: </label><%= @appointments.first.customer.telephone %></p>
 <p><label>Service Insurance: </label><%= @appointments.first.customer.has_service_insurance? %></p>
-<p><label>Account created on: </label><%= @appointments.first.customer.created_at.strftime("%b %d, %Y") %></p>
+<p><label>Account created on: </label><%= readable_created_at(@appointments.first.customer) %></p>
 
 <% end %>
 
@@ -31,8 +31,8 @@
         <tbody>
             <tr>
                 <td><%= index%></td>
-                <td><%= link_to appointment.date.strftime("%b %d, %Y"), customer_appointment_path(appointment.customer, appointment), :title => 'Customer Appointment' %></td>
-                <td><%= appointment.time.strftime("%H:%M") %></td>
+                <td><%= link_to readable_date(appointment), customer_appointment_path(appointment.customer, appointment), :title => 'Customer Appointment' %></td>
+                <td><%= readable_time(appointment) %></td>
                 <td><%= appointment.veh_model %></td>
                 <td><%= appointment.model_year %></td>
                 <td><%= appointment.status %></td>

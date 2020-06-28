@@ -3,7 +3,7 @@
 <p><label>Position: </label><%= @user.position %></p>
 <p><label>System Role: </label><%= @user.sys_role %></p>
 <p><label>Account Status: </label><%= @user.status %></p>
-<p><label>Account created on: </label><%= @user.created_at.strftime("%b %d, %Y") %></p>
+<p><label>Account created on: </label><%= readable_created_at(@user) %></p>
 
 <br>
 <%= link_to 'My Workspace', user_workspace_path %>
