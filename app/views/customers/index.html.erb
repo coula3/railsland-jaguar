@@ -14,7 +14,7 @@
         <% @customers.each.with_index(1) do |customer, index| %>
             <tr>
                 <td><%= index %></td>
-                <td><%= link_to customer.full_name, customer_path(customer) %></td>
+                <td><%= link_to customer.full_name, customer_path(customer), :title => 'Customer Profile' %></td>
                 <td><%= customer.email %></td>
                 <td><%= customer.telephone %></td>
                 <td><%= customer.has_service_insurance? %></td>

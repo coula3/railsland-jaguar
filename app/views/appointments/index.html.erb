@@ -1,6 +1,6 @@
 <% if  @appointments.distinct.count(:customer_id) == 1 %>
 
-<h2>Customer - <%= link_to @appointments.first.customer.full_name, customer_path(@appointments.first.customer) %></h2>
+<h2>Customer - <%= link_to @appointments.first.customer.full_name, customer_path(@appointments.first.customer), :title => 'Customer Profile' %></h2>
 <p><label>Email: </label><%= @appointments.first.customer.email %></p>
 <p><label>Telephone: </label><%= @appointments.first.customer.telephone %></p>
 <p><label>Service Insurance: </label><%= @appointments.first.customer.has_service_insurance? %></p>
@@ -31,14 +31,14 @@
         <tbody>
             <tr>
                 <td><%= index%></td>
-                <td><%= link_to appointment.date.strftime("%b %d, %Y"), customer_appointment_path(appointment.customer, appointment) %></td>
+                <td><%= link_to appointment.date.strftime("%b %d, %Y"), customer_appointment_path(appointment.customer, appointment), :title => 'Customer Appointment' %></td>
                 <td><%= appointment.time.strftime("%H:%M") %></td>
                 <td><%= appointment.veh_model %></td>
                 <td><%= appointment.model_year %></td>
                 <td><%= appointment.status %></td>
                 <td><%= appointment.service.name %></td>
                 <% if @appointments.distinct.count(:customer_id) > 1 %>
-                    <td><%= link_to appointment.customer.full_name, customer_appointments_path(appointment.customer) %></td>
+                    <td><%= link_to appointment.customer.full_name, customer_appointments_path(appointment.customer), :title => 'Customer Appointments' %></td>
                     <td><%= appointment.customer.has_service_insurance? %></td>
                 <% end %>
                 <td><%= link_to 'Edit', edit_customer_appointment_path(appointment.customer, appointment) %></td>
