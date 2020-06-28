@@ -11,4 +11,12 @@ module AppointmentsHelper
         t = Time.now
         m_years ||=  ((t.year - 10)..t.year).to_a
     end
+
+    def readable_date(object)
+        object.date.strftime("%b %d, %Y")
+    end
+
+    def readable_time(object)
+        object.time.strftime("%H:%M")
+    end
 end
