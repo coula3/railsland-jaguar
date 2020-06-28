@@ -33,7 +33,9 @@
         <%= link_to 'Vehicle Service Appointments', appointments_path %>
 
         <br><br>
-        <%= link_to 'Dealer Info', edit_dealer_path(dealer), :title => 'Edit Dealer Info' %>
+        <% if current_user.admin %>
+            <%= link_to 'Dealer Info', edit_dealer_path(dealer), :title => 'Edit Dealer Info' %>
+        <% end %>
     </div>
 <% end %>
 
