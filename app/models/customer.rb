@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
   belongs_to :dealer
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
   
   include FullName::InstanceMethods
 
