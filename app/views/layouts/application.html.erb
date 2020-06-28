@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailslandJaguar</title>
+    <title><%= dealer_name %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,13 +10,15 @@
   </head>
 
   <body>
-    <h1 style="font-size: 75px; margin-left: 75px; margin-top: 50px;  color: #C0C0C0">Railsland Jaguar</h1>
+    <h1 style="font-size: 65px; margin-left: 75px; margin-top: 50px;  color: #C0C0C0"><%= dealer_name %></h1>
     <div style="float: right; margin-right: 350px">
       <% if logged_in? && current_user.first_name %>
         <%= link_to current_user.full_name, user_path(current_user) %>
       <% end %>
-      <% if logged_in?%>
+      <% if logged_in? && !current_page?(controller: 'users', action: 'workspace') %>
         <%= link_to 'My Workspace', user_workspace_path %>
+      <% end %>
+      <% if logged_in?%>
         <%= link_to 'Sign Out', '/signout' %>
       <% end %>
     </div>
