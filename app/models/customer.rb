@@ -7,4 +7,6 @@ class Customer < ApplicationRecord
   def has_service_insurance?
     self.service_insurance ? "Yes" : "No"
   end
+
+  scope :with_service_insurance, -> { where(service_insurance: true) }
 end
