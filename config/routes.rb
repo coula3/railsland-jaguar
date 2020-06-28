@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/users/workspace', to: 'users#workspace', as: 'user_workspace'
   get '/auth/facebook/callback', to: 'session#create'
   get '/users/:id/admin_edit', to: 'users#admin_edit', as: 'admin_edit'
-  get '/customers/with_service_insurance', to: 'customers#service_insurance', as: 'service_insurance'
+  get '/customers/with_service_insurance', to: 'customers#with_service_insurance', as: 'service_insurance'
 
   resources :users, only: [:create, :show, :index, :edit, :update, :destroy]
   resources :customers do 
