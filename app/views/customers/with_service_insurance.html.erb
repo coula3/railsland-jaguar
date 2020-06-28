@@ -1,0 +1,23 @@
+<h2>Customers with Service Insurance</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>&nbsp</th>
+            <th>Name</th>
+            <th>Appointments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @customers_with_service_insurance.each.with_index(1) do |customer, index| %>
+            <tr>
+                <td><%= index %></td>
+                <td><%= customer.full_name %></td>
+                <td><%= customer.appointments.count %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+<p><%= link_to 'My Workspace', user_workspace_path %></p>
