@@ -1,5 +1,5 @@
 module CustomersHelper
     def select_service_insurance
-       ins ||= [true, false] 
+        options ||= {"Yes" => true, "No" => false} 
     end
 end
