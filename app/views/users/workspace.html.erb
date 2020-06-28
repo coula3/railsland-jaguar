@@ -8,7 +8,7 @@
 
 <% if !@user.first_name || !@user.last_name %>
     <div style="margin: 30px 60px">
-        <p>You are required to provide your <strong><%= link_to 'first name',  edit_user_path(@user) %></strong> and <strong><%= link_to 'last name',  edit_user_path(@user) %></strong> to proceed</p>
+        <p>You are required to provide your <strong><%= link_to 'first name',  edit_user_path(@user) %></strong>, <strong><%= link_to 'last name',  edit_user_path(@user) %></strong> and <strong><%= link_to 'password', edit_user_path(@user) %></strong> to proceed.</p>
     </div>
 <% end %>
 
@@ -31,6 +31,9 @@
         
         <br><br>
         <%= link_to 'Vehicle Service Appointments', appointments_path %>
+
+        <br><br>
+        <%= link_to 'Dealer Info', edit_dealer_path(dealer) %>
     </div>
 <% end %>
 
