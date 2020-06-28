@@ -1,24 +1,15 @@
-<%= form_tag signin_path do %>
-    <%= label_tag 'eMail: ' %>
-    <%= text_field_tag :email %>
+<div>
+    <%= form_tag signin_path do %>
+        <%= label_tag 'eMail: ' %>
+        <%= text_field_tag :email %>
 
-    <%= label_tag 'Password: ' %>
-    <%= password_field_tag :password %>
+        <%= label_tag 'Password: ' %>
+        <%= password_field_tag :password %>
 
-    <%= submit_tag 'Sign In'%>
-    
-<% end %>
+        <%= submit_tag 'Sign In'%>
 
-<br>
-<p><%= link_to 'Sign Up', signup_path %></p>
+        <%= button_to 'Create Account', signup_path %>
+    <% end %>
 
-<a href="/auth/facebook"><img src="/assets/fb_logo.png"></a>
-
-
-<!--<form action="/signup" method="GET">
-    <button class="button">Signup</button>
-
-        <%#= link_to image_tag('fb_logo.png'), auth_facebook_callback_path %>
-</form>-->
-
-
+    <p><a href="/auth/facebook"><img src="/assets/fb_logo.png"></a>
+</div>
