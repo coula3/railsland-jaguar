@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/users/:id/admin_edit', to: 'users#admin_edit', as: 'admin_edit'
   get '/customers/with_service_insurance', to: 'customers#with_service_insurance', as: 'service_insurance'
 
+  resources :dealers, only: [:edit, :update]
   resources :users, only: [:create, :show, :index, :edit, :update, :destroy]
   resources :customers do 
     resources :appointments, only: [:new, :show, :index, :edit]
