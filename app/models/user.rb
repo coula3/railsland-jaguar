@@ -5,8 +5,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
 
-  include FullName::InstanceMethods
-
   def admin?
     self.admin ? "Yes" : "No"
   end

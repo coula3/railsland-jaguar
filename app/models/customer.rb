@@ -4,8 +4,6 @@ class Customer < ApplicationRecord
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
   validates :telephone, format: { with: /\d{3}-\d{3}-\d{4}/, message: "uses 555-555-5555 format" }
-  
-  include FullName::InstanceMethods
 
   def has_service_insurance?
     self.service_insurance ? "Yes" : "No"
