@@ -1,5 +1,6 @@
 class ServicesController < ApplicationController
   before_action :require_login
+  before_action :set_service, only: [:edit, :update, :destroy]
   
   def new
     @service = Service.new
@@ -18,15 +19,10 @@ class ServicesController < ApplicationController
     @services = Service.all
   end
 
-  def show
-  end
-
   def edit
-    @service = Service.find(params[:id])
   end
 
   def update
-    @service = Service.find(params[:id])
     if @service.update(service_params)
       redirect_to services_path
     else
@@ -35,7 +31,6 @@ class ServicesController < ApplicationController
   end
 
   def destroy
-    @service = Service.find(params[:id])
     @service.destroy
 
     redirect_to services_path
@@ -49,5 +44,9 @@ class ServicesController < ApplicationController
 
   def require_login
     return head(:forbidden) unless session.include? :user_id
+  end
+
+  def set_service
+    @service = Service.find_by(id: params[:id])
   end
 end
