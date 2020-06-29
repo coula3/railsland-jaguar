@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+div .forms {
+    margin: 75px 100px 25px 100px
+}
+
+div .main-data {
+    margin-bottom: 50px
+}

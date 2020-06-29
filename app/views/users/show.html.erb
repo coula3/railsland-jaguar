@@ -1,13 +1,20 @@
-<h2>User - <%= link_to full_name(@user), edit_user_path, :title => 'Edit User Profile' %></h2>
-<p><label>Email: </label><%= @user.email %></p>
-<p><label>Position: </label><%= @user.position %></p>
-<p><label>System Role: </label><%= @user.sys_role %></p>
-<p><label>Account Status: </label><%= @user.status %></p>
-<p><label>Account created on: </label><%= readable_created_at(@user) %></p>
+<div class="forms">
+    <div class="main-data">
+        <h2>User - <%= link_to full_name(@user), edit_user_path, :title => 'Edit User Profile' %></h2>
+        <p><label>Email: </label><%= @user.email %></p>
+        <p><label>Position: </label><%= @user.position %></p>
+        <p><label>System Role: </label><%= @user.sys_role %></p>
+        <p><label>Account Status: </label><%= @user.status %></p>
+        <p><label>Account created on: </label><%= readable_created_at(@user) %></p>
+    </div>
 
-<br>
-<%= link_to 'My Workspace', user_workspace_path %>
-<%= link_to 'Edit Profile', edit_user_path(@user) %>
-<% if current_user.admin %>
-    <%= link_to 'System Users', users_path %>
-<% end %>
+    <div>
+        <%= link_to 'My Workspace', user_workspace_path %>
+        <span> | </span>
+        <%= link_to 'Edit Profile', edit_user_path(@user) %>
+        <span> | </span>
+        <% if current_user.admin %>
+            <%= link_to 'System Users', users_path %>
+        <% end %>
+    </div>
+</div>
