@@ -13,8 +13,6 @@
         <span> | </span>
         <%= link_to 'Edit Profile', edit_user_path(@user) %>
         <span> | </span>
-        <% if current_user.admin %>
-            <%= link_to 'System Users', users_path %>
-        <% end %>
+        <%= is_admin?(current_user) %>
     </div>
 </div>
