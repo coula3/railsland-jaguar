@@ -6,11 +6,9 @@
     <h1 style="color: blue; display: inline; padding-left: 5px"><%= user_first_name %> Workspace</h1>
 </div>
 
-<% if !@user.first_name || !@user.last_name %>
     <div style="margin: 30px 60px">
-        <p>You are required to provide your <strong><%= link_to 'first name',  edit_user_path(@user) %></strong>, <strong><%= link_to 'last name',  edit_user_path(@user) %></strong> and <strong><%= link_to 'password', edit_user_path(@user) %></strong> to proceed.</p>
+        <p>You are required to provide your <strong><%= names_present?(@user) %></strong> to continue.</p>
     </div>
-<% end %>
 
 <% if @user.first_name || @user.last_name %>
     <div style="margin: 30px 60px">
