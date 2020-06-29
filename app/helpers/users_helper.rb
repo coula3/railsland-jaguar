@@ -24,10 +24,4 @@ module UsersHelper
             link_to 'System Users', users_path
         end
     end
-
-    def names_present?(user)
-        if !current_user.first_name && !current_user.last_name
-            link_to 'profile data and password',  edit_user_path(user)
-        end
-    end
 end
