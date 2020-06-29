@@ -1,45 +1,45 @@
 
-<div style="margin: 30px 60px">
-   
-    <img src="<%= user_image %>">
-
-    <h1 style="color: blue; display: inline; padding-left: 5px"><%= user_first_name %> Workspace</h1>
-</div>
-
-<% if !@user.first_name || !@user.last_name %>
-    <div style="margin: 30px 60px">
-        <p>You are required to provide your <strong><%= link_to 'profile data and password',  edit_user_path(@user) %></strong> to continue.</p>
+<div class="main-container">
+    <div style="margin: 25px 0px 50px 0px">
+        <img src="<%= user_image %>">
+        <h1 style="color: blue; display: inline; padding-left: 5px"><%= user_first_name %> Workspace</h1>
     </div>
-<% end %>
 
-<% if @user.first_name || @user.last_name %>
-    <div style="margin: 30px 60px">
-        <%= link_to 'My Profile', user_path(@user) %><br>
-        <p><% if @user.admin%>
-            <%= link_to 'System Users', users_path %>
-        <% end %></p>
+    <% if !@user.first_name || !@user.last_name %>
+        <div>
+            <p>You are required to provide your <strong><%= link_to 'profile data and password',  edit_user_path(@user) %></strong> to continue.</p>
+        </div>
+    <% end %>
 
-        <%= link_to 'New Customer', new_customer_path %><br>
-        <%= link_to 'Valued Service Customers', customers_path %><br>
-        <%= link_to 'Customers with Service Insurance', service_insurance_path %>
+    <% if @user.first_name || @user.last_name %>
+        <div style="margin-bottom: 25px">
+            <%= link_to 'My Profile', user_path(@user) %><br>
+            <%= link_to 'System Users', users_path if @user.admin%>
+        </div>
 
-        <br><br>
-        <% if current_user.admin %>
-            <%= link_to 'New Vehicle Service', new_service_path %><br>
-        <% end %>
-        <%= link_to 'Vehicle Services', services_path %>
+        <div style="margin-bottom: 25px">
+            <%= link_to 'New Customer', new_customer_path %><br>
+            <%= link_to 'Valued Service Customers', customers_path %><br>
+            <%= link_to 'Customers with Service Insurance', service_insurance_path %>
+        </div>
+
+        <div style="margin-bottom: 25px">
+            <% if current_user.admin %>
+                <%= link_to 'New Vehicle Service', new_service_path %><br>
+            <% end %>
+            <%= link_to 'Vehicle Services', services_path %>
+        </div>
+
+        <div style="margin-bottom: 25px">
+            <%= link_to 'Vehicle Service Appointments', appointments_path %>
+        </div>
         
-        <br><br>
-        <%= link_to 'Vehicle Service Appointments', appointments_path %>
-
-        <br><br>
-        <% if current_user.admin %>
-            <%= link_to 'Dealer Info', edit_dealer_path(dealer), :title => 'Edit Dealer Info' %>
-        <% end %>
-    </div>
-<% end %>
-
-<div style="margin: 30px 60px">
+        <div style="margin-bottom: 25px">
+            <% if current_user.admin %>
+                <%= link_to 'Dealer Information', edit_dealer_path(dealer), :title => 'Edit Dealer Info' %>
+            <% end %>
+        </div>
+    <% end %>
 
 </div>
 
