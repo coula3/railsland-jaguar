@@ -46,9 +46,10 @@
      <% end %>
 </table>
 
-<p><%= link_to 'My Workspace', user_workspace_path %></p>
-<% if @appointments.distinct.count(:customer_id) == 1 %>
-    <%=  link_to 'Create New Appointment', new_customer_appointment_path(@appointments.first.customer) %>
-    <%= link_to 'Service Appointments', appointments_path %>
-<% end %>
-
+<div>
+    <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+    <% if @appointments.distinct.count(:customer_id) == 1 %>
+        <span style="margin-right: 5px"><%=  link_to 'Create New Appointment', new_customer_appointment_path(@appointments.first.customer) %></span>
+        <span style="margin-right: 5px"><%= link_to 'Service Appointments', appointments_path %></span>
+    <% end %>
+</div>

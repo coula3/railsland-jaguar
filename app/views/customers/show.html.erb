@@ -2,9 +2,10 @@
 
 <%= render 'customer' %>
 
-<br>
-<%= link_to 'My Workspace', user_workspace_path %>
-<%= link_to 'Service Customers', customers_path %>
-<%= link_to 'Edit Customer', edit_customer_path(@customer) %>
-<%= link_to 'Create New Appointment', new_customer_appointment_path(@customer) %>
-<%= link_to "#{@customer.first_name}'s Appointments", customer_appointments_path(@customer) %><br>
+<div>
+    <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+    <span style="margin-right: 5px"><%= link_to 'Service Customers', customers_path %></span>
+    <span style="margin-right: 5px"><%= link_to 'Edit Customer', edit_customer_path(@customer) %></span>
+    <span style="margin-right: 5px"><%= link_to 'Create New Appointment', new_customer_appointment_path(@customer) %></span>
+    <span style="margin-right: 5px"><%= link_to "#{@customer.first_name}'s Appointments", customer_appointments_path(@customer) %></span>
+</div>

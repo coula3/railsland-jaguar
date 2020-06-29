@@ -9,9 +9,9 @@
     </div>
 
     <div>
-        <span><%= link_to 'My Workspace', user_workspace_path %></span>
-        <span style="margin-left: 5px"><%= link_to 'Edit Profile', edit_user_path(@user) %></span>
-        <span style="margin-left: 5px"><%= is_admin?(current_user) %></span>
+        <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+        <span style="margin-right: 5px"><%= link_to 'Edit Profile', edit_user_path(@user) %></span>
+        <span style="margin-right: 5px"><%= is_admin?(current_user) %></span>
         
     </div>
 </div>
