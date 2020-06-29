@@ -1,4 +1,4 @@
-<div>
+<div style="margin: 30px 60px" >
     <%= form_tag signin_path do %>
         <%= label_tag 'eMail: ' %>
         <%= text_field_tag :email %>
@@ -8,8 +8,9 @@
 
         <%= submit_tag 'Sign In'%>
 
-        <%= button_to 'Create Account', signup_path %>
     <% end %>
-
+            
+    <p><%= link_to 'Sign Up', signup_path %></p>
+    
     <p><a href="/auth/facebook"><img src="/assets/fb_logo.png"></a>
 </div>
