@@ -1,22 +1,25 @@
-<h2>Edit Dealer Info</h2>
+<div class="main-container">
+    <div class="main-data">
+        <h2>Edit Dealer Info</h2>
 
-<%= form_for(@dealer) do |f| %>
-    <p><%= f.label 'Name' %>
-    <%= f.text_field :name %></p>
-    <%= f.label 'Address' %>
-    <%= f.text_field :address %></p>
-    <p><%= f.label 'City' %>
-    <%= f.text_field :city %></p>
-    <p><%= f.label 'State' %>
-    <%= f.text_field :state %></p>
-    <p><%= f.label 'Zip' %>
-    <%= f.text_field :zip %></p>
-    <p><%= f.label 'Telephone' %>
-    <%= f.text_field :telephone, placeholder: "555-555-5555" %></p>
+        <%= form_for(@dealer) do |f| %>
+            <p><%= f.label :name, size: 20 %>
+            <%= f.text_field :name, size: 30 %></p>
+            <%= f.label :address %>
+            <%= f.text_field :address, size: 30 %></p>
+            <p><%= f.label :city %>
+            <%= f.text_field :city, size: 30 %></p>
+            <p><%= f.label :state %>
+            <%= f.text_field :state, size: 30 %></p>
+            <p><%= f.label :zip %>
+            <%= f.text_field :zip, size: 20 %></p>
+            <%= f.label :telephone %>
+            <%= f.text_field :telephone, placeholder: "555-555-5555", size: 20 %>
 
-    <%= f.submit %>
-<% end %>
-
-<div>
-    <span style="margin-right: 5px"><%= link_to 'Back', user_workspace_path %></span>
+            <%= f.submit %>
+        <% end %>
+    </div>
+        <div>
+            <span style="margin-right: 5px"><%= link_to 'Back', user_workspace_path %></span>
+        </div>
 </div>
