@@ -19,4 +19,12 @@ module AppointmentsHelper
     def readable_time(object)
         object.time.strftime("%H:%M")
     end
+
+    def display_customer_header(collection)
+        "Customer" if collection.distinct.count(:customer_id) > 1
+    end
+
+    def display_service_insurance_header(collection)
+        "Service Insurance" if collection.distinct.count(:customer_id) > 1
+    end
 end
