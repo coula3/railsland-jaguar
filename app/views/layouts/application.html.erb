@@ -11,19 +11,18 @@
 
   <body>
     <h1 style="font-size: 65px; margin-left: 75px; margin-top: 50px;  color: #C0C0C0"><%= dealer_name %></h1>
-    <div style="float: right; margin-right: 350px">
-      <% if logged_in? && current_user.first_name %>
-        <%= link_to full_name(current_user), user_path(current_user) %>
-      <% end %>
-      <% if logged_in? && !current_page?(controller: 'users', action: 'workspace') %>
-        <%= link_to 'My Workspace', user_workspace_path %>
-      <% end %>
-      <% if logged_in?%>
-        <%= link_to 'Sign Out', '/signout' %>
-      <% end %>
-    </div>
-    <div class="main-container" style="margin-top: 75px; max-width: 1080px; margin: 16px auto; border-style: solid; border-width: thin">
+
+    <div class="wrapper" style="margin-top: 75px; max-width: 1080px; margin: 16px auto; border-style: solid; border-width: thin">
+      <div style="margin-bottom: 75px">
+        <div style="display: inline; float: right;  margin: 15px 15px 0px 0px">
+          <span style="margin-left: 5px"><%= link_to full_name(current_user), user_path(current_user) if logged_in? && current_user.first_name %></span>
+          <span style="margin-left: 5px"><%= link_to 'My Workspace', user_workspace_path if logged_in? && !current_page?(controller: 'users', action: 'workspace') %></span>
+          <span style="margin-left: 5px"><%= link_to 'Sign Out', '/signout' if logged_in? %></span>
+        </div>
+      </div>
+      
       <%= yield %>
+      
     </div>
   </body>
 </html>
