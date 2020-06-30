@@ -7,9 +7,10 @@
         <p><label>Account created on: </label><%= readable_created_at(@appointments.first.customer) %></p>
     <% end %>
 
-    <h2><%= pluralize(@appointments.size, "@appointments".chop.delete_prefix('@').capitalize) %></h2>
-
+    <br>
     <div class="main-data">
+        <h3><%= pluralize(@appointments.size, "@appointments".chop.delete_prefix('@').capitalize) %></h3>
+
         <table>
             <thead>
                 <tr>

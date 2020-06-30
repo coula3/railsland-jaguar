@@ -1,35 +1,40 @@
-<h2>Customer - <%= link_to full_name(@appointment.customer), customer_path(@appointment.customer), :title => 'Customer Profile' %></h2>
-<p><label>Email: </label><%= @appointment.customer.email %></p>
-<p><label>Telephone: </label><%= @appointment.customer.telephone %></p>
-<p><label>Service Insurance: </label><%= @appointment.customer.has_service_insurance? %></p>
-<p><label>Account created on: </label><%= readable_created_at(@appointment) %></p>
+<div class="main-container">
+    <h2>Customer - <%= link_to full_name(@appointment.customer), customer_path(@appointment.customer), :title => 'Customer Profile' %></h2>
+    <p><label>Email: </label><%= @appointment.customer.email %></p>
+    <p><label>Telephone: </label><%= @appointment.customer.telephone %></p>
+    <p><label>Service Insurance: </label><%= @appointment.customer.has_service_insurance? %></p>
+    <p><label>Account created on: </label><%= readable_created_at(@appointment) %></p>
 
-<br>
-<h2>Appointment</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Vehicle Model</th>
-            <th>Model Year</th>
-            <th>Status</th>
-            <th>Service</th>
-        <tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><%= readable_date(@appointment) %></td>
-            <td><%= readable_time(@appointment) %></td>
-            <td><%= @appointment.veh_model %></td>
-            <td><%= @appointment.model_year %></td>
-            <td><%= @appointment.status %></td>
-            <td><%= @appointment.service.name %></td>
-        </tr>
-    </tbody>
-</table>
+    <br>
+    <div class="main-data">
+        <h3>Appointment</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Vehicle Model</th>
+                    <th>Model Year</th>
+                    <th>Status</th>
+                    <th>Service</th>
+                <tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= readable_date(@appointment) %></td>
+                    <td><%= readable_time(@appointment) %></td>
+                    <td><%= @appointment.veh_model %></td>
+                    <td><%= @appointment.model_year %></td>
+                    <td><%= @appointment.status %></td>
+                    <td><%= @appointment.service.name %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<div>
-    <span style="margin-right: 5px"><%= user_workspace %></span>
-    <span style="margin-right: 5px"><%= link_to "Customer's Profile", customer_path(@appointment.customer) %></span>
+    <div>
+        <span style="margin-right: 5px"><%= user_workspace %></span>
+        <span style="margin-right: 5px"><%= link_to "Customer's Profile", customer_path(@appointment.customer) %></span>
+    </div>
 </div>
