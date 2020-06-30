@@ -21,8 +21,10 @@
                     <th style="width: 20px">Year</th>
                     <th>Status</th>
                     <th>Service</th>
-                    <th> <%= display_customer_header(@appointments) %></th>
-                    <th style="width: 40px"><%= display_service_insurance_header(@appointments) %></th>
+                    <% if @appointments.distinct.count(:customer_id) > 1 %>
+                        <th> <%= display_customer_header(@appointments) %></th>
+                        <th style="width: 40px"><%= display_service_insurance_header(@appointments) %></th>
+                    <% end %>
                 <tr>
             </thead>
             
