@@ -10,4 +10,8 @@ module ApplicationHelper
     def readable_created_at(object)
         object.created_at.strftime("%b %d, %Y")
     end
+
+    def user_workspace
+        link_to 'My Workspace', user_workspace_path
+    end
 end
