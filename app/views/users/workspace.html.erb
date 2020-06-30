@@ -14,7 +14,7 @@
     <% if @user.first_name || @user.last_name %>
         <div style="margin-bottom: 25px">
             <%= link_to 'My Profile', user_path(@user) %><br>
-            <%= link_to 'System Users', users_path if @user.admin%>
+            <%= is_admin?(@user) %>
         </div>
 
         <div style="margin-bottom: 25px">
