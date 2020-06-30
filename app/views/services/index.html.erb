@@ -3,13 +3,11 @@
     <h2>Vehicle Services</h2>
 
     <div class="main-data">
-        <table>
+        <table style="width: 60%">
             <thead>
                 <tr>
                     <th>&nbsp</th>
                     <th>Name</th>
-                    <th>&nbsp</th>
-                    <th>&nbsp</th>
                 </tr>
             </thead>
             <% @services.each.with_index(1) do |service, index| %>
@@ -18,8 +16,8 @@
                         <td style="text-align: center"><%= index %></td>
                         <td><%= service.name %></td>
                         <% if current_user.admin %>
-                            <td style="text-align: center"><%= link_to 'Edit', edit_service_path(service) %></td>
-                            <td style="text-align: center"><%= link_to "Delete", service, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                            <td style="text-align: center; width: 15px"><%= link_to 'Edit', edit_service_path(service) %></td>
+                            <td style="text-align: center; width: 15px"><%= link_to "Delete", service, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
                         <% end %>
                     </tr>
                 </tbody>
