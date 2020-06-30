@@ -1,25 +1,31 @@
-<h2>Customers with Service Insurance</h2>
+<div class="main-container">
+    <div>
+        <h2>Customers with Service Insurance</h2>
+    </div>
 
-<table>
-    <thead>
-        <tr>
-            <th>&nbsp</th>
-            <th>Name</th>
-            <th>Appointments</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @customers_with_service_insurance.each.with_index(1) do |customer, index| %>
-            <tr>
-                <td><%= index %></td>
-                <td><%= full_name(customer) %></td>
-                <td><%= customer.appointments.count %></td>
-            </tr>
-        <% end %>
-    </tbody>
-</table>
+    <div class="main-data">
+        <table style="width: 50%">
+            <thead>
+                <tr>
+                    <th>&nbsp</th>
+                    <th>Name</th>
+                    <th>Appointments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @customers_with_service_insurance.each.with_index(1) do |customer, index| %>
+                    <tr>
+                        <td><%= index %></td>
+                        <td><%= full_name(customer) %></td>
+                        <td><%= customer.appointments.count %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
 
-<div>
-    <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
-    <span style="margin-right: 5px"><%= link_to 'Service Customers', customers_path %></span>
+    <div>
+        <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+        <span style="margin-right: 5px"><%= link_to 'Service Customers', customers_path %></span>
+    </div>
 </div>
