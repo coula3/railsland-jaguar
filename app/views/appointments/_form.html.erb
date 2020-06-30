@@ -1,21 +1,37 @@
-<h2>Customer - <%= link_to full_name(@customer), customer_path(@customer) %></h2>
+<div class="main-container">
+    <div>
+        <% if !@appointment.id %>
+            <h2>Create New Appointment</h2> 
+        <% else %>
+            <h2>Edit Appointment</h2>
+        <% end %>
+    </div>
 
-<%= render 'customers/customer' %>
+    <div class="main-data">
+        <h3>Customer - <%= link_to full_name(@customer), customer_path(@customer) %></h3>
 
-<div>
-    <%= form_for(@appointment) do |f| %>
-        <label style="color: blue"> <%=!f.object.id ? "Select" : "Edit"%> Vehicle Service</label>
+        <%= render 'customers/customer' %><br>
 
-        <br><br>
-        <%= f.collection_radio_buttons :service_id, Service.all, :id, :name %><br><br>
+        <div>
+            <%= form_for(@appointment) do |f| %>
+                <label style="color: blue"><strong><%=!f.object.id ? "Select" : "Edit"%> Vehicle Service</strong></label>
 
-        <label style="color: blue"><%=!f.object.id ? "Enter" : "Edit"%> Appointment Details</label><br><br>
-        <%= f.date_field :date %>
-        <%= f.time_field :time %>
-        <%= f.select  :veh_model, veh_models, {:include_blank => "--select vehicle model--"} %>
-        <%= f.select  :model_year, model_years, {:include_blank => "--select model year--"} %>
-        <%= f.select :status, select_status %>
-        <%= f.hidden_field :customer_id %>
-        <%= f.submit %>
-    <% end %>
+                <br><br>
+                <%= f.collection_radio_buttons :service_id, Service.all, :id, :name %><br><br><br>
+
+                <label style="color: blue"><strong><%=!f.object.id ? "Enter" : "Edit"%> Appointment Details</strong></label><br><br>
+                <%= f.date_field :date %>
+                <%= f.time_field :time %>
+                <%= f.select  :veh_model, veh_models, {:include_blank => "--select vehicle model--"} %>
+                <%= f.select  :model_year, model_years, {:include_blank => "--select model year--"} %>
+                <%= f.select :status, select_status %>
+                <%= f.hidden_field :customer_id %>
+                <%= f.submit %>
+            <% end %>
+        </div>
+    </div>
+
+    <div>
+        <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+    </div>
 </div>
