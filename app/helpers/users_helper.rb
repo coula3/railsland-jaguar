@@ -24,4 +24,12 @@ module UsersHelper
             link_to 'System Users', users_path
         end
     end
+
+    def edit?(user)
+        if current_user == user
+            link_to 'Edit Profile', edit_user_path(user)
+        else
+            link_to 'Edit Profile', admin_edit_path(user)
+        end
+    end
 end
