@@ -1,6 +1,10 @@
 <div class="main-container">
     <div class="main-data">
-        <h2>User - <%= link_to full_name(@user), edit_user_path, :title => 'Edit User Profile' %></h2>
+        <% if current_user == @user %>
+            <h2>User - <%= link_to full_name(@user), edit_user_path, :title => 'Edit User Profile' %></h2>
+        <% else %>
+            <h2>User - <%= link_to full_name(@user), admin_edit_path, :title => 'Edit User Profile' %></h2>
+        <% end %>
         <p><label>Email: </label><%= @user.email %></p>
         <p><label>Position: </label><%= @user.position %></p>
         <p><label>System Role: </label><%= @user.sys_role %></p>
@@ -10,11 +14,7 @@
 
     <div>
         <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
-        <% if current_user != @user%>
-            <span style="margin-right: 5px"><%= link_to 'Edit Profile', admin_edit_path(@user) %></span>
-        <% else %>
-            <span style="margin-right: 5px"><%= link_to 'Edit Profile', edit_user_path(@user) %></span>
-        <% end %>
+        <span style="margin-right: 5px"><%= edit?(@user) %></span>
         <span style="margin-right: 5px"><%= is_admin?(current_user) %></span>
         
     </div>
