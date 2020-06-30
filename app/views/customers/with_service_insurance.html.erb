@@ -1,6 +1,6 @@
 <div class="main-container">
     <div>
-        <h2>Customers with Service Insurance</h2>
+        <h2><%= pluralize_customer(@customers_with_service_insurance) %></h2>
     </div>
 
     <div class="main-data">
@@ -9,7 +9,7 @@
                 <tr>
                     <th>&nbsp</th>
                     <th>Name</th>
-                    <th>Appointments</th>
+                    <th style="text-align: center; width: 20px">Appointments</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,7 +17,7 @@
                     <tr>
                         <td><%= index %></td>
                         <td><%= full_name(customer) %></td>
-                        <td><%= customer.appointments.count %></td>
+                        <td style="text-align: center; width: 20px"><%= customer.appointments.count %></td>
                     </tr>
                 <% end %>
             </tbody>
