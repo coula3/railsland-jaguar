@@ -1,16 +1,16 @@
-<div style="margin: 30px 60px" >
-    <%= form_tag signin_path do %>
-        <%= label_tag 'eMail: ' %>
-        <%= text_field_tag :email %>
+<div class="main-container">
+    <div style="text-align: center; border-style: solid; border-width: thin; padding-top: 20px">
+        <%= form_tag signin_path do %>
+            <%= text_field_tag :email, nil, placeholder: "email", size: 30 %>
 
-        <%= label_tag 'Password: ' %>
-        <%= password_field_tag :password %>
+            <%= password_field_tag :password, nil, placeholder: "password", size: 30 %>
 
-        <%= submit_tag 'Sign In'%>
+            <%= submit_tag 'Sign In'%>
 
-    <% end %>
-            
-    <p><%= link_to 'Sign Up', signup_path %></p>
-    
-    <p><a href="/auth/facebook"><img src="/assets/fb_logo.png"></a>
+        <% end %>
+                
+        <p><%= link_to 'Sign Up', signup_path %></p><br>
+        
+        <p><a href="/auth/facebook"><img src="/assets/fb_logo.png"></a>
+    </div>
 </div>
