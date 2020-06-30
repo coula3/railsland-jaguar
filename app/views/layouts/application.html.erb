@@ -16,7 +16,7 @@
       <div style="margin-bottom: 75px">
         <div style="display: inline; float: right;  margin: 15px 15px 0px 0px">
           <span style="margin-left: 5px"><%= link_to full_name(current_user), user_path(current_user) if logged_in? && current_user.first_name %></span>
-          <span style="margin-left: 5px"><%= link_to 'My Workspace', user_workspace_path if logged_in? && !current_page?(controller: 'users', action: 'workspace') %></span>
+          <span style="margin-right: 5px"><%= user_workspace if logged_in? && !current_page?(controller: 'users', action: 'workspace') %></span>
           <span style="margin-left: 5px"><%= link_to 'Sign Out', '/signout' if logged_in? %></span>
         </div>
       </div>
