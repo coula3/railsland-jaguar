@@ -21,3 +21,21 @@ div .main-container {
 div .main-data {
     margin-bottom: 50px;
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%
+ }
+ th {
+    background-color:  #C0C0C0;
+ }
+  
+ th, td {
+    text-align: left;
+    padding: 10px;
+ }
+  
+ tr:nth-child(even) {
+     background-color: #f2f2f2
+    }
+ 
