@@ -1,11 +1,17 @@
-<h2>Customer - <%= link_to full_name(@customer), edit_customer_path(@customer), :title => 'Edit Customer Profile' %></h2>
+<div class="main-container">
+    <div>
+        <h2>Customer - <%= link_to full_name(@customer), edit_customer_path(@customer), :title => 'Edit Customer Profile' %></h2>
+    </div>
 
-<%= render 'customer' %>
+    <div class="main-data">
+        <%= render 'customer' %>
+    </div>
 
-<div>
-    <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
-    <span style="margin-right: 5px"><%= link_to 'Service Customers', customers_path %></span>
-    <span style="margin-right: 5px"><%= link_to 'Edit Customer', edit_customer_path(@customer) %></span>
-    <span style="margin-right: 5px"><%= link_to 'Create New Appointment', new_customer_appointment_path(@customer) %></span>
-    <span style="margin-right: 5px"><%= link_to "#{@customer.first_name}'s Appointments", customer_appointments_path(@customer) %></span>
+    <div>
+        <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+        <span style="margin-right: 5px"><%= link_to 'Service Customers', customers_path %></span>
+        <span style="margin-right: 5px"><%= link_to 'Edit Customer', edit_customer_path(@customer) %></span>
+        <span style="margin-right: 5px"><%= link_to 'Create New Appointment', new_customer_appointment_path(@customer) %></span>
+        <span style="margin-right: 5px"><%= link_to "#{@customer.first_name}'s Appointments", customer_appointments_path(@customer) %></span>
+    </div>
 </div>
