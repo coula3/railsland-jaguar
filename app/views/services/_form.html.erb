@@ -1,4 +1,20 @@
-<%= form_for(@service) do |f| %>
-    <%= f.text_field :name %>
-    <%= f.submit %>
-<% end %>
+<div class="main-container">
+    <div>
+        <% if !@service.id %>
+            <h2>Create New Service</h2> 
+        <% else %>
+            <h2>Edit Service</h2>
+        <% end %>
+    </div>
+
+    <div class="main-data">
+        <%= form_for(@service) do |f| %>
+            <%= f.text_field :name, size: 30 %>
+            <%= f.submit %>
+        <% end %>
+    </div>
+
+    <div>
+        <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+    <div>
+</div>
