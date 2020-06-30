@@ -3,6 +3,7 @@ class SessionController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
   
   def new
+    redirect_to user_workspace_path if logged_in?
   end
 
   def create
