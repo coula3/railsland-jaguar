@@ -1,55 +1,59 @@
-<% if  @appointments.distinct.count(:customer_id) == 1 %>
-    <h2>Customer - <%= link_to full_name(@appointments.first.customer), customer_path(@appointments.first.customer), :title => 'Customer Profile' %></h2>
-    <p><label>Email: </label><%= @appointments.first.customer.email %></p>
-    <p><label>Telephone: </label><%= @appointments.first.customer.telephone %></p>
-    <p><label>Service Insurance: </label><%= @appointments.first.customer.has_service_insurance? %></p>
-    <p><label>Account created on: </label><%= readable_created_at(@appointments.first.customer) %></p>
-<% end %>
-
-<h2>Appointments</h2>
-
-<table>
-    <thead>
-        <tr>
-            <th>&nbsp</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Vehicle Model</th>
-            <th>Model Year</th>
-            <th>Status</th>
-            <th>Service</th>
-            <th> <%= display_customer_header(@appointments) %></th>
-            <th><%= display_service_insurance_header(@appointments) %></th>
-        <tr>
-    </thead>
-    
-    <% @appointments.each.with_index(1) do |appointment, index| %>
-        <tbody>
-            <tr>
-                <td><%= index%></td>
-                <td><%= link_to readable_date(appointment), customer_appointment_path(appointment.customer, appointment), :title => 'Customer Appointment' %></td>
-                <td><%= readable_time(appointment) %></td>
-                <td><%= appointment.veh_model %></td>
-                <td><%= appointment.model_year %></td>
-                <td><%= appointment.status %></td>
-                <td><%= appointment.service.name %></td>
-                <% if @appointments.distinct.count(:customer_id) > 1 %>
-                    <td><%= link_to full_name(appointment.customer), customer_appointments_path(appointment.customer), :title => 'Customer Appointments' %></td>
-                    <td><%= appointment.customer.has_service_insurance? %></td>
-                <% end %>
-                <td><%= link_to 'Edit', edit_customer_appointment_path(appointment.customer, appointment) %></td>
-                <% if current_user.admin && @appointments.distinct.count(:customer_id) == 1 %>
-                    <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
-                <% end %>
-            </tr>
-        </tbody>
-     <% end %>
-</table>
-
-<div>
-    <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
-    <% if @appointments.distinct.count(:customer_id) == 1 %>
-        <span style="margin-right: 5px"><%=  link_to 'Create New Appointment', new_customer_appointment_path(@appointments.first.customer) %></span>
-        <span style="margin-right: 5px"><%= link_to 'Service Appointments', appointments_path %></span>
+<div class="main-container">
+    <% if  @appointments.distinct.count(:customer_id) == 1 %>
+        <h2>Customer - <%= link_to full_name(@appointments.first.customer), customer_path(@appointments.first.customer), :title => 'Customer Profile' %></h2>
+        <p><label>Email: </label><%= @appointments.first.customer.email %></p>
+        <p><label>Telephone: </label><%= @appointments.first.customer.telephone %></p>
+        <p><label>Service Insurance: </label><%= @appointments.first.customer.has_service_insurance? %></p>
+        <p><label>Account created on: </label><%= readable_created_at(@appointments.first.customer) %></p>
     <% end %>
+
+    <h2>Appointments</h2>
+
+    <div class="main-data">
+        <table>
+            <thead>
+                <tr>
+                    <th>&nbsp</th>
+                    <th style="width: 90px">Date</th>
+                    <th style="width: 25px">Time</th>
+                    <th style="width: 115px">Vehicle Model</th>
+                    <th style="width: 20px">Year</th>
+                    <th>Status</th>
+                    <th>Service</th>
+                    <th> <%= display_customer_header(@appointments) %></th>
+                    <th style="width: 40px"><%= display_service_insurance_header(@appointments) %></th>
+                <tr>
+            </thead>
+            
+            <% @appointments.each.with_index(1) do |appointment, index| %>
+                <tbody>
+                    <tr>
+                        <td><%= index%></td>
+                        <td><%= link_to readable_date(appointment), customer_appointment_path(appointment.customer, appointment), :title => 'Customer Appointment' %></td>
+                        <td><%= readable_time(appointment) %></td>
+                        <td><%= appointment.veh_model %></td>
+                        <td><%= appointment.model_year %></td>
+                        <td><%= appointment.status %></td>
+                        <td><%= appointment.service.name %></td>
+                        <% if @appointments.distinct.count(:customer_id) > 1 %>
+                            <td><%= link_to full_name(appointment.customer), customer_appointments_path(appointment.customer), :title => 'Customer Appointments' %></td>
+                            <td style="text-align: center"><%= appointment.customer.has_service_insurance? %></td>
+                        <% end %>
+                        <td><%= link_to 'Edit', edit_customer_appointment_path(appointment.customer, appointment) %></td>
+                        <% if current_user.admin && @appointments.distinct.count(:customer_id) == 1 %>
+                            <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                        <% end %>
+                    </tr>
+                </tbody>
+            <% end %>
+        </table>
+    </div>
+
+    <div>
+        <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+        <% if @appointments.distinct.count(:customer_id) == 1 %>
+            <span style="margin-right: 5px"><%=  link_to 'Create New Appointment', new_customer_appointment_path(@appointments.first.customer) %></span>
+            <span style="margin-right: 5px"><%= link_to 'Service Appointments', appointments_path %></span>
+        <% end %>
+    </div>
 </div>
