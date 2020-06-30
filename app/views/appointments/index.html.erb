@@ -1,10 +1,10 @@
 <div class="main-container">
     <% if  @appointments.distinct.count(:customer_id) == 1 %>
         <h2>Customer - <%= link_to full_name(@appointments.first.customer), customer_path(@appointments.first.customer), :title => 'Customer Profile' %></h2>
-        <p><label>Email: </label><%= @appointments.first.customer.email %></p>
         <p><label>Telephone: </label><%= @appointments.first.customer.telephone %></p>
         <p><label>Service Insurance: </label><%= @appointments.first.customer.has_service_insurance? %></p>
-        <p><label>Account created on: </label><%= readable_created_at(@appointments.first.customer) %></p>
+    <% else %>
+        <h2>Customer Appointments</h2>
     <% end %>
 
     <br>
