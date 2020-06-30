@@ -1,25 +1,30 @@
-<h1>Edit User - Admin</h1>
+<div class="main-container">
 
-<%= form_for(@user) do |f| %>
-   
-    <% if @user != current_user %>
-        <%= f.text_field :full_name, :readonly => true %>
-        <%= f.text_field :email, :readonly => true %>
-    <% else %>
-        <%= f.text_field :full_name, :readonly => true %>
-        <%= f.text_field :email %>
-    <% end %>
+    <h2>Edit User - Admin</h2>
 
-    <%= f.text_field :position, placeholder: "position" %>
-    <% if @user != current_user %>
-        <%= f.select :status, user_status %>
-        <%= f.check_box :admin %>
-        <%= f.label 'Admin' %>
-    <% end %>
+    <div class="main-data">
+        <%= form_for(@user) do |f| %>
+        
+            <% if @user != current_user %>
+                <%= f.text_field :full_name, size: 30, :readonly => true %>
+                <%= f.text_field :email, size: 25, :readonly => true %>
+            <% else %>
+                <%= f.text_field :full_name, size: 30, :readonly => true %>
+                <%= f.text_field :email, size: 25 %>
+            <% end %>
 
-    <%= f.submit %>
-<% end %>
+            <%= f.text_field :position, size: 25, placeholder: "position" %>
+            <% if @user != current_user %>
+                <%= f.select :status, user_status %>
+                <%= f.check_box :admin %>
+                <%= f.label 'Admin' %>
+            <% end %>
 
-<div>
-    <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+            <%= f.submit %>
+        <% end %>
+    </div>
+
+    <div>
+        <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+    </div>
 </div>
