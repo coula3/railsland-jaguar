@@ -27,4 +27,8 @@ module AppointmentsHelper
     def display_service_insurance_header(collection)
         "Insurance" if collection.distinct.count(:customer_id) > 1
     end
+
+    def service_appointments
+        link_to 'Service Appointments', appointments_path
+    end
 end
