@@ -1,35 +1,42 @@
-<h2>System Users</h2>
+<div class="main-container">
+    <div>
+        <h2>System Users</h2>
+    </div>
 
-<table>
-    <thead>
-        <tr>
-            <th>&nbsp;</th>
-            <th style="text-align: left">Name</th>
-            <th style="text-align: left">Email</th>
-            <th style="text-align: left">Position</th>
-            <th style="text-align: left">Status</th>
-            <th style="text-align: left">Admin</th>
-           
-        </tr
-    </thead>
-    <% @users.each.with_index(1) do |user, index| %>
-        <tbody>
-            <tr>
-                <td style="text-align: left"><%= index%></td>
-                <td style="text-align: left"><%= link_to full_name(user), user_path(user), :title => 'User Profile' %></td>
-                <td style="text-align: left"><%= user.email %></td>
-                <td style="text-align: left"><%= user.position %></td>
-                <td style="text-align: left"><%= user.status %></td>
-                <td style="text-align: left"><%= user.admin? %></td>
-                <td style="text-align: left"><%= link_to 'Edit', admin_edit_path(user) %></td>
-                <% if user != current_user %>
-                <td style="text-align: left"><%= link_to "Delete", user, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
-                <% end %>
-            </tr
-        </tbody>
-    <% end %>
-</table>
+    <div class="main-data">
+        <table>
+            <thead>
+                <tr>
+                    <th>&nbsp</th>
+                    <th style="text-align: left">Name</th>
+                    <th style="text-align: left">Email</th>
+                    <th style="text-align: left">Position</th>
+                    <th style="text-align: left">Status</th>
+                    <th style="text-align: left">Admin</th>
+                    <th>&nbsp</th>
+                    <th>&nbsp</th>
+                </tr
+            </thead>
+            <% @users.each.with_index(1) do |user, index| %>
+                <tbody>
+                    <tr>
+                        <td style="text-align: left"><%= index%></td>
+                        <td style="text-align: left"><%= link_to full_name(user), user_path(user), :title => 'User Profile' %></td>
+                        <td style="text-align: left"><%= user.email %></td>
+                        <td style="text-align: left"><%= user.position %></td>
+                        <td style="text-align: left"><%= user.status %></td>
+                        <td style="text-align: left"><%= user.admin? %></td>
+                        <td style="text-align: left"><%= link_to 'Edit', admin_edit_path(user) %></td>
+                        <% if user != current_user %>
+                        <td style="text-align: left"><%= link_to "Delete", user, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                        <% end %>
+                    </tr
+                </tbody>
+            <% end %>
+        </table>
+    </div>
 
-<div>
-    <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
-<div>
+    <div>
+        <span style="margin-right: 5px"><%= link_to 'My Workspace', user_workspace_path %></span>
+    <div>
+</div>
