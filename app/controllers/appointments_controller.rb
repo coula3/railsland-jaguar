@@ -11,7 +11,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(date: appt_params[:date], time: appt_params[:time], veh_model: appt_params[:veh_model], model_year: appt_params[:model_year], status: appt_params[:status], customer_id: appt_params[:customer_id], service_id: serv_params[:service_id])
+    @appointment = Appointment.new(appointment_params)
     if @appointment.save
       redirect_to customer_appointments_path(@appointment.customer)
     else
@@ -21,7 +21,6 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    # /customers/:customer_id/appointments/:id(.:format)
     if params[:customer_id]
       @customer = Customer.find_by(id: params[:customer_id])
       if @customer.nil?
