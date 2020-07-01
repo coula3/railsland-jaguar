@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, url: signup_url(@user)) do |f| %>
     <%= f.text_field :first_name, placeholder: "first name" %>
     <%= f.text_field :last_name, placeholder: "last name" %>
     <%= f.text_field :position, placeholder: "position" %>
