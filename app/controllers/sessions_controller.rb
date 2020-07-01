@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
   
   def new
+    @user = User.new
     redirect_to user_workspace_path if logged_in?
   end
 
@@ -14,16 +15,17 @@ class SessionsController < ApplicationController
         u.password = SecureRandom.hex
         u.dealer_id = Dealer.first.id
       end
-
+      
       session[:user_id] = @user.id
       render 'users/workspace'
-
+      
     else
       user = User.find_by(email: params[:email])
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect_to user_workspace_path
       else
+        @user = User.create(dealer_id: Dealer.first.id)
         render :new
       end
     end
