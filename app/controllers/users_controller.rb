@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
-  before_action :require_login
+
+  before_action :require_login, :set_action_access
   skip_before_action :require_login, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy, :admin_edit]
+  before_action :set_action_access, only: [:show, :edit]
 
   def new
     @user = User.new
@@ -30,7 +32,6 @@ class UsersController < ApplicationController
   def update
     if (!@user.first_name || !@user.last_name) && params[:user][:password].empty?
       @user.first_name, @user.last_name = params[:user][:first_name], params[:user][:last_name]
-      # flash [:msg]
       render :edit
     elsif @user.update(user_params)
       @user.update(admin: true) if User.count == 1
@@ -68,5 +69,11 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find_by(id: params[:id])
+  end
+
+  def set_action_access
+    if current_user != @user && !current_user.admin
+      redirect_to user_workspace_path, notice: "You are not authorized to access or edit the data of another user."
+    end
   end
 end
