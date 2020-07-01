@@ -1,9 +1,14 @@
-
 <div class="main-container">
     <div style="margin: 25px 0px 50px 0px">
         <img src="<%= user_image %>">
         <h1 style="color: blue; display: inline; padding-left: 5px"><%= user_first_name %> Workspace</h1>
     </div>
+    
+    <% if flash[:notice] %>
+        <div style="margin-bottom: 20px">
+            <%= notice %>
+        </div>
+    <% end %>
 
     <% if !@user.first_name || !@user.last_name %>
         <div>
@@ -34,7 +39,7 @@
             <%= service_appointments %>
         </div>
         
-        <div style="margin-bottom: 25px">
+        <div style="margin-bottom: 30px">
             <% if current_user.admin %>
                 <%= link_to 'Dealer Information', edit_dealer_path(dealer), :title => 'Edit Dealer Info' %>
             <% end %>
