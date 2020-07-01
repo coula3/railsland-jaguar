@@ -6,10 +6,10 @@
         <%= form_for(@user) do |f| %>
         
             <% if @user != current_user %>
-                <%= f.text_field :full_name, size: 30, :readonly => true %>
-                <%= f.text_field :email, size: 25, :readonly => true %>
+                <%= f.text_field :full_name, size: 30, :style => "background: #f0f0f5", :readonly => true %>
+                <%= f.text_field :email, size: 25, :style => "background: #f0f0f5", :readonly => true %>
             <% else %>
-                <%= f.text_field :full_name, size: 30, :readonly => true %>
+                <%= f.text_field :full_name, size: 30, :style => "background: #f0f0f5", :readonly => true %>
                 <%= f.text_field :email, size: 25 %>
             <% end %>
 
