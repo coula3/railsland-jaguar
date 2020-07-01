@@ -1,18 +1,18 @@
 require 'test_helper'
 
-class SessionControllerTest < ActionDispatch::IntegrationTest
+class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should get signin" do
-    get session_signin_url
+    get sessions_signin_url
     assert_response :success
   end
 
   test "should get create" do
-    get session_create_url
+    get sessions_create_url
     assert_response :success
   end
 
   test "should get destroy" do
-    get session_destroy_url
+    get sessions_destroy_url
     assert_response :success
   end
 
