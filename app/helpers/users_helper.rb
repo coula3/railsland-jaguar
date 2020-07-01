@@ -32,4 +32,8 @@ module UsersHelper
             link_to 'Edit Profile', admin_edit_path(user)
         end
     end
+
+    def signup_url(user)
+        signup_path if !user.id
+    end
 end
