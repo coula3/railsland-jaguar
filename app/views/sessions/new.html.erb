@@ -1,4 +1,7 @@
+
 <div class="main-container">
+    <%= render 'flash_messages' %>
+    
     <div style="text-align: center; border-style: solid; border-width: thin; padding-top: 20px">
         <%= form_tag signin_path do %>
             <%= text_field_tag :email, nil, placeholder: "email", size: 30 %>
