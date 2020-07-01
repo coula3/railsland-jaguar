@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to customer_appointments_path(@appointment.customer)
     else
-      @customer = Customer.find_by(id: appt_params[:customer_id])
+      @customer = Customer.find_by(id: appointment_params[:customer_id])
       redirect_to new_customer_appointment_path(@customer)
     end
   end
