@@ -1,22 +1,22 @@
 <div class="main-container">
     <div class="main-data">
         <h2>Edit Dealer Info</h2>
-
+        
         <%= form_for(@dealer) do |f| %>
-            <p><%= f.label :name, size: 20 %>
+            <%= f.label :name, :class => "label-width" %>
             <%= f.text_field :name, size: 30 %></p>
-            <%= f.label :address %>
+            <%= f.label :address, :class => "label-width" %>
             <%= f.text_field :address, size: 30 %></p>
-            <p><%= f.label :city %>
+            <p><%= f.label :city, :class => "label-width" %>
             <%= f.text_field :city, size: 30 %></p>
-            <p><%= f.label :state %>
+            <p><%= f.label :state, :class => "label-width" %>
             <%= f.text_field :state, size: 30 %></p>
-            <p><%= f.label :zip %>
+            <p><%= f.label :zip, :class => "label-width" %>
             <%= f.text_field :zip, size: 20 %></p>
-            <%= f.label :telephone %>
-            <%= f.text_field :telephone, placeholder: "555-555-5555", size: 20 %>
+            <p><%= f.label :telephone, :class => "label-width" %>
+            <%= f.text_field :telephone, placeholder: "555-555-5555", size: 20 %></p>
 
-            <%= f.submit %>
+            <%= f.submit :style => "margin-left: 145px"%>
         <% end %>
     </div>
         <div>

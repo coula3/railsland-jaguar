@@ -5,11 +5,11 @@
         <% else %>
             <h2>User - <%= link_to full_name(@user), admin_edit_path, :title => 'Edit User Profile' %></h2>
         <% end %>
-        <p><label>Email: </label><%= @user.email %></p>
-        <p><label>Position: </label><%= @user.position %></p>
-        <p><label>System Role: </label><%= @user.sys_role %></p>
-        <p><label>Account Status: </label><%= @user.status %></p>
-        <p><label>Account created on: </label><%= readable_created_at(@user) %></p>
+        <p><label class="label-width">Email </label><%= @user.email %></p>
+        <p><label class="label-width">Position </label><%= @user.position %></p>
+        <p><label class="label-width">System Role </label><%= @user.sys_role %></p>
+        <p><label class="label-width">Account Status </label><%= @user.status %></p>
+        <p><label class="label-width">Created on </label><%= readable_created_at(@user) %></p>
     </div>
 
     <div>

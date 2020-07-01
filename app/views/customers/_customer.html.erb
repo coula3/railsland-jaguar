@@ -1,4 +1,4 @@
-<p><label>Email: </label><%= @customer.email %></p>
-<p><label>Telephone: </label><%= @customer.telephone %></p>
-<p><label>Service Insurance: </label><%= @customer.has_service_insurance? %></p>
-<p><label>Account created on: </label><%= readable_created_at(@customer) %></p>
+<p><label class="label-width">Email </label><%= @customer.email %></p>
+<p><label class="label-width">Telephone </label><%= @customer.telephone %></p>
+<p><label class="label-width">Service Insurance </label><%= @customer.has_service_insurance? %></p>
+<p><label class="label-width">Created on </label><%= readable_created_at(@customer) %></p>
