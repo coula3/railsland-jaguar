@@ -38,8 +38,9 @@ class UsersController < ApplicationController
   end
   
   def update
-    if (!@user.first_name || !@user.last_name) && params[:user][:password].empty?
+    if (!@user.first_name.blank? || !@user.last_name.blank?) && params[:user][:password].blank?
       @user.first_name, @user.last_name = params[:user][:first_name], params[:user][:last_name]
+      @user.valid?
       render :edit
     elsif @user.update(user_params)
       @user.update(admin: true) if User.count == 1
