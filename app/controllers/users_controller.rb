@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    redirect_to user_workspace_path if logged_in?
   end
 
   def create
