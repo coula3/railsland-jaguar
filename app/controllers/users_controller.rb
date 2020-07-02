@@ -27,6 +27,9 @@ class UsersController < ApplicationController
   end
   
   def edit
+    if @user && (current_user != @user && current_user.admin)
+      redirect_to admin_edit_path(@user)
+    end
   end
   
   def update
@@ -72,8 +75,10 @@ class UsersController < ApplicationController
   end
 
   def set_action_access
-    if current_user != @user && !current_user.admin
-      redirect_to user_workspace_path, notice: "You are not authorized to access or edit the data of another user."
+    if @user && (current_user != @user && !current_user.admin)
+      redirect_to user_workspace_path, notice: "You are not authorized to access the data of User ##{params[:id]}."
+    elsif !@user
+      redirect_to user_workspace_path, notice: "User ##{params[:id]} does not exist"
     end
   end
 end
