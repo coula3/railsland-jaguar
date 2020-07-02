@@ -10,7 +10,7 @@
     <div class="main-data">
         <h3>Customer - <%= link_to full_name(@customer), customer_path(@customer) %></h3>
 
-        <%= render 'customers/customer' %><br>
+        <%= render 'customers/app_customer_data' %><br>
 
         <div>
             <%= form_for(@appointment) do |f| %>
