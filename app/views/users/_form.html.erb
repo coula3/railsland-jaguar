@@ -5,7 +5,7 @@
     <%= f.text_field :last_name, placeholder: "last name", size: 24 %>
     <%= f.text_field :position, placeholder: "position", size: 22 %>
     <%= f.text_field :email, placeholder: "email", size: 24 %>
-    <%= f.password_field :password, placeholder: "password", size: 12 %>
+    <%= f.password_field :password, placeholder: "password", size: 12, disabled: (true if logged_in? && !current_user.uid) && current_user.first_name.empty? %>
 
     <%= f.submit %>
 <% end %>
