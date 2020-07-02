@@ -3,7 +3,11 @@ class ServicesController < ApplicationController
   before_action :set_service, only: [:edit, :update, :destroy]
   
   def new
-    @service = Service.new
+    if current_user.admin
+      @service = Service.new
+    else
+      redirect_to user_workspace_path, notice: access_unauthorized_msg
+    end
   end
 
   def create
@@ -20,6 +24,10 @@ class ServicesController < ApplicationController
   end
 
   def edit
+    if current_user.admin
+    else
+      redirect_to user_workspace_path, notice: access_unauthorized_msg
+    end
   end
 
   def update
