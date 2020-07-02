@@ -22,7 +22,8 @@ body {
 }
 
 div .main-container {
-    margin: 75px 100px 250px 100px
+    margin: 75px 100px 250px 100px;
+    background:  rgba(255, 255, 255, 0.9);
 }
 
 div .main-data {
@@ -51,3 +52,7 @@ table {
     width: 140px;
     font-weight: bold;
 }
+
+a:hover {
+    font-size: 1.25em;
+  }
