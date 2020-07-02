@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?, :access_unauthorized_msg
+    helper_method :current_user, :logged_in?, :access_unauthorized_msg, :non_existing_customer_msg
 
     def logged_in?
         !!current_user
@@ -11,5 +11,9 @@ class ApplicationController < ActionController::Base
 
     def access_unauthorized_msg
         "Access Unauthorized"
+    end
+
+    def non_existing_customer_msg
+        "Customer does not exist"
     end
 end
