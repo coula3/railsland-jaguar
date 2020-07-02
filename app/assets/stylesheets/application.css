@@ -22,12 +22,19 @@ body {
 }
 
 div .main-container {
-    margin: 75px 100px 250px 100px;
+    margin: 75px 50px 250px 50px;
     background:  rgba(255, 255, 255, 0.9);
 }
 
 div .main-data {
     margin-bottom: 50px;
+    padding-top: 25px;
+    padding-left: 50px;
+}
+
+div .bottom-navs {
+    padding-left: 50px;
+    padding-bottom: 50px;
 }
 
 table {
