@@ -35,4 +35,8 @@ module AppointmentsHelper
     def new_appointment(customer)
         link_to 'Create New Appointment', new_customer_appointment_path(customer)
     end
+
+    def customer_appointments(customer)
+        link_to "#{customer.first_name}'s Appointments", customer_appointments_path(customer)
+    end
 end
