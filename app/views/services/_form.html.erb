@@ -1,13 +1,13 @@
 <div class="main-container">
-    <div>
-        <% if !@service.id %>
-            <h2>Create New Service</h2> 
-        <% else %>
-            <h2>Edit Service</h2>
-        <% end %>
-    </div>
-
     <div class="main-data">
+        <div>
+            <% if !@service.id %>
+                <h2>Create New Service</h2> 
+            <% else %>
+                <h2>Edit Service</h2>
+            <% end %>
+        </div>
+        
         <%= form_for(@service) do |f| %>
             <%= f.text_field :name, size: 30 %>
             <%= f.submit %>

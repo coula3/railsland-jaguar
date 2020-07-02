@@ -1,13 +1,13 @@
 <div class="main-container">
-    <div>
-        <% if !@appointment.id %>
-            <h2>Create New Appointment</h2> 
-        <% else %>
-            <h2>Edit Appointment</h2>
-        <% end %>
-    </div>
-
     <div class="main-data">
+        <div>
+            <% if !@appointment.id %>
+                <h2>Create New Appointment</h2> 
+            <% else %>
+                <h2>Edit Appointment</h2>
+            <% end %>
+        </div>
+       
         <h3>Customer - <%= link_to full_name(@customer), customer_path(@customer) %></h3>
 
         <%= render 'customers/app_customer_data' %><br>

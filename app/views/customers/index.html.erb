@@ -1,9 +1,9 @@
 <div class="main-container">
-    <div>
-        <h2>Customers</h2> 
-    </div>
-
     <div class="main-data">
+        <div>
+            <h2>Customers</h2> 
+        </div>
+    
         <table>
             <thead>
                 <tr>
@@ -14,6 +14,7 @@
                     <th>Serv. Insurance</th>
                 </tr>
             </thead>
+            
             <tbody>
                 <% @customers.each.with_index(1) do |customer, index| %>
                     <tr>

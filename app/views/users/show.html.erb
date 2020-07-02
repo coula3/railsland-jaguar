@@ -5,6 +5,7 @@
         <% else %>
             <h2>User - <%= link_to full_name(@user), admin_edit_path, :title => 'Edit User Profile' %></h2>
         <% end %>
+        
         <p><label class="label-width">Email </label><%= @user.email %></p>
         <p><label class="label-width">Position </label><%= @user.position %></p>
         <p><label class="label-width">System Role </label><%= @user.sys_role %></p>
@@ -16,6 +17,5 @@
         <span style="margin-right: 5px"><%= user_workspace %></span>
         <span style="margin-right: 5px"><%= edit?(@user) %></span>
         <span style="margin-right: 5px"><%= is_admin?(current_user) %></span>
-
     </div>
 </div>

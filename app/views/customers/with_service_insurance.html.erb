@@ -1,9 +1,9 @@
 <div class="main-container">
-    <div>
-        <h2><%= pluralize_customer(@customers_with_service_insurance) %></h2>
-    </div>
-
     <div class="main-data">
+        <div>
+            <h2><%= pluralize_customer(@customers_with_service_insurance) %></h2>
+        </div>
+
         <table style="width: 50%">
             <thead>
                 <tr>
@@ -12,6 +12,7 @@
                     <th style="text-align: center; width: 20px">Appointments</th>
                 </tr>
             </thead>
+            
             <tbody>
                 <% @customers_with_service_insurance.each.with_index(1) do |customer, index| %>
                     <tr>
