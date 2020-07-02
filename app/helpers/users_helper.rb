@@ -12,7 +12,7 @@ module UsersHelper
     def user_first_name
         if current_user.first_name && current_user.first_name.include?("-")
             current_user.first_name.gsub("-", " ").split.map {|str| str.capitalize}.join("-") + "'s"
-        elsif current_user.first_name
+        elsif !current_user.first_name.blank?
             current_user.first_name.capitalize + "'s"
         else
             "My"
