@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
 
   def new
     if params[:customer_id] && !Customer.exists?(params[:customer_id])
-      redirect_to customers_path, alert: "Customer does not exist"
+      redirect_to customers_path, notice: non_existing_customer_msg
     else
       @appointment = Appointment.new(customer_id: params[:customer_id])
       @customer = Customer.find_by(id: params[:customer_id])
@@ -24,7 +24,7 @@ class AppointmentsController < ApplicationController
     if params[:customer_id]
       @customer = Customer.find_by(id: params[:customer_id])
       if @customer.nil?
-        redirect_to customers_path, alert: "Customer does not exist"
+        redirect_to customers_path, notice: non_existing_customer_msg
       else
         @appointment = @customer.appointments.find_by(id: params[:id])
       end  
@@ -37,7 +37,7 @@ class AppointmentsController < ApplicationController
     if params[:customer_id]
       @customer = Customer.find_by(id: params[:customer_id])
       if @customer.nil?
-        redirect_to customers_path, alert: "Customer does not exist"
+        redirect_to customers_path, notice: non_existing_customer_msg
       else
         @appointments = @customer.appointments.order(:date)
       end
@@ -50,7 +50,7 @@ class AppointmentsController < ApplicationController
     if params[:customer_id]
       @customer = Customer.find_by(id: params[:customer_id])
       if @customer.nil?
-        redirect_to customers_path, alert: "Customer does not exist"
+        redirect_to customers_path, notice: non_existing_customer_msg
       else
         @appointment = @customer.appointments.find_by(id: params[:id])
       end  
