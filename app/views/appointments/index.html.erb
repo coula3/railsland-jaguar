@@ -1,6 +1,6 @@
 <div class="main-container"> 
     <div class="main-data">
-        <div>
+        <div style="margin-bottom: 50px">
             <% if  @appointments.distinct.count(:customer_id) == 1 %>
                 <h2>Customer - <%= link_to full_name(@appointments.first.customer), customer_path(@appointments.first.customer), :title => 'Customer Profile' %></h2>
                 <p><label class="label-width">Telephone </label><%= @appointments.first.customer.telephone %></p>
