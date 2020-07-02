@@ -12,7 +12,7 @@
 
         <%= render 'customers/app_customer_data' %><br>
 
-        <div>
+        <div style="margin-top: 40px">
             <%= form_for(@appointment) do |f| %>
                 <label style="color: blue"><strong><%=!f.object.id ? "Select" : "Edit"%> Vehicle Service</strong></label>
 
