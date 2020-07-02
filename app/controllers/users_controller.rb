@@ -21,7 +21,11 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.all.order(:first_name)
+    if current_user.admin
+      @users = User.all.order(:first_name)
+    else
+      redirect_to user_workspace_path, notice: "Access Unauthorized"
+    end
   end
   
   def show
