@@ -58,6 +58,12 @@ class UsersController < ApplicationController
   end
 
   def admin_edit
+    if !current_user.admin
+      redirect_to user_workspace_path, notice: "Access Unauthorized"
+    elsif !@user
+      redirect_to user_workspace_path, notice: "User ##{params[:id]} does not exist"
+    else
+    end
   end
 
   private
