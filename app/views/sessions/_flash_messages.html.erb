@@ -1,9 +1,15 @@
-<% if @user.errors.any? %>
-    <div id="error_explanation">
+<% if @user && @user.errors.any? %>
+    <div id="error_explanation" style="margin-left: 110px; text-align: left">
       <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
+<% end %>
+
+<% if flash[:notice] %>
+<div style="margin-bottom: 20px">
+    <span style="margin-left: 25px"><%= notice %><span>
+</div>
 <% end %>
