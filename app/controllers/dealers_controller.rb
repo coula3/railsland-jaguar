@@ -2,6 +2,10 @@ class DealersController < ApplicationController
   before_action :set_dealer
 
   def edit
+    if current_user.admin
+    else
+      redirect_to user_workspace_path, notice: access_unauthorized_msg
+    end
   end
 
   def update
