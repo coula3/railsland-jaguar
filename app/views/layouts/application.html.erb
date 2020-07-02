@@ -10,9 +10,9 @@
   </head>
 
   <body>
-    <h1 style="font-size: 65px; margin-left: 75px; margin-top: 50px;  color: #C0C0C0"><%= dealer_name %></h1>
+    <h1 style="font-size: 75px; margin-left: 75px; margin-top: 50px;  color: white"><%= dealer_name %></h1>
 
-    <div class="wrapper" style="margin-top: 75px; max-width: 1080px; margin: 16px auto; border-style: solid; border-width: thin">
+    <div class="wrapper" style="margin-top: 75px; max-width: 1080px; margin: 16px auto;  border-style: solid; border-width: thin">
       <div style="margin-bottom: 75px">
         <div style="display: inline; float: right;  margin: 15px 15px 0px 0px">
           <span style="margin-left: 5px"><%= link_to full_name(current_user), user_path(current_user) if logged_in? && current_user.first_name %></span>
