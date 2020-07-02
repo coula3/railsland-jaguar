@@ -38,6 +38,8 @@ class AppointmentsController < ApplicationController
       @customer = Customer.find_by(id: params[:customer_id])
       if @customer.nil?
         redirect_to customers_path, notice: non_existing_customer_msg
+      elsif @customer.appointments.size == 0
+        redirect_to customer_path(@customer), notice: "No appointment record"
       else
         @appointments = @customer.appointments.order(:date)
       end
