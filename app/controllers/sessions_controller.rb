@@ -24,6 +24,8 @@ class SessionsController < ApplicationController
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect_to user_workspace_path
+      elsif (user || !user) && (!params[:email].empty? || !params[:password].empty?)
+        redirect_to root_path, notice: "Invalid email or password"
       else
         @user = User.create(dealer_id: Dealer.first.id)
         render :new
