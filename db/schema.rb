@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2020_06_26_035518) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
-    t.string "status", default: "active"
+    t.string "status", default: "inactive"
     t.string "position"
     t.string "image"
     t.string "uid"
