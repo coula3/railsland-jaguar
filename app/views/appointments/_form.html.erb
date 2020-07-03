@@ -12,7 +12,17 @@
 
         <%= render 'customers/app_customer_data' %><br>
 
-        <div style="margin-top: 40px">
+        <% if @appointment && @appointment.errors.any? %>
+            <div id="error_explanation">
+                <ul>
+                    <% @appointment.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+
+        <div style="margin-top: 25px">
             <%= form_for(@appointment) do |f| %>
                 <label style="color: blue"><strong><%=!f.object.id ? "Select" : "Edit"%> Vehicle Service</strong></label>
 
