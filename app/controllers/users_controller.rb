@@ -43,13 +43,10 @@ class UsersController < ApplicationController
   end
   
   def update
-    if (!@user.first_name.blank? || !@user.last_name.blank?) && params[:user][:password].blank?
-      @user.first_name, @user.last_name = params[:user][:first_name], params[:user][:last_name]
-      @user.valid?
-      render :edit
-    elsif @user.update(user_params)
-      @user.update(admin: true) if User.count == 1
-      @user.update(status: "active")
+    new_user = @user.created_at == @user.updated_at ? true : false
+    if @user.update(user_params)
+      @user.update(admin: true) if new_user && User.count == 1
+      @user.update(status: "active") if new_user
       redirect_to user_path(@user)
     else
       render :edit
