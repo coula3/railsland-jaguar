@@ -2,7 +2,7 @@
     <div class="main-data">
         <h2>Edit Dealer Info</h2>
 
-        <% if @dealer && @dealer.errors.any? %>
+        <% if @dealer.errors.any? %>
             <div id="error_explanation">
                 <ul>
                     <% @dealer.errors.full_messages.each do |message| %>

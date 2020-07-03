@@ -12,7 +12,7 @@
 
         <%= render 'customers/app_customer_data' %><br>
 
-        <% if @appointment && @appointment.errors.any? %>
+        <% if @appointment.errors.any? %>
             <div id="error_explanation">
                 <ul>
                     <% @appointment.errors.full_messages.each do |message| %>

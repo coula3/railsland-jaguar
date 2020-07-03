@@ -8,7 +8,7 @@
             <% end %>
         </div>
 
-        <% if @service && @service.errors.any? %>
+        <% if @service.errors.any? %>
             <div id="error_explanation">
                 <ul>
                     <% @service.errors.full_messages.each do |message| %>
