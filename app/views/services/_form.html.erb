@@ -7,6 +7,16 @@
                 <h2>Edit Service</h2>
             <% end %>
         </div>
+
+        <% if @service && @service.errors.any? %>
+            <div id="error_explanation">
+                <ul>
+                    <% @service.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
         
         <%= form_for(@service) do |f| %>
             <%= f.text_field :name, size: 30 %>
