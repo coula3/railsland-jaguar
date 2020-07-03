@@ -11,8 +11,8 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @service = Dealer.first.services.create(service_params)
-    if @service
+    @service = Dealer.first.services.build(service_params)
+    if @service.save
       redirect_to services_path
     else
       render :new
