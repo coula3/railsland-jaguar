@@ -12,7 +12,11 @@
 
     <% if @user.first_name.blank? || @user.last_name.blank? %>
         <div style="padding-bottom: 50px; padding-left: 50px">
-            <p>You are required to update your <strong><%= link_to 'profile data',  edit_user_path(@user) %></strong> associated with email <span style="color: blue"><%= @user.email %></span> to continue.</p>
+        <% if @user.uid %>
+            <p>You are required to update your <strong><%= link_to 'profile data and password',  edit_user_path(@user) %></strong> associated with email <span style="color: blue"><%= @user.email %></span> to activate your user account</p>
+        <% else %>
+            <p>You are required to update your <strong><%= link_to 'profile data',  edit_user_path(@user) %></strong> associated with email <span style="color: blue"><%= @user.email %></span> to activate your user account</p>
+        <% end %>
         </div>
     <% end %>
 
