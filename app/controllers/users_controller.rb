@@ -30,6 +30,10 @@ class UsersController < ApplicationController
   end
   
   def show
+    if @user.status == "active"
+    else
+      redirect_to user_workspace_path, notice: access_unauthorized_msg
+    end
   end
   
   def edit
