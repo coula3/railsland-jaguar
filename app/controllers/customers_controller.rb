@@ -41,6 +41,10 @@ class CustomersController < ApplicationController
 
   def with_service_insurance
     @customers_with_service_insurance = Customer.with_service_insurance
+    if @customers_with_service_insurance.size == 0
+      redirect_to user_workspace_path, notice: "No customer with service insurance"
+    else
+    end
   end
 
   private
