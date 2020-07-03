@@ -1,11 +1,11 @@
 <%= render 'sessions/flash_messages' %>
 
 <%= form_for(@user, url: signup_url(@user)) do |f| %>
-    <%= f.text_field :first_name, placeholder: "first name", size: 18 %>
-    <%= f.text_field :last_name, placeholder: "last name", size: 24 %>
-    <%= f.text_field :position, placeholder: "position", size: 22 %>
-    <%= f.text_field :email, placeholder: "email", size: 24 %>
-    <%= f.password_field :password, placeholder: "password", size: 12, disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
+    <%= f.text_field :first_name, placeholder: "first name", style: "height: 20px", size: 18 %>
+    <%= f.text_field :last_name, placeholder: "last name", style: "height: 20px", size: 24 %>
+    <%= f.text_field :position, placeholder: "position", style: "height: 20px", size: 22 %>
+    <%= f.text_field :email, placeholder: "email", style: "height: 20px", size: 24 %>
+    <%= f.password_field :password, placeholder: "password", style: "height: 20px", size: 12, disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
 
-    <%= f.submit %>
+    <%= f.submit class: "button" %>
 <% end %>
