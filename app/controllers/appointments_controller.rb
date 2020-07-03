@@ -13,11 +13,12 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
+    
     if @appointment.save
       redirect_to customer_appointments_path(@appointment.customer)
     else
       @customer = Customer.find_by(id: appointment_params[:customer_id])
-      redirect_to new_customer_appointment_path(@customer)
+      render :new
     end
   end
 
@@ -67,6 +68,7 @@ class AppointmentsController < ApplicationController
     if @appointment.update(appointment_params)
       redirect_to customer_appointments_path(@appointment.customer)
     else
+      @customer = Customer.find_by(id: appointment_params[:customer_id])
       render :edit
     end
   end
