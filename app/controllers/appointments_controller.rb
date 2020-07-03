@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :require_login
+  before_action :set_action_access, only: [:new, :show, :index, :edit]
 
   def new
     if params[:customer_id] && !Customer.exists?(params[:customer_id])
@@ -84,5 +85,12 @@ class AppointmentsController < ApplicationController
 
   def require_login
     return head(:forbidden) unless session.include? :user_id
+  end
+
+  def set_action_access
+    if current_user.status == "active"
+    else
+      redirect_to user_workspace_path, notice: access_unauthorized_msg
+    end
   end
 end
