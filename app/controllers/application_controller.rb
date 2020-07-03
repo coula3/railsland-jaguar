@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
         user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
 
-    def access_unauthorized_msg
+    def unauthorized_access_msg
         "Access Unauthorized"
     end
 
@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
     end
 
     def inactive_user_msg(user)
-        user == current_user ? "Access Unauthorized" : "User #{user.full_name} is inactive"
+        user == current_user ? unauthorized_access_msg : "User #{user.full_name} is inactive"
     end
 end

@@ -6,7 +6,7 @@ class ServicesController < ApplicationController
     if current_user.admin
       @service = Service.new
     else
-      redirect_to user_workspace_path, notice: access_unauthorized_msg
+      redirect_to user_workspace_path, notice: unauthorized_access_msg
     end
   end
 
@@ -23,7 +23,7 @@ class ServicesController < ApplicationController
     @services = Service.all
     if current_user.status == "active"
     else
-      redirect_to user_workspace_path, notice: access_unauthorized_msg
+      redirect_to user_workspace_path, notice: unauthorized_access_msg
     end
   end
 

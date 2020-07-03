@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if current_user.admin
       @users = User.all.order(:first_name)
     else
-      redirect_to user_workspace_path, notice: access_unauthorized_msg
+      redirect_to user_workspace_path, notice: unauthorized_access_msg
     end
   end
   
@@ -68,7 +68,7 @@ class UsersController < ApplicationController
 
   def admin_edit
     if !current_user.admin
-      redirect_to user_workspace_path, notice: access_unauthorized_msg
+      redirect_to user_workspace_path, notice: unauthorized_access_msg
     elsif !@user
       redirect_to user_workspace_path, notice: "User ##{params[:id]} does not exist"
     else
