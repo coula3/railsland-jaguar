@@ -21,6 +21,10 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
+    if current_user.status == "active"
+    else
+      redirect_to user_workspace_path, notice: access_unauthorized_msg
+    end
   end
 
   def edit
