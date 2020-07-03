@@ -1,9 +1,10 @@
 class User < ApplicationRecord
   belongs_to :dealer
-  has_secure_password
   validates :first_name, :last_name, presence: true, on: :update
-  validates :email, presence: true
+  validates :position, length: {maximum: 24}
+  validates :email, email: true
   validates :email, uniqueness: true
+  has_secure_password
 
   def admin?
     self.admin ? "Yes" : "No"
