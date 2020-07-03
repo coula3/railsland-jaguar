@@ -8,6 +8,16 @@
             <% end %>
         </div>
         
+        <% if @customer && @customer.errors.any? %>
+            <div id="error_explanation">
+                <ul>
+                    <% @customer.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+
         <%= form_for(@customer) do |f| %>
             <%= f.text_field :first_name, placeholder: "first name" %>
             <%= f.text_field :last_name, placeholder: "last name" %>
