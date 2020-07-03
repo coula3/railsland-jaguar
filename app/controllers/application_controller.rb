@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
     def non_existing_customer_msg
         "Customer does not exist"
     end
+
+    def inactive_user_msg(user)
+        user == current_user ? "Access Unauthorized" : "User #{user.full_name} is inactive"
+    end
 end
