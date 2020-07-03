@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def show
     if @user.status == "active"
     else
-      redirect_to user_workspace_path, notice: access_unauthorized_msg
+      redirect_to user_workspace_path, notice: inactive_user_msg(@user)
     end
   end
   
