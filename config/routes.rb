@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/signout', to: 'sessions#destroy'
   get '/users/workspace', to: 'users#workspace', as: 'user_workspace'
   get '/auth/facebook/callback', to: 'sessions#create'
+  get '/auth/failure', to: 'users#workspace'
   get '/users/:id/admin_edit', to: 'users#admin_edit', as: 'admin_edit'
   get '/customers/with_service_insurance', to: 'customers#with_service_insurance', as: 'service_insurance'
 
