@@ -15,9 +15,9 @@
     <div class="wrapper" style="margin-top: 75px; max-width: 1080px; margin: 16px auto;  border-style: solid; border-width: thin">
       <div style="margin-bottom: 75px">
         <div style="display: inline; float: right;  margin: 15px 25px 0px 0px">
-          <span style="margin-left: 5px"><%= link_to full_name(current_user), user_path(current_user), style: "color: white" if logged_in? && !current_user.first_name.blank? && !current_user.last_name.blank? %></span>
-          <span style="margin-left: 5px"><%= link_to 'My Workspace', user_workspace_path, style: "color: white" if logged_in? && !current_page?(controller: 'users', action: 'workspace') %></span>
-          <span style="margin-left: 5px"><%= link_to 'Sign Out', '/signout', style: "color: white" if logged_in? %></span>
+          <span style="margin-left: 5px"><%= link_to full_name(current_user), user_path(current_user), class: "hov-link", style: "color: white" if logged_in? && !current_user.first_name.blank? && !current_user.last_name.blank? %></span>
+          <span style="margin-left: 5px"><%= link_to 'My Workspace', user_workspace_path, class: "hov-link", style: "color: white" if logged_in? && !current_page?(controller: 'users', action: 'workspace') %></span>
+          <span style="margin-left: 5px"><%= link_to 'Sign Out', '/signout', class: "hov-link", style: "color: white" if logged_in? %></span>
         </div>
       </div>
       

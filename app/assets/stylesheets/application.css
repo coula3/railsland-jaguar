@@ -59,6 +59,6 @@ table {
     font-weight: bold;
 }
 
-a:hover {
+a.hov-link:hover {
     font-size: 1.25em;
   }
