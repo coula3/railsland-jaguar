@@ -6,7 +6,11 @@
         
         <%= render 'customer' %>
         
-        <%= render 'sessions/flash_notices' %>
+        <% if flash[:notice] %>
+            <div style="margin-top: 25px; margin-bottom: 15px; padding-left: 25px; padding-right: 25px; background-color: #e6ffe6; display: inline">
+                <%= notice %>
+            </div>
+        <% end %>
     </div>
 
     <div class="bottom-navs">
