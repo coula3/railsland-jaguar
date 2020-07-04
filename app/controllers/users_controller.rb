@@ -49,7 +49,11 @@ class UsersController < ApplicationController
       @user.update(status: "active") if new_user
       redirect_to user_path(@user)
     else
-      render :edit
+      if params[:user][:full_name]
+        render :admin_edit 
+      else
+        render :edit
+      end
     end
   end
   
