@@ -17,7 +17,11 @@
                 <% @customers_with_service_insurance.each.with_index(1) do |customer, index| %>
                     <tr>
                         <td><%= index %></td>
-                        <td><%= full_name(customer) %></td>
+                        <% if customer.appointments.size > 0 %>
+                            <td><%= link_to full_name(customer), customer_appointments_path(customer) %></td>
+                        <% else %>
+                            <td><%= full_name(customer) %></td>
+                        <% end %>
                         <td style="text-align: center; width: 20px"><%= customer.appointments.count %></td>
                     </tr>
                 <% end %>
