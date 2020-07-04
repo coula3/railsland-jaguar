@@ -1,10 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# # This file should contain all the record creation needed to seed the database with its default values.
+# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# #
+# # Examples:
+# #
+# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# #   Character.create(name: 'Luke', movie: movies.first)
 
 
 # DEALER ***
@@ -44,6 +44,15 @@ c.times do
     customer.save
 end
 puts "#{Customer.count} customers successfully created!" if Customer.count == c
+
+x = 2
+select_nums = (0...c).to_a.shuffle.take(x)
+customers = Customer.all
+
+new_customers = customers.map do |customer|
+    select_nums.any?(customers.index(customer)) ? customer.update(service_insurance: true) : customer
+end
+puts "Update of customers' service insurance successful" if Customer.where(service_insurance: true).size == x
 
 # APPOINTMENT ***
 t = Time.now
