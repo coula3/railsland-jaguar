@@ -1,17 +1,33 @@
 <div style="margin: 600px 100px 25px 100px">
-    <%= render 'flash_messages' %>
-    
+
+    <% if @user.errors.any? %>
+        <div id="error_explanation" style="margin-left: 110px; text-align: left">
+            <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <% if flash[:notice] %>
+        <div style="margin-bottom: 20px; margin-left: 110px">
+            <%= notice %>
+        </div>
+    <% end %>
+
     <div style="text-align: center; padding-top: 20px">
         <%= form_tag signin_path do %>
             <%= text_field_tag :email, nil, style: "height: 20px", placeholder: "email", size: 30 %>
             <%= password_field_tag :password, nil, style: "height: 20px", placeholder: "password", size: 30 %>
 
-            <%= submit_tag("Sign In", :style => "width:75px; height:25px") %>
-            
+            <%= submit_tag("Sign In", :style => "width:75px; height:25px") %>           
         <% end %>
                 
         <p><%= link_to 'Sign Up', signup_path, class: "hov-link", :style=> "color: white"%></p>
         
-        <div style="margin: 25px 0px 10px 0px"><a href="/auth/facebook"><img src="/assets/facebook_login.jpeg" alt="Continue with Facebook" width="200" height="30"></div>
+        <div style="margin: 25px 0px 10px 0px">
+            <a href="/auth/facebook"><img src="/assets/facebook_login.jpeg" alt="Continue with Facebook" width="200" height="30">
+        </div>
     </div>
 </div>

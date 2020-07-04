@@ -1,4 +1,12 @@
-<%= render 'sessions/flash_messages' %>
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+        <ul>
+            <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
 
 <%= form_for(@user, url: signup_url(@user)) do |f| %>
     <%= f.text_field :first_name, placeholder: "first name", style: "height: 20px", size: 18 %>
