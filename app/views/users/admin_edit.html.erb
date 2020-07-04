@@ -1,6 +1,16 @@
 <div class="main-container">
     <div class="main-data">
         <h2>Edit User - Admin</h2>
+
+        <% if @user.errors.any? %>
+            <div id="error_explanation">
+                <ul>
+                    <% @user.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
         
         <%= form_for(@user) do |f| %>    
             <% if @user != current_user %>
