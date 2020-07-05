@@ -43,10 +43,11 @@ class UsersController < ApplicationController
   end
   
   def update
-    new_user = @user.created_at == @user.updated_at ? true : false
+    new_inactive_user ||= @user if (@user.created_at == @user.updated_at) && (@user.first_name.blank? || @user.last_name.blank?)
+   
     if @user.update(user_params)
-      @user.update(admin: true) if new_user && User.count == 1
-      @user.update(status: "active") if new_user
+      @user.update(admin: true) if new_inactive_user && User.count == 1
+      @user.update(status: "active") if new_inactive_user
       redirect_to user_path(@user)
     else
       if params[:user][:full_name]
