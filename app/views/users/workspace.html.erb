@@ -24,7 +24,7 @@
     <% if !@user.first_name.blank? && !@user.last_name.blank? %>
         <div style="margin-bottom: 25px">
             <%= link_to 'My Profile', user_path(@user) %><br>
-            <%= is_admin?(@user) %>
+            <%= system_users_if_admin?(@user) %>
         </div>
 
         <div style="margin-bottom: 25px">

@@ -19,7 +19,7 @@ module UsersHelper
         end
     end
 
-    def is_admin?(user)
+    def system_users_if_admin?(user)
         if user.admin
             link_to 'System Users', users_path
         end
