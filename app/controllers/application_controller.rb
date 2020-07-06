@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?, :access_unauthorized_msg, :non_existing_customer_msg
+    helper_method :current_user, :logged_in?, :access_unauthorized_msg, :non_existing_customer_msgq, :dealer
 
     def logged_in?
         !!current_user
@@ -19,5 +19,9 @@ class ApplicationController < ActionController::Base
 
     def inactive_user_msg(user)
         user == current_user ? unauthorized_access_msg : "User #{user.full_name} is inactive"
+    end
+
+    def dealer
+        Dealer.first
     end
 end
