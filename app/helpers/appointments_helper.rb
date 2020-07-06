@@ -39,4 +39,12 @@ module AppointmentsHelper
     def customer_appointments(customer)
         link_to "#{customer.first_name}'s Appointments", customer_appointments_path(customer)
     end
+
+    def single_customer_appointments?(appointments)
+        true if appointments.distinct.count(:customer_id) == 1
+    end
+
+    def multiple_customer_appointments?(appointments)
+        true if appointments.distinct.count(:customer_id) > 1
+    end
 end
