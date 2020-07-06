@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
   
   def update
-    new_inactive_user ||= @user if (@user.created_at == @user.updated_at) && (@user.first_name.blank? || @user.last_name.blank?)
+    new_inactive_user ||= @user.new_inactive_user
    
     if @user.update(user_params)
       @user.update(admin: true) if new_inactive_user && User.count == 1
