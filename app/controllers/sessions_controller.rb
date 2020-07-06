@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         u.email = auth['info']['email']
         u.image = auth['info']['image']
         u.password = SecureRandom.hex
-        u.dealer_id = Dealer.first.id
+        u.dealer_id = dealer.id
       end
       
       session[:user_id] = @user.id
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
       elsif (user || !user) && (!params[:email].empty? || !params[:password].empty?)
         redirect_to root_path, notice: "Invalid email or password"
       else
-        @user = User.create(dealer_id: Dealer.first.id)
+        @user = User.create(dealer_id: dealer.id)
         render :new
       end
     end
