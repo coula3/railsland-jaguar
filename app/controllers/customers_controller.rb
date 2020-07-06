@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
   end
 
   def index
-    @customers = Customer.all
+    @customers = Customer.order(:first_name)
   end
 
   def show

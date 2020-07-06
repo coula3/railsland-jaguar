@@ -46,7 +46,7 @@ class AppointmentsController < ApplicationController
         @appointments = @customer.appointments.order(:date)
       end
     else
-      @appointments = Appointment.all.order(:date)
+      @appointments = Appointment.order(:date)
     end
   end
 

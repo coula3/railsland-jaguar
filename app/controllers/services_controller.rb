@@ -20,7 +20,7 @@ class ServicesController < ApplicationController
   end
 
   def index
-    @services = Service.all
+    @services = Service.order(:name)
     if current_user.status == "active"
     else
       redirect_to user_workspace_path, notice: unauthorized_access_msg
