@@ -25,8 +25,8 @@ class AppointmentsController < ApplicationController
   def show
     if params[:customer_id]
       @customer = Customer.find_by(id: params[:customer_id])
-      if @customer.nil?
-        redirect_to customers_path, notice: non_existing_customer_msg
+      if @customer.nil? || !Appointment.exists?(params[:id])
+        redirect_to appointments_path, notice: "Customer or Appointment does not exist"
       else
         @appointment = @customer.appointments.find_by(id: params[:id])
       end  
@@ -53,8 +53,8 @@ class AppointmentsController < ApplicationController
   def edit
     if params[:customer_id]
       @customer = Customer.find_by(id: params[:customer_id])
-      if @customer.nil?
-        redirect_to customers_path, notice: non_existing_customer_msg
+      if @customer.nil? || !Appointment.exists?(params[:id])
+        redirect_to appointments_path, notice: "Customer or Appointment does not exist"
       else
         @appointment = @customer.appointments.find_by(id: params[:id])
       end  
