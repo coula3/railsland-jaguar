@@ -28,9 +28,11 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    if current_user.admin
+    if !Service.exists?(params[:id])
+      redirect_to services_path, notice: "Service does not exist"
+    elsif current_user.admin
     else
-      redirect_to user_workspace_path, notice: access_unauthorized_msg
+      redirect_to user_workspace_path, notice: unauthorized_access_msg
     end
   end
 
