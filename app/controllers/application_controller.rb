@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?, :access_unauthorized_msg, :non_existing_customer_msg, :dealer
+    helper_method :current_user, :logged_in?, :unauthorized_access_msg, :non_existing_customer_msg, :dealer
 
     def logged_in?
         !!current_user
