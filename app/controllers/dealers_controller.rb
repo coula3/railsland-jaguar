@@ -2,7 +2,9 @@ class DealersController < ApplicationController
   before_action :set_dealer
 
   def edit
-    if current_user.admin
+    if !Dealer.exists?(params[:id])
+      redirect_to user_workspace_path, notice: "Dealer does not exist"
+    elsif current_user.admin
     else
       redirect_to user_workspace_path, notice: unauthorized_access_msg
     end
