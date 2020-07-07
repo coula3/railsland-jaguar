@@ -55,6 +55,7 @@
 
     <div class="bottom-navs">
         <span style="margin-right: 5px"><%= user_workspace %></span>
+        <span style="margin-right: 5px"><%= service_customers %></span>
         <% if single_customer_appointments?(@appointments) %>
             <span style="margin-right: 5px"><%= new_appointment(@appointments.first.customer) %></span>
             <span style="margin-right: 5px"><%= service_appointments %></span>
