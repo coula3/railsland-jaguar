@@ -12,12 +12,12 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
+    @customer = Customer.find_by(id: appointment_params[:customer_id])
+    @appointment = @customer.appointments.build(appointment_params)
     
     if @appointment.save
       redirect_to customer_appointments_path(@appointment.customer)
     else
-      @customer = Customer.find_by(id: appointment_params[:customer_id])
       render :new
     end
   end
