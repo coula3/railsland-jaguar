@@ -98,7 +98,7 @@ class UsersController < ApplicationController
     if @user && (current_user != @user && !current_user.admin)
       redirect_to user_workspace_path, notice: "You are not authorized to access the data of User ##{params[:id]}."
     elsif current_user.status == "inactive" && !@user
-      redirect_to user_workspace_path, notice: "Access Unauthorized"
+      redirect_to user_workspace_path, notice: unauthorized_access_msg
     elsif !@user
       redirect_to user_workspace_path, notice: "User ##{params[:id]} does not exist"
     end
