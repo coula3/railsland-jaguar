@@ -9,6 +9,12 @@
                 <h2>Customer Appointments</h2>
             <% end %>
         </div>
+
+        <% if flash[:notice] %>
+            <div style="margin-top: 25px; margin-bottom: 15px; padding: 0px 15px 0px 15px; background-color: #e6ffe6; display: inline">
+                <%= notice %>
+            </div>
+        <% end %>
         
         <h3><%= pluralize(@appointments.size, "@appointments".chop.delete_prefix('@').capitalize) %></h3>
 
