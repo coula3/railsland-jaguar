@@ -2,7 +2,8 @@ class CustomersController < ApplicationController
   before_action :require_login
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
   before_action :set_action_access, only: [:new, :show, :index, :edit, :with_service_insurance]
-  
+  before_action :check_customer, only: [:show, :edit]
+
   def new
     @customer = Customer.new
   end
@@ -65,6 +66,12 @@ class CustomersController < ApplicationController
     if current_user.status == "active"
     else
       redirect_to user_workspace_path, notice: unauthorized_access_msg
+    end
+  end
+
+  def check_customer
+    if !Customer.exists?(params[:id])
+      redirect_to customers_path, notice: non_existing_customer_msg
     end
   end
 end
