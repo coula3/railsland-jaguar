@@ -1,0 +1,40 @@
+<% if logged_in? %>
+    <div style="text-align: right; padding: 10px; margin-bottom: 5px">
+        <span style="margin-left: 5px"><%= link_to full_name(current_user), user_path(current_user), class: "hov-link", style: "background-color: #fffaf0; padding: 0px 5px 0px 5px; border-radius: 20px" if logged_in? && !current_user.first_name.blank? && !current_user.last_name.blank? %></span>
+        <span style="margin-left: 5px"><%= link_to 'My Workspace', user_workspace_path, class: "hov-link", style: "background-color: #fffaf0; padding: 0px 5px 0px 5px; border-radius: 20px" if logged_in? && !current_page?(controller: 'users', action: 'workspace') %></span>
+        <span style="margin-left: 5px"><%= link_to 'Sign Out', '/signout', class: "hov-link", style: "background-color: #fffaf0; padding: 0px 5px 0px 5px; border-radius: 20px" if logged_in? %></span>
+    </div>
+<% end %>
+
+<div style="background-color: rgb(255, 250, 240, 0.85); padding: 10px; width: 410px; border-radius: 20px">
+    <div style="margin-bottom: 10px; text-align: right; padding-right: 10px">
+    <span><a href="https://www.jaguarusa.com/" target="_blank">JaguarUSA</a></span>
+    <span style="margin-left: 5px"><a href="#"><%= dealer.name %></a></span>
+    </div>
+
+    <div style="padding-left: 10px">
+        <span><label style="padding-right: 17px"><strong>Address: </strong></label><%= dealer.address %></span>
+        <div style="margin: 5px 0px 15px 0px">
+            <span><label style="padding-right: 45px"><strong>City: </strong></label><%= dealer.city %></span>
+            <span style="padding-left: 30px"><label style="padding-right: 17px"><strong>State: </strong></label><%= dealer.state %>, <%= dealer.zip %></span></span><br>
+        </div>
+        <span><label style="padding-right: 5px"><strong>Telephone: </strong></label><span style="color: red"><%= dealer.telephone %></span></span>
+    </div>
+    
+    <table style="width: 75%">
+        <tbody>
+            <tr>
+                <td style="padding: 0px 0px 0px 20px">Customer Service</td>
+                <td style="padding: 0px; color: red"><%= dealer.ext_one %></td>
+            </tr>
+            <tr>
+                <td style="padding: 0px 0px 0px 20px"><a href="#">Finance Department</a></td>
+                <td style="padding: 0px;"><%= dealer.ext_two %></td>
+            </tr>
+            <tr>
+                <td style="padding: 0px 0px 0px 20px"><a href="#">Service Department</a></td>
+                <td style="padding: 0px; color: red;"><%= dealer.ext_three %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
