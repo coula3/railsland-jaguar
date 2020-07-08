@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true, on: :update
   validates :position, length: {maximum: 24}
   validates :email, email: true
-  validates :email, uniqueness: true
+  validates :email, uniqueness: { case_sensitive: false }
   has_secure_password
 
   def admin?
