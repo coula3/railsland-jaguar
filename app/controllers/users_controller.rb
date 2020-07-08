@@ -60,7 +60,7 @@ class UsersController < ApplicationController
   
   def destroy
     if @user.admin && !@user.admin_deletable?
-      redirect_to users_path, notice: "The must be at least two (02) active admins in the system"
+      redirect_to users_path, notice: "There must be at least two (02) active administrators in the system"
     else
       @user.destroy
       redirect_to users_path
