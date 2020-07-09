@@ -18,7 +18,11 @@ class CustomersController < ApplicationController
   end
 
   def index
-    @customers = Customer.order(:first_name)
+    if params[:q]
+      @customers = Customer.search(params[:q])
+    else
+      @customers = Customer.all
+    end
   end
 
   def show
