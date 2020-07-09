@@ -9,7 +9,12 @@
                 <%= notice %>
             </div>
         <% end %>
-    
+
+        <%= form_tag customers_path, method: 'get' do %>
+            <%= text_field_tag :q, params[:q], style: "text-align: center", placeholder: "first name only" %>
+            <%= submit_tag("Search") %><br><br>
+        <% end %>
+
         <table>
             <thead>
                 <tr>
@@ -43,5 +48,6 @@
     <div class="bottom-navs">
         <span style="margin-right: 5px"><%= user_workspace %></span>
         <span style="margin-right: 5px"><%= link_to 'New Customer', new_customer_path %></span>
+        <span style="margin-right: 5px"><%= link_to 'Service Customers', customers_path %></span>
     </div>
 </div>
