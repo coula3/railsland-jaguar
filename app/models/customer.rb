@@ -7,6 +7,7 @@ class Customer < ApplicationRecord
   validates :telephone, format: { with: /\d{3}-\d{3}-\d{4}/, message: "uses 555-555-5555 format" }
 
   scope :with_service_insurance, -> { where(service_insurance: true) }
+  scope :search, -> (search) { where('first_name LIKE ?', "%#{search}%") }
   
   def has_service_insurance?
     self.service_insurance ? "Yes" : "No"
