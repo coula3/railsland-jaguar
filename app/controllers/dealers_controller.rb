@@ -21,7 +21,7 @@ class DealersController < ApplicationController
   private
 
   def dealer_params
-    params.require(:dealer).permit(:name, :address, :city, :state, :zip, :telephone, :ext_one, :ext_two, :ext_three)
+    params.require(:dealer).permit(:name, :address, :city, :state, :zip, :telephone, :ext_one, :ext_two, :ext_three, :vanity_number)
   end
 
   def set_dealer
