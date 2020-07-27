@@ -1,6 +1,6 @@
 module UsersHelper
     def user_status
-       status = ["active", "inactive", "deactivated"]
+       status = ["active", "deactivated"]
     end
 
     def user_image
