@@ -36,4 +36,8 @@ module UsersHelper
     def signup_url(user)
         signup_path if !user.id
     end
+
+    def user_sys_role
+        role ||= ["Super User", "SD User", "IT User", "User"]
+    end
 end
