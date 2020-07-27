@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     end
 
     def inactive_user_msg(user)
-        user == current_user ? unauthorized_access_msg : "User #{user.full_name} is inactive"
+        user == current_user ? unauthorized_access_msg : "User #{user.full_name} is #{user.status}"
     end
 
     def dealer
