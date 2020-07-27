@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   belongs_to :dealer
   validates :first_name, :last_name, presence: true, on: :update
-  validates :position, length: {maximum: 24}
+  validates :sys_role, presence: true
   validates :email, email: true
   validates :email, uniqueness: { case_sensitive: false }
   has_secure_password
@@ -10,9 +10,9 @@ class User < ApplicationRecord
     self.admin ? "Yes" : "No"
   end
 
-  def sys_role
-    self.admin ? "Admin" : "User"
-  end
+  # def sys_role
+  #   self.admin ? "Admin" : "User"
+  # end
 
   def admin_deletable?
     User.count { |u| u.admin == true && u.status == "active"} > 2 ? true : false
