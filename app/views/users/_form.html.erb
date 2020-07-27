@@ -9,10 +9,10 @@
 <% end %>
 
 <%= form_for(@user, url: signup_url(@user)) do |f| %>
-    <%= f.text_field :first_name, placeholder: "first name", style: "height: 20px", size: 18 %>
+    <%= f.text_field :first_name, placeholder: "first name", style: "height: 20px", size: 20 %>
     <%= f.text_field :last_name, placeholder: "last name", style: "height: 20px", size: 24 %>
     <%= f.text_field :email, placeholder: "email", style: "height: 20px", size: 24 %>
-    <%= f.password_field :password, placeholder: "password", style: "height: 20px", size: 12, disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
-
+    <%= f.password_field :password, placeholder: "password", style: "height: 20px", size: 15, disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
+    <%= f.password_field :password_confirmation, placeholder: "confirm password", style: "height: 20px", size: 15, disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
     <%= f.submit class: "button" %>
 <% end %>
