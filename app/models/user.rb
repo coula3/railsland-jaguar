@@ -25,4 +25,8 @@ class User < ApplicationRecord
   def new_inactive_user
     self if (self.created_at == self.updated_at) && (self.first_name.blank? || self.last_name.blank?)
   end
+
+  def is_activated?
+    true if self.status ==  "active"
+  end
 end
