@@ -9,7 +9,7 @@
         <p><label class="label-width">Email </label><%= @user.email %></p>
         <p><label class="label-width">System Role </label><%= @user.sys_role %></p>
         <p><label class="label-width">Admin </label><%= @user.admin? %></p>
-        <p><label class="label-width">Account Status </label><%= @user.status %></p>
+        <p><label class="label-width">Account Status </label><%= @user.status.capitalize %></p>
         <p><label class="label-width">Created on </label><%= readable_created_at(@user) %></p>
     </div>
 
