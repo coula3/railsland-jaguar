@@ -15,7 +15,7 @@
                     <th style="text-align: left">Name</th>
                     <th style="text-align: left">Email</th>
                     <th style="text-align: left">System Role</th>
-                    <th style="text-align: center">Status</th>
+                    <th style="text-align: left">Status</th>
                     <th style="text-align: center">Admin</th>
                 </tr>
             </thead>
@@ -27,7 +27,7 @@
                         <td style="text-align: left"><%= link_to full_name(user), user_path(user), :title => 'User Profile' %></td>
                         <td style="text-align: left"><%= user.email %></td>
                         <td style="text-align: left"><%= user.sys_role %></td>
-                        <td style="text-align: center; width: 20px"><%= user.status.capitalize %></td>
+                        <td style="text-align: left; width: 20px"><%= user.status.capitalize %></td>
                         <td style="text-align: center; width: 15px"><%= user.admin? %></td>
                         <td style="text-align: center; width: 15px"><%= link_to 'Edit', admin_edit_path(user) %></td>
                         <% if user != current_user %>
