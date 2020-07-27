@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates :email, email: true
   validates :email, uniqueness: { case_sensitive: false }
   has_secure_password
+  validates :password_confirmation, presence: true
 
   def admin?
     self.admin ? "Yes" : "No"
