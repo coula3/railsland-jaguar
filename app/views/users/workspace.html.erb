@@ -45,7 +45,7 @@
         </div>
         
         <div>
-            <% if current_user.admin %>
+            <% if current_user.admin && current_user.sys_role == "Super User" %>
                 <%= link_to 'Dealer Information', edit_dealer_path(dealer), :title => 'Edit Dealer Info' %>
             <% end %>
         </div>
