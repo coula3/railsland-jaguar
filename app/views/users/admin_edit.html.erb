@@ -21,8 +21,8 @@
                 <%= f.text_field :email, size: 25 %>
             <% end %>
 
-            <%= f.text_field :position, size: 25, placeholder: "position" %>
             <% if @user != current_user %>
+                <%= f.select :sys_role, user_sys_role %>
                 <%= f.select :status, user_status %>
                 <%= f.check_box :admin %>
                 <%= f.label 'Admin' %>
