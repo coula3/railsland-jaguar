@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_22_021623) do
+ActiveRecord::Schema.define(version: 2020_07_27_153551) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "date"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_07_22_021623) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
     t.string "status", default: "inactive"
-    t.string "position"
+    t.string "sys_role"
     t.string "image"
     t.string "uid"
     t.index ["dealer_id"], name: "index_users_on_dealer_id"
