@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def update
+  def update 
     new_inactive_user ||= @user.new_inactive_user
    
     if @user.update(user_params)
@@ -83,7 +83,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :position, :email, :password, :status, :admin)
+    params.require(:user).permit(:first_name, :last_name, :sys_role, :email, :password, :status, :admin)
   end
 
   def require_login
