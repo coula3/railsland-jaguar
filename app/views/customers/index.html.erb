@@ -7,13 +7,17 @@
         <% if flash[:notice] %>
             <div style="margin-top: 25px; margin-bottom: 15px; padding: 0px 15px 0px 15px; background-color: #e6ffe6; display: inline">
                 <%= notice %>
-            </div>
+            </div><br><br>
         <% end %>
 
-        <%= form_tag customers_path, method: 'get' do %>
+        <%= form_tag customers_path, method: 'get', style: "display: inline" do %>
             <%= text_field_tag :q, params[:q], style: "text-align: center", placeholder: "first name only" %>
-            <%= submit_tag("Search") %><br><br>
+            <%= submit_tag "Search", :name => nil %>
         <% end %>
+
+        <%= (link_to '<button type="button">Reset</button>'.html_safe, customers_path) if params[:q] %>
+
+        <br><br>
 
         <table>
             <thead>
@@ -48,6 +52,6 @@
     <div class="bottom-navs">
         <span style="margin-right: 5px"><%= user_workspace %></span>
         <span style="margin-right: 5px"><%= link_to 'New Customer', new_customer_path %></span>
-        <span style="margin-right: 5px"><%= link_to 'Service Customers', customers_path %></span>
+        <span style="margin-right: 5px"><%= link_to 'Service Customers', customers_path if params[:q] %></span>
     </div>
 </div>
