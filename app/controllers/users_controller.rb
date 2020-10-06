@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = Dealer.first.users.build(user_params)
-    @user.status = "active" if @user.first_name.present? && @user.last_name.present?
+
     if @user.save
       session[:user_id] = @user.id
       redirect_to user_workspace_path
