@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   belongs_to :dealer
-  validates :first_name, :last_name, presence: true, on: :update
+  validates :first_name, :last_name, presence: true
   validates :email, email: true
   validates :email, uniqueness: { case_sensitive: false }
   has_secure_password
