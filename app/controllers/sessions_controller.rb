@@ -10,12 +10,14 @@ class SessionsController < ApplicationController
   def create
     if auth
       @user = User.find_or_create_by(uid: auth['uid']) do |u|
+        u.first_name = auth['info']['first_name']
+        u.last_name = auth['info']['last_name']
         u.email = auth['info']['email']
         u.image = auth['info']['image']
         u.password = SecureRandom.hex
         u.dealer_id = dealer.id
       end
-      
+
       if @user && @user.status == "deactivated"
         redirect_to root_path, notice: "User account deactivated"
       else
