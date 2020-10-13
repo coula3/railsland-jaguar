@@ -25,12 +25,6 @@ class CustomersController < ApplicationController
     end
   end
 
-  def show
-  end
-
-  def edit
-  end
-
   def update
     if @customer.update(customer_params)
       redirect_to @customer
