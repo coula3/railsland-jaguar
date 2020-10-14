@@ -18,8 +18,8 @@
 
     <div style="text-align: center; padding-top: 10px">
         <%= form_tag signin_path do %>
-            <%= text_field_tag :email, nil, style: "height: 20px", placeholder: "email", size: 30 %>
-            <%= password_field_tag :password, nil, style: "height: 20px", placeholder: "password", size: 30 %>
+            <%= text_field_tag :email, nil, style: "height: 20px; padding-left: 5px", placeholder: "email", size: 30 %>
+            <%= password_field_tag :password, nil, style: "height: 20px; padding-left: 5px", placeholder: "password", size: 30 %>
 
             <%= submit_tag("Sign In", :style => "width:75px; height:25px") %>           
         <% end %>

@@ -9,10 +9,10 @@
 <% end %>
 
 <%= form_for(@user, url: signup_url(@user)) do |f| %>
-    <%= f.text_field :first_name, placeholder: "first name", style: "height: 20px", size: 21 %>
-    <%= f.text_field :last_name, placeholder: "last name", style: "height: 20px", size: 26 %>
-    <%= f.text_field :email, placeholder: "email", style: "height: 20px", size: 28 %>
-    <%= f.password_field :password, placeholder: "password", style: "height: 20px", size: 16, disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
-    <%= f.password_field :password_confirmation, placeholder: "confirm password", style: "height: 20px", size: 16, disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
+    <%= f.text_field :first_name, placeholder: "first name", style: "height: 20px; padding-left: 5px", size: 21 %>
+    <%= f.text_field :last_name, placeholder: "last name", style: "height: 20px; padding-left: 5px", size: 26 %>
+    <%= f.text_field :email, placeholder: "email", style: "height: 20px; padding-left: 5px", size: 28 %>
+    <%= f.password_field :password, placeholder: "password", style: "height: 20px; padding-left: 5px", size: 16, disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
+    <%= f.password_field :password_confirmation, placeholder: "confirm password", style: "height: 20px; padding-left: 5px", size: 16, disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
     <%= f.submit class: "button" %>
 <% end %>
