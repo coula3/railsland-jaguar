@@ -1,29 +1,39 @@
-<% if @user.errors.any? %>
-    <div id="error_explanation">
-        <ul>
-            <% @user.errors.full_messages.uniq.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-        </ul>
-    </div>
-<% end %>
-
 <%= form_for(@user, url: signup_url(@user)) do |f| %>
     <p>
         <%= f.text_field :first_name, placeholder: "first name", class: "signup_inputs element_border_radius" %>
     </p>
+
+    <% if @user.errors.any? && @user_errors[:first_name] %>
+        <span id="signin_span_errors" class="element_border_radius"> <%= @user_errors[:first_name] %> </span>
+    <% end %>
+
     <p>
         <%= f.text_field :last_name, placeholder: "last name", class: "signup_inputs element_border_radius" %>
     </p>
+
+    <% if @user.errors.any? && @user_errors[:last_name] %>
+        <span id="signin_span_errors" class="element_border_radius"> <%= @user_errors[:last_name] %> </span>
+    <% end %>
+
     <p>
         <%= f.text_field :email, placeholder: "email", class: "signup_inputs element_border_radius" %>
     </p>
+
+    <% if @user.errors.any? && @user_errors[:email] %>
+        <span id="signin_span_errors" class="element_border_radius"> <%= @user_errors[:email] %> </span>
+    <% end %>
+
     <p>
         <%= f.password_field :password, placeholder: "password", class: "signup_inputs element_border_radius", disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
     </p>
     <p>
         <%= f.password_field :password_confirmation, placeholder: "confirm password", class: "signup_inputs element_border_radius", disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
     </p>
+
+    <% if @user.errors.any? && @user_errors[:password] %>
+        <span id="signin_span_errors" class="element_border_radius"> <%= @user_errors[:password] %> </span>
+    <% end %>
+
     <p>
         <%= f.submit class: "button", id: "user_form_btn", class: "element_border_radius" %>
     </p>
