@@ -26,16 +26,18 @@ class SessionsController < ApplicationController
       end
     else
       user = User.find_by(email: params[:email])
+
       if user && user.authenticate(params[:password]) && user.is_activated?
         session[:user_id] = user.id
         redirect_to user_workspace_path
-      elsif user && user.status == "deactivated"
-          redirect_to root_path, notice: "User account deactivated"
-      elsif (user || !user) && (!params[:email].empty? || !params[:password].empty?)
-        redirect_to root_path, notice: "Invalid email or password"
       else
-        @user = User.create(dealer_id: dealer.id)
-        render :new
+        if user && user.status == "deactivated"
+            redirect_to root_path, notice: "User account deactivated"
+        elsif (user || !user) && (!params[:email].empty? || !params[:password].empty?)
+          redirect_to root_path, notice: "Invalid email or password"
+        elsif params[:email].empty? || params[:password].empty?
+          redirect_to root_path, notice: "Please provide valid email and password"
+        end
       end
     end
   end
