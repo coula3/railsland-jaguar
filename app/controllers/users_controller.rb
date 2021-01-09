@@ -17,8 +17,20 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_workspace_path
     else
+      @user_errors = get_user_errors_hash(@user.errors.full_messages)
       render :new
     end
+  end
+
+  def get_user_errors_hash(user_errors)
+    errors_hash = {}
+    user_errors.uniq.each do |error|
+      errors_hash[:first_name] = error if error.include?("First name")
+      errors_hash[:last_name] = error if error.include?("Last name")
+      errors_hash[:email] = error if error.include?("Email") || error.include?("email")
+      errors_hash[:password] = error if error.include?("Password")
+    end
+    errors_hash
   end
   
   def index
