@@ -1,13 +1,13 @@
-<div style="margin: 350px 0px 25px 0px;" >
-    <div style="margin-bottom: 25px">
-        <h2 style="margin-left: 105px; color: white">User Sign up</h2>
+<div id="signup_main_div">
+    <div id="signup_div">
+        <h2 style="color: white">User Sign Up</h2>
         
-        <div style="margin-left: 105px">
+        <div id="signup_form_div"">
             <%= render 'form' %>
         </div>
     </div>
 
-    <div style="margin-left: 105px">
-        <%= link_to 'Home', root_path, class: "hov-link", style: "color: white" %></p>
-    </div>
+    <p style="text-align: center;">
+        <%= link_to 'Home', root_path, id: "home_link" %>
+    </p>
 </div>
