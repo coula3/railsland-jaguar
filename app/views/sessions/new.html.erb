@@ -1,22 +1,30 @@
-<div style="margin: 350px 100px 25px 100px">
-    <% if flash[:notice] %>
-        <div style="margin-bottom: 20px; margin-left: 110px">
-            <%= notice %>
-        </div>
-    <% end %>
-
-    <div style="text-align: center; padding-top: 10px">
+<div id="signin_div">
+    <div id="signin_form_div">
         <%= form_tag signin_path do %>
-            <%= text_field_tag :email, nil, style: "height: 20px; padding-left: 5px", placeholder: "email", size: 30 %>
-            <%= password_field_tag :password, nil, style: "height: 20px; padding-left: 5px", placeholder: "password", size: 30 %>
+            <p>
+                <%= text_field_tag :email, nil, class: "signin_inputs", placeholder: "email" %>
+            </p>
+            <p>
+                <%= password_field_tag :password, nil, class: "signin_inputs", placeholder: "password" %>
+            </p>
 
-            <%= submit_tag("Sign In", :style => "width:75px; height:25px") %>           
+            <% if flash[:notice] %>
+                <span id="signin_span_errors">
+                    <%= notice %>
+                </span>
+            <% end %>
+
+            <p id="signin_btn_p">
+                <%= submit_tag("Sign In", id: "signin_btn") %>
+            </p>
         <% end %>
                 
-        <p><%= link_to 'Sign Up with Email', signup_path, class: "hov-link", :style=> "color: white"%></p>
+        <p>
+            <%= link_to 'Sign Up', signup_path, id: "signup_link" %>
+        </p>
         
-        <div style="margin: 10px 0px 10px 0px">
-            <a href="/auth/facebook"><img src="/assets/facebook_login.jpeg" alt="Continue with Facebook" width="200" height="30"></a>
-        </div>
+        <p id="facebook_p">
+            <a href="/auth/facebook"><img src="/assets/facebook_login.jpeg" alt="Continue with Facebook" id="facebook_img"></a>
+        </p>
     </div>
 </div>

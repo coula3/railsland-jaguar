@@ -1,3 +1,60 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#signin_div {
+    width: 400px;
+    margin: 50px auto;
+}
+
+#signin_form_div {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#signup_link {
+    background: #006400;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    width: 315px;
+    height: 25px;
+    padding: 4px 5px 0px 5px;
+    border: solid 2px #808080;
+}
+
+#signin_btn_p {
+    margin-top: 30px;
+}
+
+#facebook_p {
+    margin: 30px 0px 20px 0px;
+}
+
+#facebook_img {
+    width: 200px;
+    height: 32px;
+}
+
+#signin_btn {
+    background: #C0C0C0;
+    width: 330px;
+    height: 35px;
+    font-size: 16px;
+}
+
+.signin_inputs {
+    width: 315px;
+    height: 25px;
+    padding: 2px 8px;
+    font-size:16px;
+}
+
+#signin_span_errors  {
+    background-color: #fff;
+    color: red;
+    padding: 2px 10px;
+    font-size: 14px;
+}
