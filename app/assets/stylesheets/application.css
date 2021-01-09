@@ -58,4 +58,8 @@ table {
 
 a.hov-link:hover {
     font-size: 1.15em;
-  }
+}
+
+.element_border_radius {
+    border-radius: 15px;
+}

@@ -2,25 +2,25 @@
     <div id="signin_form_div">
         <%= form_tag signin_path do %>
             <p>
-                <%= text_field_tag :email, nil, class: "signin_inputs", placeholder: "email" %>
+                <%= text_field_tag :email, nil, class: "signin_inputs element_border_radius", placeholder: "email" %>
             </p>
             <p>
-                <%= password_field_tag :password, nil, class: "signin_inputs", placeholder: "password" %>
+                <%= password_field_tag :password, nil, class: "signin_inputs element_border_radius", placeholder: "password" %>
             </p>
 
             <% if flash[:notice] %>
-                <span id="signin_span_errors">
+                <span id="signin_span_errors" class="element_border_radius">
                     <%= notice %>
                 </span>
             <% end %>
 
             <p id="signin_btn_p">
-                <%= submit_tag("Sign In", id: "signin_btn") %>
+                <%= submit_tag("Sign In", id: "signin_btn", class: "element_border_radius") %>
             </p>
         <% end %>
                 
         <p>
-            <%= link_to 'Sign Up', signup_path, id: "signup_link" %>
+            <%= link_to 'Sign Up', signup_path, id: "signup_link", class: "element_border_radius" %>
         </p>
         
         <p id="facebook_p">

@@ -10,22 +10,22 @@
 
 <%= form_for(@user, url: signup_url(@user)) do |f| %>
     <p>
-        <%= f.text_field :first_name, placeholder: "first name", class: "signup_inputs" %>
+        <%= f.text_field :first_name, placeholder: "first name", class: "signup_inputs element_border_radius" %>
     </p>
     <p>
-        <%= f.text_field :last_name, placeholder: "last name", class: "signup_inputs" %>
+        <%= f.text_field :last_name, placeholder: "last name", class: "signup_inputs element_border_radius" %>
     </p>
     <p>
-        <%= f.text_field :email, placeholder: "email", class: "signup_inputs" %>
+        <%= f.text_field :email, placeholder: "email", class: "signup_inputs element_border_radius" %>
     </p>
     <p>
-        <%= f.password_field :password, placeholder: "password", class: "signup_inputs", disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
+        <%= f.password_field :password, placeholder: "password", class: "signup_inputs element_border_radius", disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
     </p>
     <p>
-        <%= f.password_field :password_confirmation, placeholder: "confirm password", class: "signup_inputs", disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
+        <%= f.password_field :password_confirmation, placeholder: "confirm password", class: "signup_inputs element_border_radius", disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
     </p>
     <p>
-        <%= f.submit class: "button", id: "user_form_btn" %>
+        <%= f.submit class: "button", id: "user_form_btn", class: "element_border_radius" %>
     </p>
 <% end %>
 
