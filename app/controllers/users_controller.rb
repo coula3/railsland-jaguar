@@ -21,17 +21,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  def get_user_errors_hash(user_errors)
-    errors_hash = {}
-    user_errors.uniq.each do |error|
-      errors_hash[:first_name] = error if error.include?("First name")
-      errors_hash[:last_name] = error if error.include?("Last name")
-      errors_hash[:email] = error if error.include?("Email") || error.include?("email")
-      errors_hash[:password] = error if error.include?("Password")
-    end
-    errors_hash
-  end
   
   def index
     if current_user.admin
@@ -65,6 +54,7 @@ class UsersController < ApplicationController
       if params[:user][:full_name]
         render :admin_edit 
       else
+        @user_errors = get_user_errors_hash(@user.errors.full_messages)
         render :edit
       end
     end
@@ -114,5 +104,16 @@ class UsersController < ApplicationController
     elsif !@user
       redirect_to user_workspace_path, notice: "User ##{params[:id]} does not exist"
     end
+  end
+
+  def get_user_errors_hash(user_errors)
+    errors_hash = {}
+    user_errors.uniq.each do |error|
+      errors_hash[:first_name] = error if error.include?("First name")
+      errors_hash[:last_name] = error if error.include?("Last name")
+      errors_hash[:email] = error if error.include?("Email") || error.include?("email")
+      errors_hash[:password] = error if error.include?("Password")
+    end
+    errors_hash
   end
 end
