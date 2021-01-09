@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :email, email: true
   validates :email, uniqueness: { case_sensitive: false }
   has_secure_password
-  validates :password, confirmation: true, :if => lambda{ new_record? || !password.nil? }
+  validates :password, confirmation: true, :if => lambda{ new_record? && password.present? }
 
   def admin?
     self.admin ? "Yes" : "No"
