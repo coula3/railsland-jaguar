@@ -6,11 +6,26 @@
             <h2>User - <%= link_to full_name(@user), admin_edit_path, :title => 'Edit User Profile' %></h2>
         <% end %>
         
-        <p><label class="label-width">Email </label><%= @user.email %></p>
-        <p><label class="label-width">System Role </label><%= @user.sys_role %></p>
-        <p><label class="label-width">Admin </label><%= @user.admin? %></p>
-        <p><label class="label-width">Account Status </label><%= @user.status.capitalize %></p>
-        <p><label class="label-width">Created on </label><%= readable_created_at(@user) %></p>
+        <p class="user_show_p">
+            <span class="user_show_caption">Email</span>
+            <span class="user_show_data"><%= @user.email %></span>
+        </p>
+        <p class="user_show_p">
+            <span class="user_show_caption">System Role</span>
+            <span class="user_show_data"><%= @user.sys_role %></span>
+        </p>
+        <p class="user_show_p">
+            <span class="user_show_caption">Admin</span>
+            <span class="user_show_data"><%= @user.admin? %></span>
+        </p>
+        <p class="user_show_p">
+            <span class="user_show_caption">Account Status</span>
+            <span class="user_show_data"><%= @user.status.capitalize %></span>
+        </p>
+        <p class="user_show_p">
+            <span class="user_show_caption">Created on</span>
+            <span class="user_show_data"><%= readable_created_at(@user) %></span>
+        </p>
     </div>
 
     <div class="bottom-navs">
