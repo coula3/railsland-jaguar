@@ -1,25 +1,40 @@
 <% if logged_in? %>
     <div id="top_navs_div">
-        <span class="top_navs_span"><%= link_to full_name(current_user), user_path(current_user), class: "top_navs_link link_style" if logged_in? && !current_user.first_name.blank? && !current_user.last_name.blank? %></span>
-        <span class="top_navs_span"><%= link_to 'My Workspace', user_workspace_path, class: "top_navs_link link_style" if logged_in? && !current_page?(controller: 'users', action: 'workspace') %></span>
-        <span class="top_navs_span"><%= link_to 'Sign Out', '/signout', class: "top_navs_link link_style" if logged_in? %></span>
+        <span class="span_margin_left"><%= link_to full_name(current_user), user_path(current_user), class: "top_navs_link link_style" if logged_in? && !current_user.first_name.blank? && !current_user.last_name.blank? %></span>
+        <span class="span_margin_left"><%= link_to 'My Workspace', user_workspace_path, class: "top_navs_link link_style" if logged_in? && !current_page?(controller: 'users', action: 'workspace') %></span>
+        <span class="span_margin_left"><%= link_to 'Sign Out', '/signout', class: "top_navs_link link_style" if logged_in? %></span>
     </div>
 <% end %>
 
-<div style="background-color: rgb(255, 250, 240, 0.85); padding: 10px; width: 410px; border-radius: 20px">
-    <div style="margin-bottom: 10px; text-align: right; padding-right: 10px">
-    <span><a href="https://www.jaguarusa.com/" target="_blank">JaguarUSA</a></span>
-    <span style="margin-left: 5px"><a href="#"><%= dealer.name %></a></span>
+<div id="dealer_info_div">
+    <div id="web_links_div">
+        <span>
+            <a href="https://www.jaguarusa.com/" class = "link_style" target="_blank">JaguarUSA</a>
+        </span>
+        <span class="span_margin_left">
+            <a href="#" class = "link_style"><%= dealer.name %></a>
+        </span>
     </div>
 
-    <div style="padding-left: 10px">
-        <span><label style="padding-right: 17px"><strong>Address: </strong></label><%= dealer.address %></span>
-        <div style="margin: 5px 0px 15px 0px">
-            <span><label style="padding-right: 45px"><strong>City: </strong></label><%= dealer.city %></span>
-            <span style="padding-left: 30px"><label style="padding-right: 17px"><strong>State: </strong></label><%= dealer.state %>, <%= dealer.zip %></span></span><br>
+    <div id="address_div" >
+        <span>
+            <label class="address_state_label"><strong>Address: </strong></label><%= dealer.address %>
+        </span>
+        <div id="city_state_div">
+            <span>
+                <label id="city_label"><strong>City: </strong></label><%= dealer.city %>
+            </span>
+            <span id="state_span">
+                <label class="address_state_label"><strong>State: </strong></label><%= dealer.state %>, <%= dealer.zip %></span>
+            </span><br>
         </div>
-        <span><label style="padding-right: 5px"><strong>Telephone: </strong></label><span style="color: red"><%= dealer.telephone %></span></span>
-        <span><label style="padding-left: 5px">(<%=dealer.vanity_number%>)</span></span>
+        <span>
+            <label id="label_margin_right"><strong>Telephone: </strong></label>
+            <span class="text_color"><%= dealer.telephone %></span>
+        </span>
+        <span>
+            <label id="label_margin_left">(<%= dealer.vanity_number %>)</label>
+        </span>
     </div>
     
     <table style="width: 75%">
