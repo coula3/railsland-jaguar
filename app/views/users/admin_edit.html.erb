@@ -24,7 +24,7 @@
             <% if @user != current_user %>
                 <%= f.select :sys_role, user_sys_role, {}, class: "admin_edits_select element_border_radius" %>
                 <%= f.select :status, user_status, {}, class: "admin_edits_select element_border_radius" %>
-                <span class="admin_edits_check_span">
+                <span id="admin_edits_check_span">
                     <%= f.check_box :admin, style: "display: inline-block;" %>
                     <%= f.label 'Admin', style: "font-size: 16px;"  %>
                 </span>
