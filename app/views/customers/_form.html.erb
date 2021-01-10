@@ -19,14 +19,16 @@
         <% end %>
 
         <%= form_for(@customer) do |f| %>
-            <%= f.text_field :first_name, placeholder: "first name" %>
-            <%= f.text_field :last_name, placeholder: "last name" %>
-            <%= f.text_field :email, placeholder: "email", size: 23 %>
-            <%= f.text_field :telephone, placeholder: "555-555-5555", size: 12 %>
-            <%= f.label 'Service Insurance' %>
-            <%= f.select :service_insurance, select_service_insurance %>
+            <%= f.text_field :first_name, placeholder: "first name", class: "customer_form_inputs element_border_radius" %>
+            <%= f.text_field :last_name, placeholder: "last name", class: "customer_form_inputs element_border_radius" %>
+            <%= f.text_field :email, placeholder: "email", class: "customer_form_inputs element_border_radius" %>
+            <%= f.text_field :telephone, placeholder: "555-555-5555", class: "customer_form_inputs element_border_radius" %>
+            <span id="customer_form_check_span">
+                <%= f.label 'Service Insurance' %>
+                <%= f.select :service_insurance, select_service_insurance, {}, id: "insurance_select", class: "element_border_radius" %>
+            </span>
 
-            <%= f.submit %>
+            <%= f.submit nil, id: "customer_form_btn", class: "element_border_radius" %>
         <% end %>
     </div>
 

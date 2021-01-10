@@ -19,3 +19,38 @@
     text-align: left;
     width: 240px;
 }
+
+.customer_form_inputs {
+    display: block;
+    width: 315px;
+    margin: 16px auto;
+    height: 25px;
+    padding: 2px 10px;
+    font-size: 16px
+}
+
+#customer_form_check_span {
+    display: block;
+    width: 335px;
+    margin: 16px auto;
+    height: 25px;
+    padding-top: 5px;
+    font-size: 17px
+}
+
+#insurance_select {
+    display: inline-block;
+    width: 70px;
+    margin-left: 10px;
+    padding: 2px 5px;
+}
+
+#customer_form_btn {
+    display: block;
+    width: 335px;
+    margin: 35px auto;
+    border: solid 2px #606060;
+    height: 35px;
+    padding-top: 3px;
+    font-size: 16px;
+}
