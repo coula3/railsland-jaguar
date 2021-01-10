@@ -1,9 +1,9 @@
 <div class="main-container">
     <div class="main-data">
         <% if current_user == @user %>
-            <h2>User - <%= link_to full_name(@user), edit_user_path, :title => 'Edit User Profile' %></h2>
+            <h2>User - <%= link_to full_name(@user), edit_user_path, :title => 'Edit User Profile', class: "user_show_h2_link" %></h2>
         <% else %>
-            <h2>User - <%= link_to full_name(@user), admin_edit_path, :title => 'Edit User Profile' %></h2>
+            <h2>User - <%= link_to full_name(@user), admin_edit_path, :title => 'Edit User Profile', class: "user_show_h2_link" %></h2>
         <% end %>
         
         <p class="user_show_p">
