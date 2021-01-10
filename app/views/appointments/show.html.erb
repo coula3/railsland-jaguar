@@ -1,7 +1,7 @@
 <div class="main-container">
     <div class="main-data">
         <div style="margin-bottom: 50px">
-            <h2>Customer - <%= link_to full_name(@appointment.customer), customer_path(@appointment.customer), :title => 'Customer Profile' %></h2>
+            <h2>Customer - <%= link_to full_name(@appointment.customer), customer_path(@appointment.customer), :title => 'Customer Profile', class: "link_style" %></h2>
             <p><label class="label-width">Telephone </label><%= @appointment.customer.telephone %></p>
             <p><label class="label-width">Service Insurance </label><%= @appointment.customer.has_service_insurance? %></p>
         </div>
