@@ -1,3 +1,44 @@
 // Place all the styles related to the appointments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.appointment_form_select {
+    display: block;
+    width: 335px;
+    margin: 16px auto;
+    border: solid 2px #606060;
+    height: 32.5px;
+    padding: 5px 6px;
+    font-size: 16px;
+}
+
+.appointment_form_inputs {
+    display: block;
+    width: 315px;
+    margin: 16px auto;
+    height: 25px;
+    padding: 2px 10px;
+    font-size: 16px
+}
+
+#appointment_form_btn {
+    display: block;
+    width: 335px;
+    margin: 35px auto;
+    border: solid 2px #606060;
+    height: 35px;
+    padding-top: 3px;
+    font-size: 16px;
+}
+
+#appt_form_div {
+    margin-top: 40px;
+}
+
+.appt_form_header_label {
+    color: #0000ff;
+}
+
+#appt_form_sub_div {
+    margin: 15px 0px
+}
