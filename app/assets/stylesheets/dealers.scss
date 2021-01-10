@@ -2,6 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+#top_navs_div {
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.top_navs_span {
+    margin-left: 5px;
+}
+
+.top_navs_link {
+    background-color: #fffaf0;
+    padding: 0px 5px;
+    border-radius: 20px;
+}
+
+
 .dealer_edit_p {
     width: 400px;
     margin: 16px auto;
