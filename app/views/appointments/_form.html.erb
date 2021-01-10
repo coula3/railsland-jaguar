@@ -2,13 +2,13 @@
     <div class="main-data">
         <div>
             <% if !@appointment.id %>
-                <h2>Create New Appointment</h2> 
+                <h2>New Appointment</h2>
             <% else %>
                 <h2>Edit Appointment</h2>
             <% end %>
         </div>
        
-        <h3>Customer - <%= link_to full_name(@customer), customer_path(@customer), element_border_radius %></h3>
+        <h2>Customer - <%= link_to full_name(@customer), customer_path(@customer), class: "h2_link_style"%></h2>
 
         <%= render 'customers/append_customer_data' %>
 
