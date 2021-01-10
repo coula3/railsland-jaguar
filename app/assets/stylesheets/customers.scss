@@ -1,3 +1,21 @@
 // Place all the styles related to the customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.customer_show_p {
+    width: 400px;
+    margin: 16px auto;
+}
+
+.customer_show_caption {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.customer_show_data {
+    display: inline-block;
+    text-align: left;
+    width: 240px;
+}

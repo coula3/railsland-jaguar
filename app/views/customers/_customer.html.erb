@@ -1,4 +1,19 @@
-<p><label class="label-width">Email </label><%= @customer.email %></p>
-<p><label class="label-width">Telephone </label><%= @customer.telephone %></p>
-<p><label class="label-width">Service Insurance </label><%= @customer.has_service_insurance? %></p>
-<p><label class="label-width">Created on </label><%= readable_created_at(@customer) %></p>
+<p class="customer_show_p">
+    <span class="customer_show_caption">Email</span>
+    <span class="customer_show_data"><%= @customer.email %></span>
+</p>
+
+<p class="customer_show_p">
+    <span class="customer_show_caption">Telephone</span>
+    <span class="customer_show_data"><%= @customer.telephone %></span>
+</p>
+
+<p class="customer_show_p">
+    <span class="customer_show_caption">Service Insurance</span>
+    <span class="customer_show_data"><%= @customer.has_service_insurance? %></span>
+</p>
+
+<p class="customer_show_p">
+    <span class="customer_show_caption">Created on</span>
+    <span class="customer_show_data"><%= readable_created_at(@customer) %></span>
+</p>
