@@ -1,8 +1,14 @@
 <% if logged_in? %>
     <div id="top_navs_div">
-        <span class="span_margin_left"><%= link_to full_name(current_user), user_path(current_user), class: "top_navs_link link_style" if logged_in? && !current_user.first_name.blank? && !current_user.last_name.blank? %></span>
-        <span class="span_margin_left"><%= link_to 'My Workspace', user_workspace_path, class: "top_navs_link link_style" if logged_in? && !current_page?(controller: 'users', action: 'workspace') %></span>
-        <span class="span_margin_left"><%= link_to 'Sign Out', '/signout', class: "top_navs_link link_style" if logged_in? %></span>
+        <span class="span_margin_left">
+            <%= link_to full_name(current_user), user_path(current_user), class: "top_navs_link link_style" if logged_in? && !current_user.first_name.blank? && !current_user.last_name.blank? %>
+        </span>
+        <span class="span_margin_left">
+            <%= link_to 'My Workspace', user_workspace_path, class: "top_navs_link link_style" if logged_in? && !current_page?(controller: 'users', action: 'workspace') %>
+        </span>
+        <span class="span_margin_left">
+            <%= link_to 'Sign Out', '/signout', class: "top_navs_link link_style" if logged_in? %>
+        </span>
     </div>
 <% end %>
 
