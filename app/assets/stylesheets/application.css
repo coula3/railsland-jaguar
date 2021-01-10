@@ -68,3 +68,7 @@ a.hov-link:hover {
 .element_border_radius {
     border-radius: 15px;
 }
+
+.link_style {
+    text-decoration: none;
+}
