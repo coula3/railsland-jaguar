@@ -10,7 +10,7 @@
        
         <h3>Customer - <%= link_to full_name(@customer), customer_path(@customer), class: "link_style" %></h3>
 
-        <%= render 'customers/app_customer_data' %>
+        <%= render 'customers/append_customer_data' %>
 
         <% if @appointment.errors.any? %>
             <div id="error_explanation">
