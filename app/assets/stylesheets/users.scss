@@ -35,7 +35,48 @@
     width: 315px;
     height: 25px;
     padding: 2px 10px;
-    font-size:16px;
+    font-size: 16px
+}
+
+.admin_edits_inputs {
+    display: block;
+    width: 315px;
+    margin: 16px auto;
+    height: 25px;
+    padding: 2px 10px;
+    font-size: 16px;
+}
+
+.admin_edits_inputs_background {
+    background: #f0f0f5;
+}
+
+.admin_edits_select {
+    display: block;
+    width: 335px;
+    margin: 16px auto;
+    border: solid 2px #606060;
+    height: 32.5px;
+    padding: 5px 6px;
+    font-size: 16px;
+}
+
+.admin_edits_check_span {
+    display: block;
+    width: 335px;
+    margin: 16px auto;
+    // border: solid 1px;
+    height: 25px;
+    padding-top: 5px;
+}
+
+#admin_edits_btn {
+    display: block;
+    width: 335px;
+    margin: 16px auto;
+    border: solid 2px #606060;
+    height: 35px;
+    padding-top: 3px;
 }
 
 .button {

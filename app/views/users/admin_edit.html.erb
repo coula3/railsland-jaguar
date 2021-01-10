@@ -14,21 +14,23 @@
         
         <%= form_for(@user) do |f| %>    
             <% if @user != current_user %>
-                <%= f.text_field :full_name, size: 30, :style => "background: #f0f0f5", :readonly => true %>
-                <%= f.text_field :email, size: 25, :style => "background: #f0f0f5", :readonly => true %>
+                <%= f.text_field :full_name, class: "admin_edits_inputs admin_edits_inputs_background element_border_radius", :readonly => true %>
+                <%= f.text_field :email, class: "admin_edits_inputs admin_edits_inputs_background element_border_radius", :readonly => true %>
             <% else %>
-                <%= f.text_field :full_name, size: 30, :style => "background: #f0f0f5", :readonly => true %>
-                <%= f.text_field :email, size: 25 %>
+                <%= f.text_field :full_name, class: "admin_edits_inputs admin_edits_inputs_background element_border_radius", :readonly => true %>
+                <%= f.text_field :email, class: "admin_edits_inputs element_border_radius" %>
             <% end %>
 
             <% if @user != current_user %>
-                <%= f.select :sys_role, user_sys_role %>
-                <%= f.select :status, user_status %>
-                <%= f.check_box :admin %>
-                <%= f.label 'Admin' %>
+                <%= f.select :sys_role, user_sys_role, {}, class: "admin_edits_select element_border_radius" %>
+                <%= f.select :status, user_status, {}, class: "admin_edits_select element_border_radius" %>
+                <span class="admin_edits_check_span">
+                    <%= f.check_box :admin, style: "display: inline-block;" %>
+                    <%= f.label 'Admin', style: "font-size: 16px;"  %>
+                </span>
             <% end %>
 
-            <%= f.submit %>
+            <%= f.submit nil, id: "admin_edits_btn", class: "element_border_radius" %>
         <% end %>
     </div>
 
