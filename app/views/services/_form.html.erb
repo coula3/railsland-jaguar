@@ -1,6 +1,6 @@
 <div class="main-container">
     <div class="main-data">
-        <div>
+        <div id="service_h2_div">
             <% if !@service.id %>
                 <h2>Create New Service</h2> 
             <% else %>
@@ -8,20 +8,22 @@
             <% end %>
         </div>
 
-        <% if @service.errors.any? %>
-            <div id="error_explanation">
-                <ul>
-                    <% @service.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                </ul>
-            </div>
-        <% end %>
-        
-        <%= form_for(@service) do |f| %>
-            <%= f.text_field :name, size: 30 %>
-            <%= f.submit %>
-        <% end %>
+        <div id="service_form_div">
+            <% if @service.errors.any? %>
+                <div id="error_explanation">
+                    <ul id="service_form_ul">
+                        <% @service.errors.full_messages.each do |message| %>
+                            <li id="service_error_li"><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+
+            <%= form_for(@service) do |f| %>
+                <%= f.text_field :name, class: "service_inputs", placeholder: "enter service name" %>
+                <%= f.submit id: "services_form_btn" %>
+            <% end %>
+        </div>
     </div>
 
     <div class="bottom-navs">
