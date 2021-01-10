@@ -35,7 +35,7 @@
     <div class="bottom-navs">
         <span style="margin-right: 5px"><%= user_workspace %></span>
         <span style="margin-right: 5px"><%= service_customers if !@customer.id %></span> 
-        <span style="margin-right: 5px"><%= link_to "Customer's Profile", customer_path(@customer) if !!@customer.id %></span>
+        <span style="margin-right: 5px"><%= link_to "#{@customer.first_name}'s Profile", customer_path(@customer) if !!@customer.id %></span>
     </div>
 </div>
 
