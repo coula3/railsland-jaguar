@@ -43,10 +43,10 @@ class AppointmentsController < ApplicationController
       elsif @customer.appointments.size == 0
         redirect_to customer_path(@customer), notice: "No appointment record"
       else
-        @appointments = @customer.appointments.order(:date)
+        @appointments = @customer.appointments.order(date: :desc)
       end
     else
-      @appointments = Appointment.order(:date)
+      @appointments = Appointment.order(date: :desc)
     end
   end
 
