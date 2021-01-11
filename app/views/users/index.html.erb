@@ -24,7 +24,7 @@
                 <tbody>
                     <tr>
                         <td style="text-align: left"><%= index%></td>
-                        <td style="text-align: left"><%= link_to full_name(user), user_path(user), :title => 'User Profile' %></td>
+                        <td style="text-align: left"><%= link_to last_name_first_name(user), user_path(user), :title => 'User Profile' %></td>
                         <td style="text-align: left"><%= user.email %></td>
                         <td style="text-align: left"><%= user.sys_role %></td>
                         <td style="text-align: left; width: 20px"><%= user.status.capitalize %></td>
