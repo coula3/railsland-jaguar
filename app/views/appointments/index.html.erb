@@ -23,12 +23,13 @@
             <thead>
                 <tr>
                     <th>&nbsp</th>
-                    <th style="width: 100px">Date</th>
+                    <th style="width: 85px">Date</th>
                     <th style="width: 20px">Time</th>
                     <th style="width: 110px">Vehicle Model</th>
                     <th style="width: 15px">Year</th>
-                    <th style="width: 120px">Status</th>
+                    <th style="width: 130px">Status</th>
                     <th>Service</th>
+
                     <% if multiple_customer_appointments?(@appointments) %>
                         <th> <%= display_customer_header(@appointments) %></th>
                         <th style="width: 40px"><%= display_service_insurance_header(@appointments) %></th>
@@ -39,7 +40,7 @@
             <% @appointments.each.with_index(1) do |appointment, index| %>
                 <tbody>
                     <tr>
-                        <td><%= index%></td>
+                        <td><%= index %></td>
                         <td><%= link_to readable_date(appointment), customer_appointment_path(appointment.customer, appointment), :title => 'Appointment Details' %></td>
                         <td><%= readable_time(appointment) %></td>
                         <td><%= appointment.veh_model %></td>
@@ -54,11 +55,14 @@
                         <% end %>
 
                         <td><%= appointment.service.name %></td>
+
                         <% if multiple_customer_appointments?(@appointments) %>
                             <td><%= link_to full_name(appointment.customer), customer_appointments_path(appointment.customer), :title => 'Customer Appointments' %></td>
                             <td style="text-align: center"><%= appointment.customer.has_service_insurance? %></td>
                         <% end %>
+
                         <td><%= link_to 'Edit', edit_customer_appointment_path(appointment.customer, appointment) %></td>
+
                         <% if current_user.admin && single_customer_appointments?(@appointments) %>
                             <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
                         <% end %>
