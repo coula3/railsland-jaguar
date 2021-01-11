@@ -19,9 +19,11 @@ class CustomersController < ApplicationController
 
   def index
     if params[:q]
-      @customers = Customer.search(params[:q])
+      results = Customer.search(params[:q])
+      @customers = results.sort_by { |result| result.last_name }
     else
-      @customers = Customer.all
+      customers = Customer.all
+      @customers = customers.sort_by {|customer| customer.last_name }
     end
   end
 
