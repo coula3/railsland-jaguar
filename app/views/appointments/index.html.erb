@@ -47,9 +47,9 @@
                         <td><%= appointment.model_year %></td>
 
                         <% if appointment.status == "Open" %>
-                            <td style="color:red"><%= appointment.status %></td>
+                            <td style="color:#ff0000"><%= appointment.status %></td>
                         <% elsif appointment.status == "Service Completed" %>
-                            <td style="color:green"><%= appointment.status %></td>
+                            <td style="color:#008000"><%= appointment.status %></td>
                         <% elsif appointment.status != "Open" || appointment.status != "Service Completed" %>
                             <td style="color:nil"><%= appointment.status %></td>
                         <% end %>
@@ -58,7 +58,11 @@
 
                         <% if multiple_customer_appointments?(@appointments) %>
                             <td><%= link_to full_name(appointment.customer), customer_appointments_path(appointment.customer), :title => 'Customer Appointments' %></td>
-                            <td style="text-align: center"><%= appointment.customer.has_service_insurance? %></td>
+                            <% if appointment.customer.has_service_insurance? == "Yes" %>
+                                <td style="text-align: center; color:#008000"><%= appointment.customer.has_service_insurance? %></td>
+                            <% else %>
+                                <td style="text-align: center; color:nil"><%= appointment.customer.has_service_insurance? %></td>
+                            <% end %>
                         <% end %>
 
                         <td><%= link_to 'Edit', edit_customer_appointment_path(appointment.customer, appointment) %></td>
