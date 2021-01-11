@@ -5,13 +5,13 @@
         </div>
 
         <% if flash[:notice] %>
-            <div style="margin-top: 25px; margin-bottom: 15px; padding: 0px 15px 0px 15px; background-color: #e6ffe6; display: inline">
+            <div id="customers_notice_div">
                 <%= notice %>
-            </div><br><br>
+            </div>
         <% end %>
 
         <%= form_tag customers_path, method: 'get', style: "display: inline" do %>
-            <%= text_field_tag :q, params[:q], style: "text-align: center", placeholder: "first name only" %>
+            <%= text_field_tag :q, params[:q], id: "search_input", placeholder: "search text" %>
             <%= submit_tag "Search", :name => nil %>
         <% end %>
 
@@ -26,7 +26,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Telephone</th>
-                    <th>Serv. Insurance</th>
+                    <th class="customers_insurance_response">Serv. Insurance</th>
                 </tr>
             </thead>
             
@@ -37,11 +37,11 @@
                         <td><%= link_to full_name(customer), customer_path(customer), :title => 'Customer Profile' %></td>
                         <td><%= customer.email %></td>
                         <td><%= customer.telephone %></td>
-                        <td style="text-align: center"><%= customer.has_service_insurance? %></td>
-                        <td style="width: 15px"><%= link_to 'View', customer_path(customer) %></td>
-                        <td style="width: 15px"><%= link_to 'Edit', edit_customer_path(customer) %></td>
+                        <td class="customers_insurance_response"><%= customer.has_service_insurance? %></td>
+                        <td class="customers_td_width"><%= link_to 'View', customer_path(customer) %></td>
+                        <td class="customers_td_width"><%= link_to 'Edit', edit_customer_path(customer) %></td>
                         <% if current_user.admin %>
-                            <td style="text-align: left; width: 15px"><%= link_to "Delete", customer, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                            <td class="customers_td_text_align customers_td_width"><%= link_to "Delete", customer, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
                         <% end %>
                     </tr>
                 <% end %>
