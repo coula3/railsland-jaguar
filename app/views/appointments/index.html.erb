@@ -45,11 +45,11 @@
                         <td><%= appointment.veh_model %></td>
                         <td><%= appointment.model_year %></td>
 
-                        <% if appointment.status == "open" %>
+                        <% if appointment.status == "Open" %>
                             <td style="color:red"><%= appointment.status %></td>
-                        <% elsif appointment.status == "service completed" %>
+                        <% elsif appointment.status == "Service Completed" %>
                             <td style="color:green"><%= appointment.status %></td>
-                        <% elsif appointment.status != "open" || appointment.status != "service completed" %>
+                        <% elsif appointment.status != "Open" || appointment.status != "Service Completed" %>
                             <td style="color:nil"><%= appointment.status %></td>
                         <% end %>
 
