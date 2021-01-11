@@ -44,7 +44,15 @@
                         <td><%= readable_time(appointment) %></td>
                         <td><%= appointment.veh_model %></td>
                         <td><%= appointment.model_year %></td>
-                        <td><%= appointment.status %></td>
+
+                        <% if appointment.status == "open" %>
+                            <td style="color:red"><%= appointment.status %></td>
+                        <% elsif appointment.status == "service completed" %>
+                            <td style="color:green"><%= appointment.status %></td>
+                        <% elsif appointment.status != "open" || appointment.status != "service completed" %>
+                            <td style="color:nil"><%= appointment.status %></td>
+                        <% end %>
+
                         <td><%= appointment.service.name %></td>
                         <% if multiple_customer_appointments?(@appointments) %>
                             <td><%= link_to full_name(appointment.customer), customer_appointments_path(appointment.customer), :title => 'Customer Appointments' %></td>
