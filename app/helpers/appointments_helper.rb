@@ -1,6 +1,6 @@
 module AppointmentsHelper
     def select_status
-        status ||= ["open", "rescheduled", "cancelled", "no-show", "service completed"]
+        status ||= ["Open", "Re-scheduled", "Cancelled", "No-show", "Service Completed"]
     end
 
     def veh_models
