@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   
   def index
     if current_user.admin
-      @users = User.order(:first_name)
+      @users = User.order(:last_name)
     else
       redirect_to user_workspace_path, notice: unauthorized_access_msg
     end
