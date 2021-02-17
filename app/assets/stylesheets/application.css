@@ -108,3 +108,22 @@ a {
     color: #fff;
     display: inline-block;
 }
+
+@media (max-width: 1600px) {
+    #dealer_name_div h1 {
+        color: #acacac;
+    }
+}
+
+@media (max-width: 800px) {
+    #dealer_name_div h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    #dealer_name_div h1 {
+        font-size: 2rem;
+        padding: 10px 0 0 0;
+    }
+}
