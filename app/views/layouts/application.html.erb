@@ -11,16 +11,16 @@
   </head>
 
   <body>
-    <% if logged_in?%>
-      <%= render 'layouts/application_log_in' %>
-    <% else %>
-      <%= render 'layouts/application_log_out' %>
-    <% end %>
+    <div class="img_container">
+      <% if logged_in?%>
+        <%= render 'layouts/application_log_in' %>
+      <% else %>
+        <%= render 'layouts/application_log_out' %>
+      <% end %>
 
-    <div class="wrapper" style="max-width: 1080px; margin: 16px auto; border-style: solid; border-color: transparent; clear: both">
-   
-      <%= yield %>
-    
+      <div class="wrapper">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
