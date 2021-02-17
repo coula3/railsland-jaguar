@@ -123,7 +123,7 @@ a {
 
 @media (max-width: 500px) {
     #dealer_name_div h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
         padding: 10px 0 0 0;
     }
 }
