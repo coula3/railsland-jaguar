@@ -1,12 +1,9 @@
 <div id="signin_div">
     <div id="signin_form_div">
         <%= form_tag signin_path do %>
-            <p>
-                <%= text_field_tag :email, nil, class: "signin_inputs element_border_radius", placeholder: "email" %>
-            </p>
-            <p>
-                <%= password_field_tag :password, nil, class: "signin_inputs element_border_radius", placeholder: "password" %>
-            </p>
+            <%= text_field_tag :email, nil, class: "signin_inputs element_border_radius", placeholder: "email" %>
+
+            <%= password_field_tag :password, nil, class: "signin_inputs element_border_radius", placeholder: "password" %>
 
             <% if flash[:notice] %>
                 <span id="signin_span_errors" class="element_border_radius">

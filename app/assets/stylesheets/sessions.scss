@@ -7,9 +7,14 @@
     margin: 36.5px auto;
 }
 
+
 #signin_form_div {
+    padding-top: 40px;
     text-align: center;
-    padding-top: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
 }
 
 #signup_link {
@@ -19,7 +24,7 @@
     text-align: center;
     vertical-align: middle;
     display: inline-block;
-    width: 315px;
+    width: 320px;
     height: 25px;
     padding: 4px 5px 0px 5px;
     border: solid 2px #808080;
@@ -38,23 +43,95 @@
     height: 32px;
 }
 
+#signin_btn, .signin_inputs, #signup_link {
+    font-size: inherit;
+}
+
 #signin_btn {
     background: #C0C0C0;
-    width: 330px;
-    height: 35px;
-    font-size: 16px;
+    width: 335px;
+    height: 32.5px;
 }
 
 .signin_inputs {
     width: 315px;
     height: 25px;
     padding: 2px 10px;
-    font-size:16px;
+    display: block;
+    margin: 15px 0;
 }
 
 #signin_span_errors  {
     background-color: #fff;
     color: red;
     padding: 2px 10px;
-    font-size: 14px;
+    font-size: 0.75rem;
+}
+
+@media (max-width: 1600px) {
+    #dealer_name_div h1 {
+        color: #acacac;
+    }
+}
+
+@media (max-width: 800px) {
+    #dealer_name_div h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 550px) {
+    #dealer_name_div h1 {
+        font-size: 2rem;
+        padding-left: 0;
+        padding: 10px 0 0 0;
+    }
+
+    #signin_btn, .signin_inputs, #signup_link {
+        font-size: 0.875rem;
+    }
+
+    #signin_form_div {
+        padding-top: 55px;
+        top: 67.5%;
+    }
+
+    .signin_inputs {
+        width: 230px;
+        height: 20px;
+        margin: 5px 0;
+    }
+
+    #signin_btn_p {
+        margin-top: 15px;
+        margin-bottom: -10px;
+    }
+
+    #signin_btn {
+        width: 250px;
+        height: 28px;
+    }
+
+    #signup_link {
+        width: 250px;
+        height: 20px;
+        padding: 2px 0;
+    }
+
+    #facebook_p {
+        margin-top: 20px;
+    }
+
+    #facebook_img {
+        width: 120px;
+        height: 25px;
+    }
+
+    #signin_span_errors  {
+        font-size: 0.6rem;
+    }
+
+    .address_label {
+        width: 65px;
+    }
 }
