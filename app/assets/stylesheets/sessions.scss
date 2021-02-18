@@ -7,7 +7,6 @@
     margin: 36.5px auto;
 }
 
-
 #signin_form_div {
     padding-top: 40px;
     text-align: center;
@@ -68,25 +67,7 @@
     font-size: 0.75rem;
 }
 
-@media (max-width: 1600px) {
-    #dealer_name_div h1 {
-        color: #acacac;
-    }
-}
-
-@media (max-width: 800px) {
-    #dealer_name_div h1 {
-        font-size: 3.5rem;
-    }
-}
-
-@media (max-width: 550px) {
-    #dealer_name_div h1 {
-        font-size: 2rem;
-        padding-left: 0;
-        padding: 10px 0 0 0;
-    }
-
+@media (max-width: 500px) {
     #signin_btn, .signin_inputs, #signup_link {
         font-size: 0.875rem;
     }
