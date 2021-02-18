@@ -22,24 +22,25 @@
         </span>
     </div>
 
-    <div id="address_div" >
-        <span>
-            <label class="address_state_label"><strong>Address: </strong></label><%= dealer.address %>
-        </span>
-        <div id="city_state_div">
+    <div id="address_telephone_div" >
+        <div id="address_sub_div">
             <span>
-                <label id="city_label"><strong>City: </strong></label><%= dealer.city %>
-            </span>
-            <span id="state_span">
-                <label class="address_state_label"><strong>State: </strong></label><%= dealer.state %>, <%= dealer.zip %></span>
+                <label class="dealer_info_label"><strong>Address:</strong></label><%= dealer.address %>
             </span><br>
+            <span>
+                <label class="dealer_info_label"><strong>City:</strong></label><%= dealer.city %>
+            </span><br>
+            <span id="state_span">
+                <label class="dealer_info_label"><strong>State:</strong></label><%= dealer.state %>, <%= dealer.zip %></span>
+            </span>
         </div>
+
         <span>
-            <label id="label_margin_right"><strong>Telephone: </strong></label>
+            <label class="dealer_info_label"><strong>Telephone:</strong></label>
             <span class="text_color"><%= dealer.telephone %></span>
         </span>
-        <span>
-            <label id="label_margin_left">(<%= dealer.vanity_number %>)</label>
+        <span class="span_margin_left">
+            (<%= dealer.vanity_number %>)
         </span>
     </div>
     
