@@ -4,7 +4,7 @@
     </p>
 
     <% if @user.errors.any? && @user_errors[:first_name] %>
-        <span id="signin_span_errors" class="element_border_radius"> <%= @user_errors[:first_name] %> </span>
+        <span class="signup_errors_span element_border_radius"> <%= @user_errors[:first_name] %> </span>
     <% end %>
 
     <p>
@@ -12,7 +12,7 @@
     </p>
 
     <% if @user.errors.any? && @user_errors[:last_name] %>
-        <span id="signin_span_errors" class="element_border_radius"> <%= @user_errors[:last_name] %> </span>
+        <span class="signup_errors_span element_border_radius"> <%= @user_errors[:last_name] %> </span>
     <% end %>
 
     <p>
@@ -20,7 +20,7 @@
     </p>
 
     <% if @user.errors.any? && @user_errors[:email] %>
-        <span id="signin_span_errors" class="element_border_radius"> <%= @user_errors[:email] %> </span>
+        <span class="signup_errors_span element_border_radius"> <%= @user_errors[:email] %> </span>
     <% end %>
 
     <p>
@@ -31,7 +31,7 @@
     </p>
 
     <% if @user.errors.any? && @user_errors[:password] %>
-        <span id="signin_span_errors" class="element_border_radius"> <%= @user_errors[:password] %> </span>
+        <span class="signup_errors_span element_border_radius"> <%= @user_errors[:password] %> </span>
     <% end %>
 
     <p>
