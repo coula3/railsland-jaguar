@@ -1,5 +1,5 @@
 <%= form_for(@user, url: signup_url(@user)) do |f| %>
-    <p>
+    <p class="signup_inputs_p">
         <%= f.text_field :first_name, placeholder: "first name", class: "signup_inputs element_border_radius" %>
     </p>
 
@@ -7,7 +7,7 @@
         <span class="signup_errors_span element_border_radius"> <%= @user_errors[:first_name] %> </span>
     <% end %>
 
-    <p>
+    <p class="signup_inputs_p">
         <%= f.text_field :last_name, placeholder: "last name", class: "signup_inputs element_border_radius" %>
     </p>
 
@@ -15,7 +15,7 @@
         <span class="signup_errors_span element_border_radius"> <%= @user_errors[:last_name] %> </span>
     <% end %>
 
-    <p>
+    <p class="signup_inputs_p">
         <%= f.text_field :email, placeholder: "email", class: "signup_inputs element_border_radius" %>
     </p>
 
@@ -26,7 +26,7 @@
     <p>
         <%= f.password_field :password, placeholder: "password", class: "signup_inputs element_border_radius", disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
     </p>
-    <p>
+    <p class="signup_inputs_p">
         <%= f.password_field :password_confirmation, placeholder: "confirm password", class: "signup_inputs element_border_radius", disabled: (true if logged_in? && !current_user.uid) && (current_user.first_name.blank? || current_user.last_name.blank?) %>
     </p>
 
