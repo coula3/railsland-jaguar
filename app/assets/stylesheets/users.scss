@@ -139,3 +139,25 @@
     text-align: left;
     width: 240px;
 }
+
+@media (max-width: 500px) {
+    #user_form_btn, .signup_inputs, #home_link {
+        font-size: 0.875rem;
+    }
+
+    .signup_inputs {
+        width: 230px;
+        height: 20px;
+    }
+
+    #user_form_btn {
+        width: 250px;
+        height: 30px;
+    }
+
+    #home_link {
+        background-color: #abacac;
+        color: #fff;
+        width: 120px;
+    }
+}
