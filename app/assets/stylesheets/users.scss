@@ -4,7 +4,10 @@
 
 #signup_main_div {
     width: 400px;
-    margin: 0px auto;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #signup_div {
