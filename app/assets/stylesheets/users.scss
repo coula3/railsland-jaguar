@@ -19,7 +19,7 @@
 #signup_header {
     color: white;
     text-align: left;
-    font-size: 30px;
+    font-size: 1.875rem;
     margin: 10px 0px 0px 0px;
 }
 
@@ -28,14 +28,14 @@
     color: #fff;
     width: 330px;
     height: 35px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .signup_inputs {
     width: 315px;
     height: 25px;
     padding: 2px 10px;
-    font-size: 16px
+    font-size: 1rem;
 }
 
 #named_workspace {
@@ -57,7 +57,7 @@
 
 #workspace_notice_span {
     background-color: #e6ffe6;
-    padding: 0px 15px 0 15px;
+    padding: 0px 15px;
 }
 
 #workspace_link_div {
@@ -75,7 +75,7 @@
     margin: 16px auto;
     height: 25px;
     padding: 2px 10px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .admin_edits_inputs_background {
@@ -89,14 +89,13 @@
     border: solid 2px #606060;
     height: 32.5px;
     padding: 5px 6px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 #admin_edits_check_span {
     display: block;
     width: 335px;
     margin: 16px auto;
-    // border: solid 1px;
     height: 25px;
     padding-top: 5px;
 }
@@ -119,8 +118,8 @@
     text-decoration: none;
     display: inline-block;
     width: 200px;
-    font-size: 16px;
     padding: 3px 0px;
+    font-size: 1rem;
 }
 
 .user_show_p {
