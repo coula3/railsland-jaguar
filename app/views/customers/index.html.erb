@@ -26,7 +26,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Telephone</th>
-                    <th class="customers_insurance_response">Serv. Insurance</th>
+                    <th class="customers_insurance_th">Serv. Insurance</th>
                 </tr>
             </thead>
             
@@ -37,9 +37,17 @@
                         <td><%= link_to last_name_first_name(customer), customer_path(customer), :title => 'Customer Profile' %></td>
                         <td><%= customer.email %></td>
                         <td><%= customer.telephone %></td>
-                        <td class="customers_insurance_response"><%= customer.has_service_insurance? %></td>
+
+                        <% if customer.has_service_insurance? == "Yes" %>
+                            <td class="customers_insurance_td1"><%= customer.has_service_insurance? %></td>
+                        <% else %>
+                            <td class="customers_insurance_td2"><%= customer.has_service_insurance? %></td>
+                        <% end %>
+
                         <td class="customers_td_width"><%= link_to 'View', customer_path(customer) %></td>
+
                         <td class="customers_td_width"><%= link_to 'Edit', edit_customer_path(customer) %></td>
+
                         <% if current_user.admin %>
                             <td class="customers_td_text_align customers_td_width"><%= link_to "Delete", customer, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
                         <% end %>
