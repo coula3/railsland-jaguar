@@ -30,7 +30,7 @@
     background: #006400;
     color: #fff;
     width: 330px;
-    height: 35px;
+    height: 34px;
     font-size: 1rem;
 }
 
@@ -166,20 +166,21 @@
 
     #signup_main_div {
         width: 250px;
-        position: absolute;
         top: 72%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    }
+
+    #signup_div {
+        margin-bottom: 15px;
     }
 
     .signup_inputs {
         width: 230px;
-        height: 17.5px;
+        height: 18px;
     }
 
     #user_form_btn {
         width: 250px;
-        height: 24px;
+        height: 27px;
     }
 
     #home_link {
