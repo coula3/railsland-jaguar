@@ -3,6 +3,20 @@
         <h1 style="font-size: 75px; margin-left: 50px; color: white"><%= dealer.name %></h1>
     </div>
 
+    <% if logged_in? %>
+        <div id="top_navs_div">
+            <span class="span_margin_left">
+                <%= link_to full_name(current_user), user_path(current_user), class: "top_navs_link" if logged_in? && !current_user.first_name.blank? && !current_user.last_name.blank? %>
+            </span>
+            <span class="span_margin_left">
+                <%= link_to 'My Workspace', user_workspace_path, class: "top_navs_link" if logged_in? && !current_page?(controller: 'users', action: 'workspace') %>
+            </span>
+            <span class="span_margin_left">
+                <%= link_to 'Sign Out', '/signout', class: "top_navs_link" if logged_in? %>
+            </span>
+        </div>
+    <% end %>
+
     <div style="float: right; margin-right: 30px">
         <%= render 'layouts/dealer_address'%>
     </div>
