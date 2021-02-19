@@ -25,7 +25,7 @@ module AppointmentsHelper
     end
 
     def display_service_insurance_header(collection)
-        "Insurance" if collection.distinct.count(:customer_id) > 1
+        "Ins" if collection.distinct.count(:customer_id) > 1
     end
 
     def service_appointments
