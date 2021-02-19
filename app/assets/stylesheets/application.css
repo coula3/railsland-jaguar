@@ -32,19 +32,21 @@ body {
     background-attachment: fixed;
 }
 
-div .main-container {
-    margin: 25px;
-    border-radius: 20px;
-    background:  rgba(255, 255, 255, 0.9);
-}
-
 .wrapper {
-    max-width: 1080px;
+    max-width: 67.5%;
     margin: auto;
     margin-top: 20px;
     border-style: solid;
     border-color: transparent;
     clear: both;
+}
+
+.main-container {
+    width: 95%;
+    min-width: 250px;
+    margin: 16px auto;
+    border-radius: 20px;
+    background:  rgba(255, 255, 255, 0.9);
 }
 
 #dealer_name_div h1 {
@@ -56,14 +58,14 @@ div .main-container {
 }
 
 div .main-data {
-    margin-bottom: 50px;
-    padding: 25px 50px 0px 50px;
+    margin-bottom: 25px;
+    padding: 25px;
     text-align: center;
 }
 
 div .bottom-navs {
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 .navs_span {
@@ -80,7 +82,7 @@ table {
   
  th, td {
     text-align: left;
-    padding: 5px 5px 5px 10px;
+    padding: 5px;
  }
  
 .label-width {
