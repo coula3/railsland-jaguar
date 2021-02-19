@@ -52,31 +52,28 @@
     margin-bottom: 0;
 }
 
-#named_workspace {
-    margin: 25px 0px 50px 0px;
-    padding-left: 25px;
-    padding-top: 25px;
+#my_workspace {
+    min-width: 240px;
+    margin: auto;
+    padding: 25px;
+    text-align: center;
 }
 
-#first_name_h1 {
+#workspace_h1 {
     color: blue;
-    display: inline;
-    padding-left: 5px;
+    margin: 0;
 }
 
 #workspace_msg_div {
     margin-bottom: 25px;
-    padding-left: 50px;
 }
 
 #workspace_notice_span {
     background-color: #e6ffe6;
-    padding: 0px 15px;
 }
 
 #workspace_link_div {
-    padding-bottom: 50px;
-    padding-left: 50px;
+    padding: 25px;
 }
 
 .workspace_navs_divs {
