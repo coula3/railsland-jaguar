@@ -42,3 +42,59 @@
 #appt_form_sub_div {
     margin: 15px 0px
 }
+
+#appt_idx_header {
+    margin-bottom: 30px;
+}
+
+.th_td_center_align {
+    text-align: center;
+}
+
+.appt_status_complete {
+    color: #008000;
+}
+
+.appt_status_open {
+    color: #ff0000;
+}
+
+.appt_status_others {
+    color: none;
+}
+
+#appt_idx_th_date {
+    width: 95px;
+}
+
+#appt_idx_th_time, #appt_idx_th_year {
+    width: 15px;
+}
+
+#appt_idx_th_service {
+    width: 160px;
+}
+
+#appt_idx_th_vehicle {
+    width: 115px;
+}
+
+#appt_idx_th_status {
+    width: 140px;
+}
+
+#appt_idx_th_service {
+    width: 160px;
+}
+
+#appt_idx_th_insurance {
+    width: 40px;
+}
+
+#appt_idx_td_id {
+    width: 50px;
+}
+
+#appt_idx_edit_link {
+    width: 30px;
+}

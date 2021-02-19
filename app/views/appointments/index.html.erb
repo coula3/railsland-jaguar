@@ -1,6 +1,6 @@
 <div class="main-container"> 
     <div class="main-data">
-        <div style="margin-bottom: 50px">
+        <div id="appt_idx_header">
             <% if single_customer_appointments?(@appointments) %>
                 <h2>Customer - <%= link_to full_name(@appointments.first.customer), customer_path(@appointments.first.customer), :title => 'Customer Profile', class: "h2_link_style" %></h2>
 
@@ -23,16 +23,16 @@
             <thead>
                 <tr>
                     <th>&nbsp</th>
-                    <th style="width: 85px">Date</th>
-                    <th style="width: 20px">Time</th>
-                    <th style="width: 110px">Vehicle Model</th>
-                    <th style="width: 15px">Year</th>
-                    <th style="width: 130px">Status</th>
-                    <th>Service</th>
+                    <th id="appt_idx_th_date">Date</th>
+                    <th id="appt_idx_th_time">Time</th>
+                    <th id="appt_idx_th_vehicle">Vehicle</th>
+                    <th id="appt_idx_th_year">Year</th>
+                    <th id="appt_idx_th_status">Status</th>
+                    <th id="appt_idx_th_service">Service</th>
 
                     <% if multiple_customer_appointments?(@appointments) %>
                         <th> <%= display_customer_header(@appointments) %></th>
-                        <th style="width: 40px"><%= display_service_insurance_header(@appointments) %></th>
+                        <th id="appt_idx_th_insurance" class="th_td_center_align"><%= display_service_insurance_header(@appointments) %></th>
                     <% end %>
                 <tr>
             </thead>
@@ -40,18 +40,18 @@
             <% @appointments.each.with_index(1) do |appointment, index| %>
                 <tbody>
                     <tr>
-                        <td><%= index %></td>
+                        <td id="appt_idx_td_id" class="th_td_center_align"><%= appointment.id %></td>
                         <td><%= link_to readable_date(appointment), customer_appointment_path(appointment.customer, appointment), :title => 'Appointment Details' %></td>
                         <td><%= readable_time(appointment) %></td>
                         <td><%= appointment.veh_model %></td>
                         <td><%= appointment.model_year %></td>
 
                         <% if appointment.status == "Open" %>
-                            <td style="color:#ff0000"><%= appointment.status %></td>
+                            <td class="appt_status_open"><%= appointment.status %></td>
                         <% elsif appointment.status == "Service Completed" %>
-                            <td style="color:#008000"><%= appointment.status %></td>
+                            <td class="appt_status_complete"><%= appointment.status %></td>
                         <% elsif appointment.status != "Open" || appointment.status != "Service Completed" %>
-                            <td style="color:nil"><%= appointment.status %></td>
+                            <td class="appt_status_others"><%= appointment.status %></td>
                         <% end %>
 
                         <td><%= appointment.service.name %></td>
@@ -59,13 +59,13 @@
                         <% if multiple_customer_appointments?(@appointments) %>
                             <td><%= link_to full_name(appointment.customer), customer_appointments_path(appointment.customer), :title => 'Customer Appointments' %></td>
                             <% if appointment.customer.has_service_insurance? == "Yes" %>
-                                <td style="text-align: center; color:#008000"><%= appointment.customer.has_service_insurance? %></td>
+                                <td class="th_td_center_align td_color"><%= appointment.customer.has_service_insurance? %></td>
                             <% else %>
-                                <td style="text-align: center; color:nil"><%= appointment.customer.has_service_insurance? %></td>
+                                <td class="th_td_center_align td_no_color"><%= appointment.customer.has_service_insurance? %></td>
                             <% end %>
                         <% end %>
 
-                        <td><%= link_to 'Edit', edit_customer_appointment_path(appointment.customer, appointment) %></td>
+                        <td id="appt_idx_edit_link"><%= link_to 'Edit', edit_customer_appointment_path(appointment.customer, appointment) %></td>
 
                         <% if current_user.admin && single_customer_appointments?(@appointments) %>
                             <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
