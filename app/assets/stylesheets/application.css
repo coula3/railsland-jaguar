@@ -49,12 +49,13 @@ body {
     background:  rgba(255, 255, 255, 0.9);
 }
 
-#dealer_name_div h1 {
+.dealer_name_div h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 5rem;
     padding: 20px 0 0 20px;
     margin: 0;
     color: #FFF;
+    display: inline;
 }
 
 div .main-data {
@@ -64,15 +65,14 @@ div .main-data {
 }
 
 #top_navs_div {
-    padding: 10px;
-    margin-right: 30px;
+    padding: 20px 40px 0 0;
     display: flex;
     position: fixed;
     top: 4;
     right: 0;
 }
 
-.span_margin_left {
+.nav_margin_left {
     margin-left: 5px;
 }
 
@@ -80,6 +80,11 @@ div .main-data {
     background-color: #acacac;
     padding: 2.5px 10px;
     border-radius: 20px;
+}
+
+#signin_dealer_info_div {
+    float: right;
+    margin-right: 30px;
 }
 
 div .bottom-navs {
@@ -130,21 +135,15 @@ a {
     display: inline-block;
 }
 
-@media (max-width: 1600px) {
-    #dealer_name_div h1 {
-        color: #acacac;
+@media (max-width: 1080px) {
+    .dealer_name_div h1 {
+        font-size: 4rem;
     }
 }
 
-@media (max-width: 800px) {
-    #dealer_name_div h1 {
-        font-size: 3.5rem;
-    }
-}
-
-@media (max-width: 500px) {
-    #dealer_name_div h1 {
-        font-size: 1.75rem;
+@media (max-width: 600px) {
+    .dealer_name_div h1 {
+        font-size: 2.2rem;
         padding: 10px 0 0 0;
     }
 }
