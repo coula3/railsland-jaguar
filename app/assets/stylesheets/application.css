@@ -58,6 +58,10 @@ body {
     display: inline;
 }
 
+#signin_h1_navs_div {
+    display: flex;
+}
+
 div .main-data {
     margin-bottom: 25px;
     padding: 25px;
