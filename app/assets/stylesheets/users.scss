@@ -53,9 +53,11 @@
 }
 
 #my_workspace {
-    min-width: 240px;
+    border: 1px solid #000;
+    min-width: 300px;
     margin: auto;
     padding: 25px;
+    box-sizing: border-box;
     text-align: center;
 }
 
@@ -152,8 +154,26 @@
 }
 
 @media (max-width: 600px) {
-    #user_form_btn, .signup_inputs, #home_link {
+    #user_form_btn, .signup_inputs, #home_link, #workspace_link_div {
         font-size: 0.875rem;
+    }
+
+    #my_workspace {
+        width: 100%;
+        min-width: 240px;
+        padding: 10px;
+    }
+
+    #workspace_h1 {
+        font-size: 1rem;
+    }
+
+    #workspace_link_div {
+        padding: 10px;
+    }
+
+    .workspace_navs_divs {
+        margin-bottom: 15px;
     }
 
     #signup_header {
