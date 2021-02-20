@@ -57,10 +57,6 @@ body {
     display: inline;
 }
 
-#signin_h1_navs_div {
-    display: flex;
-}
-
 div .main-data {
     margin-bottom: 25px;
     padding: 25px;
@@ -68,11 +64,10 @@ div .main-data {
 }
 
 #top_navs_div {
-    padding: 20px 40px 0 0;
     display: flex;
     position: fixed;
-    top: 4;
-    right: 0;
+    top: 25px;
+    right: 45px;
 }
 
 .nav_margin_left {
@@ -156,5 +151,22 @@ a {
 
     .wrapper {
        max-width: 100%;
+       margin-top: 0;
+    }
+
+    #top_navs_div {
+        top: 50px;
+        right: 10px;
+    }
+
+    .top_navs_link {
+        font-size: 0.7rem;
+        padding: 1.5px 5px;
+    }
+
+    #signin_dealer_info_div {
+        float: none;
+        margin: auto;
+        margin-top: 30px;
     }
 }
