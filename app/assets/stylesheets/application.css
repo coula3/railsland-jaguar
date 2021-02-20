@@ -20,7 +20,7 @@ html {
 
 body {
     height: 100%;
-    background-color: #FFF;
+    background-color: #C0C0C0;
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
 }
 
@@ -81,7 +81,7 @@ div .main-data {
 }
 
 .top_navs_link {
-    background-color: #acacac;
+    background-color: #FFF;
     padding: 2.5px 10px;
     border-radius: 20px;
 }
