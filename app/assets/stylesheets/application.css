@@ -139,6 +139,10 @@ a {
     display: inline-block;
 }
 
+.signin_inputs, .signup_inputs, #user_form_btn, #signin_btn {
+    outline: none;
+}
+
 @media (max-width: 1080px) {
     .dealer_name_div h1 {
         font-size: 4rem;
