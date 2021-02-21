@@ -140,18 +140,18 @@
     margin: 16px auto;
 }
 
-.user_show_caption {
-    width: 150px;
+.user_show_label {
     font-weight: bold;
+    background-color: #C0C0C0;
+    padding: 2px 10px;
+    border-radius: 15px;
 }
 
 .user_show_data {
     width: 240px;
-}
-
-.user_show_caption, .user_show_data {
     display: block;
     margin: auto;
+    margin-top: 5px;
 }
 
 @media (max-width: 600px) {
@@ -213,7 +213,12 @@
         font-size: 0.6rem;
     }
 
+    #user_show_p_div {
+        margin-top: 16px;
+    }
+
     .user_show_p {
         width: 100%;
+        margin: 12px 0;
     }
 }
