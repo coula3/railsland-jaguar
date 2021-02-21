@@ -11,7 +11,8 @@
     text-align: center;
 }
 
-.customer_form_inputs, #insurance_select, #customer_form_btn, #customer_form_insurance_select_p label {
+.customer_form_inputs, #customer_form_btn, #customer_form_insurance_select_p label, #insurance_select {
+    font-family: inherit;
     font-size: 1rem;
 }
 
@@ -103,5 +104,13 @@
 
     .customer_form_inputs, #customer_form_insurance_select_p, #customer_form_btn {
         width: 230px;
+    }
+
+    .customer_form_inputs {
+        height: 18px;
+    }
+
+    #customer_form_btn {
+        height: 27px;
     }
 }
