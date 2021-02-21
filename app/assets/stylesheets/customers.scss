@@ -105,6 +105,14 @@
         font-size: 0.8rem;
     }
 
+    .customer_form_inputs, #customer_form_insurance_select_p {
+        width: 85%;
+    }
+
+    #customer_form_btn {
+        width: 90%;
+    }
+
     .customers_new_edit_p, #customer_form_insurance_select_p {
         margin: 6px auto;
     }
