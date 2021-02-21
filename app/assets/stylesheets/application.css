@@ -41,7 +41,7 @@ body {
     clear: both;
 }
 
-.main-container {
+.main_container {
     width: 95%;
     margin: 16px auto;
     border-radius: 20px;
