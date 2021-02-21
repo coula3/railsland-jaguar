@@ -178,8 +178,11 @@ a {
     }
 
     .top_navs_link {
-        font-size: 0.6rem;
         padding: 1.5px 5px;
+    }
+
+    .top_navs_link, .bottom_navs {
+        font-size: 0.6rem;
     }
 
     #signin_dealer_info_div {
