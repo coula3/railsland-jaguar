@@ -87,13 +87,17 @@ body {
     margin-right: 30px;
 }
 
-div .bottom-navs {
+.bottom_navs {
     text-align: center;
+    display: block;
     padding-bottom: 30px;
 }
 
-.navs_span {
+.bottom_navs_span {
+    background-color: rgba(192, 192, 192, 0.5);
     margin-right: 10px;
+    padding: 2px 5px;
+    border-radius: 15px;
 }
 
 table {
@@ -186,6 +190,14 @@ a {
 
     .h2_link_style, .main_data h2 {
         font-size: 1.25rem;
+    }
+
+    .bottom_navs {
+        padding-bottom: 10px;
+    }
+
+    .bottom_navs_span {
+        margin-right: 5px;
     }
 }
 
