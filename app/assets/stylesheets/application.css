@@ -149,7 +149,7 @@ a {
 
 @media (max-width: 1080px) {
     body {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
     }
 
     .dealer_name_div h1 {
@@ -159,7 +159,7 @@ a {
 
 @media (max-width: 600px) {
     body {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .dealer_name_div h1 {
