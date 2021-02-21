@@ -186,3 +186,14 @@ a {
         background-repeat:  space round;
     }
 }
+
+@media (max-width: 350px) {
+    .dealer_name_div h1 {
+        font-size: 1.75rem;
+    }
+
+    #top_navs_div {
+        top: 40px;
+        right: 10px;
+    }
+}
