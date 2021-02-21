@@ -150,8 +150,11 @@
 }
 
 #user_edit {
+    width: 400px;
+    margin: auto;
     text-align: center;
     padding: 25px;
+    box-sizing: border-box;
 }
 
 @media (max-width: 600px) {
@@ -159,7 +162,7 @@
         font-size: 0.8rem;
     }
 
-    #my_workspace, #my_profile {
+    #my_workspace, #my_profile, #user_edit {
         width: 100%;
         min-width: 240px;
     }
