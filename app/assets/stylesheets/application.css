@@ -128,11 +128,11 @@ a {
     font-size: inherit;
 }
 
-.h2_link_style, .main_data h2 {
+.h2_link_style, .main_data h2, #my_workspace h2 {
     font-size: 1.5rem;
 }
 
-.main_data h2 {
+.main_data h2, #my_workspace h2 {
     color: #0000FF;
 }
 
@@ -195,7 +195,7 @@ a {
         background-repeat:  space round;
     }
 
-    .h2_link_style, .main_data h2 {
+    .h2_link_style, .main_data h2, #my_workspace h2 {
         font-size: 1.2rem;
     }
 
