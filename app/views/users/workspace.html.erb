@@ -1,6 +1,6 @@
 <div class="main-container">
     <div id="my_workspace">
-        <h1 id="workspace_h1"><%= user_first_name %> Workspace</h1>
+        <h1 id="workspace_h1">My Workspace</h1>
     
         <% if flash[:notice] %>
             <div id="workspace_msg_div">
@@ -11,7 +11,7 @@
         <div id="workspace_link_div">
             <% if !@user.first_name.blank? && !@user.last_name.blank? %>
                 <div class="workspace_navs_divs">
-                    <%= link_to 'My Profile', user_path(@user) %><br>
+                    <%= link_to 'Profile', user_path(@user) %><br>
                     <%= system_users_if_admin?(@user) %>
                 </div>
 
