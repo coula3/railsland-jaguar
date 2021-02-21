@@ -74,11 +74,11 @@
     background-color: #e6ffe6;
 }
 
-#workspace_link_div {
+#workspace_nav_div {
     padding: 25px;
 }
 
-.workspace_navs_divs {
+.workspace_navs {
     margin-bottom: 25px;
 }
 
@@ -155,7 +155,7 @@
 }
 
 @media (max-width: 600px) {
-    #user_form_btn, .signup_inputs, #home_link, #workspace_link_div {
+    #user_form_btn, .signup_inputs, #home_link, #workspace_nav_div {
         font-size: 0.875rem;
     }
 
@@ -169,11 +169,11 @@
         font-size: 1rem;
     }
 
-    #workspace_link_div {
+    #workspace_nav_div {
         padding: 10px;
     }
 
-    .workspace_navs_divs {
+    .workspace_navs {
         margin-bottom: 15px;
     }
 

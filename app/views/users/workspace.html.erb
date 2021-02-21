@@ -8,35 +8,35 @@
             </div>
         <% end %>
 
-        <div id="workspace_link_div">
+        <div id="workspace_nav_div">
             <% if !@user.first_name.blank? && !@user.last_name.blank? %>
-                <div class="workspace_navs_divs">
+                <nav class="workspace_navs">
                     <%= link_to 'Profile', user_path(@user) %><br>
                     <%= system_users_if_admin?(@user) %>
-                </div>
+                </nav>
 
-                <div class="workspace_navs_divs">
+                <nav class="workspace_navs">
                     <%= link_to 'New Customer', new_customer_path %><br>
                     <%= service_customers %><br>
                     <%= link_to 'Customers with Service Insurance', service_insurance_path %>
-                </div>
+                </nav>
 
-                <div class="workspace_navs_divs">
+                <nav class="workspace_navs">
                     <% if current_user.admin %>
                         <%= link_to 'New Vehicle Service', new_service_path %><br>
                     <% end %>
                     <%= vehicle_services %>
-                </div>
+                </nav>
 
-                <div class="workspace_navs_divs">
+                <nav class="workspace_navs">
                     <%= service_appointments %>
-                </div>
+                </nav>
 
-                <div>
+                <nav>
                     <% if current_user.admin && current_user.sys_role == "Super User" %>
                         <%= link_to 'Dealer Information', edit_dealer_path(dealer), :title => 'Edit Dealer Info' %>
                     <% end %>
-                </div>
+                </nav>
             <% end %>
         </div>
     </div>
