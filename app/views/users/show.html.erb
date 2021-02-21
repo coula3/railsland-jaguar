@@ -31,10 +31,10 @@
             </div>
         </div>
 
-        <div class="bottom-navs">
-            <span class="navs_span"><%= user_workspace %></span>
-            <span class="navs_span"><%= edit?(@user) %></span>
-            <span class="navs_span"><%= system_users_if_admin?(current_user) %></span>
-        </div>
+        <nav class="bottom_navs">
+            <span class="bottom_navs_span"><%= user_workspace %></span>
+            <span class="bottom_navs_span"><%= edit?(@user) %></span>
+            <span class="bottom_navs_span"><%= system_users_if_admin?(current_user) %></span>
+        </nav>
     </div>
 </div>
