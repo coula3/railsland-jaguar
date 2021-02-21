@@ -11,6 +11,10 @@
     text-align: center;
 }
 
+.customer_form_inputs, #insurance_select, #customer_form_btn, #customer_form_insurance_select_p label {
+    font-size: 1rem;
+}
+
 .customer_show_p {
     width: 400px;
     margin: 16px auto;
@@ -35,16 +39,13 @@
     margin: 16px auto;
     height: 25px;
     padding: 2px 10px;
-    font-size: 16px
 }
 
-#customer_form_check_span {
-    display: block;
+#customer_form_insurance_select_p {
     width: 335px;
     margin: 16px auto;
     height: 25px;
     padding-top: 5px;
-    font-size: 17px
 }
 
 #insurance_select {
@@ -61,7 +62,6 @@
     border: solid 2px #606060;
     height: 35px;
     padding-top: 3px;
-    font-size: 16px;
 }
 
 #customers_notice_div {
@@ -93,4 +93,15 @@
 
 .customers_td_text_align {
     text-align: left;
+}
+
+@media (max-width: 600px) {
+    #customers_new_edit {
+        width: 100%;
+        min-width: 240px;
+    }
+
+    .customer_form_inputs, #customer_form_insurance_select_p, #customer_form_btn {
+        width: 230px;
+    }
 }
