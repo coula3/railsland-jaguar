@@ -63,11 +63,15 @@ div .main-data {
     text-align: center;
 }
 
+#signin_h1_navs_div {
+    position: relative;
+}
+
 #top_navs_div {
     display: flex;
-    position: fixed;
-    top: 25px;
-    right: 45px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
 }
 
 .nav_margin_left {
@@ -155,7 +159,7 @@ a {
     }
 
     #top_navs_div {
-        top: 50px;
+        top: 47.5px;
         right: 10px;
     }
 
