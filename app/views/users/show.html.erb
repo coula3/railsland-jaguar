@@ -1,36 +1,38 @@
 <div class="main-container">
-    <div class="main-data">
-        <% if current_user == @user %>
-            <h2>User - <%= link_to full_name(@user), edit_user_path, :title => 'Edit User Profile', class: "h2_link_style" %></h2>
-        <% else %>
-            <h2>User - <%= link_to full_name(@user), admin_edit_path, :title => 'Edit User Profile', class: "h2_link_style" %></h2>
-        <% end %>
-        
-        <p class="user_show_p">
-            <span class="user_show_caption">Email</span>
-            <span class="user_show_data"><%= @user.email %></span>
-        </p>
-        <p class="user_show_p">
-            <span class="user_show_caption">System Role</span>
-            <span class="user_show_data"><%= @user.sys_role %></span>
-        </p>
-        <p class="user_show_p">
-            <span class="user_show_caption">Admin</span>
-            <span class="user_show_data"><%= @user.admin? %></span>
-        </p>
-        <p class="user_show_p">
-            <span class="user_show_caption">Account Status</span>
-            <span class="user_show_data"><%= @user.status.capitalize %></span>
-        </p>
-        <p class="user_show_p">
-            <span class="user_show_caption">Created on</span>
-            <span class="user_show_data"><%= readable_created_at(@user) %></span>
-        </p>
-    </div>
+    <div id="my_profile">
+        <div class="main_data">
+            <% if current_user == @user %>
+                <h2>User - <%= link_to full_name(@user), edit_user_path, :title => 'Edit User Profile', class: "h2_link_style" %></h2>
+            <% else %>
+                <h2>User - <%= link_to full_name(@user), admin_edit_path, :title => 'Edit User Profile', class: "h2_link_style" %></h2>
+            <% end %>
 
-    <div class="bottom-navs">
-        <span class="navs_span"><%= user_workspace %></span>
-        <span class="navs_span"><%= edit?(@user) %></span>
-        <span class="navs_span"><%= system_users_if_admin?(current_user) %></span>
+            <p class="user_show_p">
+                <span class="user_show_caption">Email</span>
+                <span class="user_show_data"><%= @user.email %></span>
+            </p>
+            <p class="user_show_p">
+                <span class="user_show_caption">System Role</span>
+                <span class="user_show_data"><%= @user.sys_role %></span>
+            </p>
+            <p class="user_show_p">
+                <span class="user_show_caption">Admin</span>
+                <span class="user_show_data"><%= @user.admin? %></span>
+            </p>
+            <p class="user_show_p">
+                <span class="user_show_caption">Account Status</span>
+                <span class="user_show_data"><%= @user.status.capitalize %></span>
+            </p>
+            <p class="user_show_p">
+                <span class="user_show_caption">Created on</span>
+                <span class="user_show_data"><%= readable_created_at(@user) %></span>
+            </p>
+        </div>
+
+        <div class="bottom-navs">
+            <span class="navs_span"><%= user_workspace %></span>
+            <span class="navs_span"><%= edit?(@user) %></span>
+            <span class="navs_span"><%= system_users_if_admin?(current_user) %></span>
+        </div>
     </div>
 </div>

@@ -52,7 +52,7 @@
     margin-bottom: 0;
 }
 
-#my_workspace {
+#my_workspace, #my_profile {
     border: 1px solid #000;
     min-width: 300px;
     margin: auto;
@@ -141,16 +141,17 @@
 }
 
 .user_show_caption {
-    display: inline-block;
     width: 150px;
-    text-align: left;
     font-weight: bold;
 }
 
 .user_show_data {
-    display: inline-block;
-    text-align: left;
     width: 240px;
+}
+
+.user_show_caption, .user_show_data {
+    display: block;
+    margin: auto;
 }
 
 @media (max-width: 600px) {
@@ -158,7 +159,7 @@
         font-size: 0.875rem;
     }
 
-    #my_workspace {
+    #my_workspace, #my_profile {
         width: 100%;
         min-width: 240px;
         padding: 10px;
@@ -210,5 +211,9 @@
 
     .signup_errors_span  {
         font-size: 0.6rem;
+    }
+
+    .user_show_p {
+        width: 100%;
     }
 }
