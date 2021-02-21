@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+#customers_new_edit {
+    border: 1px solid #000;
+    width: 400px;
+    margin: auto;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
 .customer_show_p {
     width: 400px;
     margin: 16px auto;

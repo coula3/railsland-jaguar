@@ -1,41 +1,43 @@
-<div class="main-container">
-    <div class="main-data">
-        <div>
-            <% if !@customer.id %>
-                <h2>Create New Customer</h2> 
-            <% else %>
-                <h2>Edit Customer Information</h2>
+<div class="main_container">
+    <div id="customers_new_edit">
+        <div class="main_data">
+            <div>
+                <% if !@customer.id %>
+                    <h2>Create New Customer</h2>
+                <% else %>
+                    <h2>Edit Customer Information</h2>
+                <% end %>
+            </div>
+
+            <% if @customer.errors.any? %>
+                <div id="error_explanation">
+                    <ul>
+                        <% @customer.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+
+            <%= form_for(@customer) do |f| %>
+                <%= f.text_field :first_name, placeholder: "first name", class: "customer_form_inputs element_border_radius" %>
+                <%= f.text_field :last_name, placeholder: "last name", class: "customer_form_inputs element_border_radius" %>
+                <%= f.text_field :email, placeholder: "email", class: "customer_form_inputs element_border_radius" %>
+                <%= f.text_field :telephone, placeholder: "555-555-5555", class: "customer_form_inputs element_border_radius" %>
+                <span id="customer_form_check_span">
+                    <%= f.label 'Service Insurance' %>
+                    <%= f.select :service_insurance, select_service_insurance, {}, id: "insurance_select", class: "element_border_radius" %>
+                </span>
+
+                <%= f.submit nil, id: "customer_form_btn", class: "element_border_radius" %>
             <% end %>
         </div>
-        
-        <% if @customer.errors.any? %>
-            <div id="error_explanation">
-                <ul>
-                    <% @customer.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                </ul>
-            </div>
-        <% end %>
 
-        <%= form_for(@customer) do |f| %>
-            <%= f.text_field :first_name, placeholder: "first name", class: "customer_form_inputs element_border_radius" %>
-            <%= f.text_field :last_name, placeholder: "last name", class: "customer_form_inputs element_border_radius" %>
-            <%= f.text_field :email, placeholder: "email", class: "customer_form_inputs element_border_radius" %>
-            <%= f.text_field :telephone, placeholder: "555-555-5555", class: "customer_form_inputs element_border_radius" %>
-            <span id="customer_form_check_span">
-                <%= f.label 'Service Insurance' %>
-                <%= f.select :service_insurance, select_service_insurance, {}, id: "insurance_select", class: "element_border_radius" %>
-            </span>
-
-            <%= f.submit nil, id: "customer_form_btn", class: "element_border_radius" %>
-        <% end %>
-    </div>
-
-    <div class="bottom-navs">
-        <span class="navs_span"><%= user_workspace %></span>
-        <span class="navs_span"><%= service_customers if !@customer.id %></span>
-        <span class="navs_span"><%= link_to "#{@customer.first_name}'s Profile", customer_path(@customer) if !!@customer.id %></span>
+        <nav class="bottom-navs">
+            <span class="bottom_navs_span"><%= user_workspace %></span>
+            <span class="bottom_navs_span"><%= service_customers if !@customer.id %></span>
+            <span class="bottom_navs_span"><%= link_to "#{@customer.first_name}'s Profile", customer_path(@customer) if !!@customer.id %></span>
+        </nav>
     </div>
 </div>
 
