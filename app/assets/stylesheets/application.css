@@ -142,12 +142,20 @@ a {
 }
 
 @media (max-width: 1080px) {
+    body {
+        font-size: 0.8rem;
+    }
+
     .dealer_name_div h1 {
         font-size: 4rem;
     }
 }
 
 @media (max-width: 600px) {
+    body {
+        font-size: 0.7rem;
+    }
+
     .dealer_name_div h1 {
         font-size: 2.2rem;
         padding: 10px 0 0 10px;
@@ -164,7 +172,7 @@ a {
     }
 
     .top_navs_link {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         padding: 1.5px 5px;
     }
 
