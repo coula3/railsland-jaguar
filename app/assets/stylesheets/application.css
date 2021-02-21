@@ -132,6 +132,10 @@ a {
     font-size: 1.5rem;
 }
 
+.main_data h2 {
+    color: #0000FF;
+}
+
 .flash_notice_span {
     padding: 3px 15px;
     background-color: #3a5f0b;
