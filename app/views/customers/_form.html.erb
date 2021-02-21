@@ -20,10 +20,22 @@
             <% end %>
 
             <%= form_for(@customer) do |f| %>
-                <%= f.text_field :first_name, placeholder: "first name", class: "customer_form_inputs element_border_radius" %>
-                <%= f.text_field :last_name, placeholder: "last name", class: "customer_form_inputs element_border_radius" %>
-                <%= f.text_field :email, placeholder: "email", class: "customer_form_inputs element_border_radius" %>
-                <%= f.text_field :telephone, placeholder: "555-555-5555", class: "customer_form_inputs element_border_radius" %>
+                <p class="customers_new_edit_p">
+                    <%= f.text_field :first_name, placeholder: "first name", class: "customer_form_inputs element_border_radius" %>
+                </p>
+
+                <p class="customers_new_edit_p">
+                    <%= f.text_field :last_name, placeholder: "last name", class: "customer_form_inputs element_border_radius" %>
+                </p>
+
+                <p class="customers_new_edit_p">
+                    <%= f.text_field :email, placeholder: "email", class: "customer_form_inputs element_border_radius" %>
+                </p>
+
+                <p class="customers_new_edit_p">
+                    <%= f.text_field :telephone, placeholder: "555-555-5555", class: "customer_form_inputs element_border_radius" %>
+                </p>
+
                 <p id="customer_form_insurance_select_p">
                     <%= f.label 'Service Insurance' %>
                     <%= f.select :service_insurance, select_service_insurance, {}, id: "insurance_select", class: "element_border_radius" %>
