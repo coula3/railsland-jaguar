@@ -47,8 +47,14 @@
 
         <nav class="bottom_navs">
             <span class="bottom_navs_span"><%= user_workspace %></span>
-            <span class="bottom_navs_span"><%= service_customers if !@customer.id %></span>
-            <span class="bottom_navs_span"><%= link_to "#{@customer.first_name}'s Profile", customer_path(@customer) if !!@customer.id %></span>
+
+            <% if !@customer.id %>
+                <span class="bottom_navs_span"><%= service_customers if !@customer.id %></span>
+            <% end %>
+
+            <% if !!@customer.id %>
+                <span class="bottom_navs_span"><%= link_to "#{@customer.first_name}'s Profile", customer_path(@customer) if !!@customer.id %></span>
+            <% end %>
         </nav>
     </div>
 </div>
