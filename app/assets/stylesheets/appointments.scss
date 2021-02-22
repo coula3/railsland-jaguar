@@ -114,3 +114,9 @@
 #appt_idx_edit_link {
     width: 30px;
 }
+
+@media (max-width: 600px) {
+    #appointments_index {
+        padding: 15px;
+    }
+}
