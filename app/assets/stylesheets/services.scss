@@ -11,6 +11,10 @@
     text-align: center;
 }
 
+.services_inputs, #services_form_btn {
+    font-size: 1rem;
+}
+
 #services_h2_div {
     margin-bottom: 50px;
 }
@@ -28,13 +32,11 @@
     width: 315px;
     height: 25px;
     padding: 2px 10px;
-    font-size:16px;
 }
 
 #services_form_btn {
     width: 335px;
     margin: 20px 0px;
     height: 35px;
-    font-size: 16px;
     border-radius: 15px;
 }
