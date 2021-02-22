@@ -65,6 +65,10 @@
     margin: 10px auto;
 }
 
+.dealers_edit_inputs, #dealers_edit_btn {
+    font-size: 1rem;
+}
+
 .dealers_edit_inputs {
     width: 315px;
     height: 25px;
@@ -89,6 +93,10 @@
         margin: 5px auto;
         padding: 5px;
         font-size: 0.6rem;
+    }
+
+    .dealers_edit_inputs, #dealers_edit_btn {
+        font-size: 0.8rem;
     }
 
     #dealers_edit {
