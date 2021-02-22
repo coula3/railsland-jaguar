@@ -8,6 +8,6 @@ module CustomersHelper
     end
 
     def pluralize_customer(collection)
-        pluralize(collection.size, 'Customer').dup.concat(" with Service Insurance")
+        pluralize(collection.size, 'Customer')
     end
 end
