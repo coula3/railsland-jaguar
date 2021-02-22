@@ -52,13 +52,17 @@
     margin-bottom: 0;
 }
 
-#my_workspace, #my_profile, #user_edit {
+#my_workspace, #my_profile, #user_edit, #users_index {
     border: 1px solid #000;
     width: 400px;
     margin: auto;
     padding: 25px;
     box-sizing: border-box;
     text-align: center;
+}
+
+#users_index {
+    width: 100%;
 }
 
 #workspace_msg_div {
