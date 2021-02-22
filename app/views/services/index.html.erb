@@ -1,39 +1,40 @@
 <div class="main_container">
-    <div class="main_data">
+    <div id="services_index">
+        <div class="main_data">
+            <h2>Vehicle Services</h2>
 
-        <h2>Vehicle Services</h2>
-
-        <% if flash[:notice] %>
-            <div class="flash_notice_span">
-                <%= notice %>
-            </div>
-        <% end %>
-    
-        <table id="service_idx_table">
-            <thead>
-                <tr>
-                    <th>&nbsp</th>
-                    <th>Service Name</th>
-                </tr>
-            </thead>
-        
-            <% @services.each.with_index(1) do |service, index| %>
-                <tbody>
-                    <tr>
-                        <td class="services_idx_td_align"><%= index %></td>
-                        <td><%= service.name %></td>
-                        <% if current_user.admin %>
-                            <td class="services_idx_td_align services_idx_td_actions"><%= link_to 'Edit', edit_service_path(service) %></td>
-                            <td class="services_idx_td_align services_idx_td_actions"><%= link_to "Delete", service, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
-                        <% end %>
-                    </tr>
-                </tbody>
+            <% if flash[:notice] %>
+                <div class="flash_notice_span">
+                    <%= notice %>
+                </div>
             <% end %>
-        </table>
-    </div>
+        
+            <table id="service_idx_table">
+                <thead>
+                    <tr>
+                        <th>&nbsp</th>
+                        <th>Service Name</th>
+                    </tr>
+                </thead>
 
-    <div class="bottom-navs">
-        <span class="navs_span"><%= user_workspace %></span>
-        <span class="navs_span"><%= link_to 'New Service', new_service_path if current_user.admin %></span>
+                <% @services.each.with_index(1) do |service, index| %>
+                    <tbody>
+                        <tr>
+                            <td class="services_idx_td_align"><%= index %></td>
+                            <td><%= service.name %></td>
+                            <% if current_user.admin %>
+                                <td class="services_idx_td_align services_idx_td_actions"><%= link_to 'Edit', edit_service_path(service) %></td>
+                                <td class="services_idx_td_align services_idx_td_actions"><%= link_to "Delete", service, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                            <% end %>
+                        </tr>
+                    </tbody>
+                <% end %>
+            </table>
+        </div>
+
+        <nav class="bottom_navs">
+            <span class="bottom_navs_span"><%= user_workspace %></span>
+            <span class="bottom_navs_span"><%= link_to 'New Service', new_service_path if current_user.admin %></span>
+        </nav>
     </div>
 </div>
