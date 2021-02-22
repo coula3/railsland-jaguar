@@ -149,6 +149,22 @@
     margin-top: 5px;
 }
 
+.users_idx_left_align {
+    text-align: left;
+}
+
+.users_idx_center_align {
+    text-align: center;
+}
+
+.users_idx_td {
+    width: 15px;
+}
+
+#users_idx_td_status {
+    width: 20px;
+}
+
 @media (max-width: 600px) {
     #user_form_btn, .signup_inputs, #home_link, #workspace_nav_div, #my_profile, #user_edit {
         font-size: 0.8rem;
