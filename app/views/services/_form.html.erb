@@ -1,33 +1,40 @@
-<div class="main-container">
-    <div class="main-data">
-        <div id="service_h2_div">
-            <% if !@service.id %>
-                <h2>Create New Service</h2> 
-            <% else %>
-                <h2>Edit Service</h2>
-            <% end %>
+<div class="main_container">
+    <div id="services_new_edit">
+        <div class="main_data">
+            <div id="services_h2_div">
+                <% if !@service.id %>
+                    <h2>Create New Service</h2>
+                <% else %>
+                    <h2>Edit Service</h2>
+                <% end %>
+            </div>
+
+            <div>
+                <% if @service.errors.any? %>
+                    <div id="error_explanation">
+                        <ul id="services_form_ul">
+                            <% @service.errors.full_messages.each do |message| %>
+                                <li id="services_error_li"><%= message %></li>
+                            <% end %>
+                        </ul>
+                    </div>
+                <% end %>
+
+                <%= form_for(@service) do |f| %>
+                    <p class="services_new_edit_p">
+                        <%= f.text_field :name, class: "services_inputs element_border_radius", placeholder: "enter service name" %>
+                    </p>
+
+                    <p class="services_new_edit_p">
+                        <%= f.submit id: "services_form_btn" %>
+                    </p>
+                <% end %>
+            </div>
         </div>
 
-        <div id="service_form_div">
-            <% if @service.errors.any? %>
-                <div id="error_explanation">
-                    <ul id="service_form_ul">
-                        <% @service.errors.full_messages.each do |message| %>
-                            <li id="service_error_li"><%= message %></li>
-                        <% end %>
-                    </ul>
-                </div>
-            <% end %>
-
-            <%= form_for(@service) do |f| %>
-                <%= f.text_field :name, class: "service_inputs element_border_radius", placeholder: "enter service name" %>
-                <%= f.submit id: "services_form_btn" %>
-            <% end %>
-        </div>
+        <nav class="bottom_navs">
+            <span class="bottom_navs_span"><%= user_workspace %></span>
+            <span class="bottom_navs_span"><%= vehicle_services %></span>
+        <nav>
     </div>
-
-    <div class="bottom-navs">
-        <span class="navs_span"><%= user_workspace %></span>
-        <span class="navs_span"><%= vehicle_services %></span>
-    <div>
 </div>

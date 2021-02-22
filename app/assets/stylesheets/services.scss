@@ -2,34 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+#services_new_edit {
+    border: 1px solid #000;
+    width: 400px;
+    margin: auto;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+}
 
-#service_h2_div {
+#services_h2_div {
     margin-bottom: 50px;
 }
 
-#service_form_div {
-    width: 400px;
-    margin: auto;
-}
-
-#service_errors_ul {
+#services_errors_ul {
     padding-left: 0px;
 }
 
-#service_errors_li {
+#services_errors_li {
     list-style: none;
     color: #ff0000;
 }
 
-.service_inputs {
-    width: 375px;
+.services_inputs {
+    width: 315px;
     height: 25px;
     padding: 2px 10px;
     font-size:16px;
 }
 
 #services_form_btn {
-    width: 330px;
+    width: 335px;
     margin: 20px 0px;
     height: 35px;
     font-size: 16px;
