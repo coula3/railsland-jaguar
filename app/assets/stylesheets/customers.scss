@@ -11,13 +11,21 @@
     text-align: center;
 }
 
+.customer_form_inputs, #customer_form_btn, #customer_form_insurance_select_p label, #insurance_select {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
 #customers_index {
     width: 100%;
 }
 
-.customer_form_inputs, #customer_form_btn, #customer_form_insurance_select_p label, #insurance_select {
-    font-family: inherit;
-    font-size: 1rem;
+#customers_idx_table_div {
+    overflow: scroll;
+}
+
+#customers_idx_table {
+    min-width: 850px;
 }
 
 .customer_show_p {
