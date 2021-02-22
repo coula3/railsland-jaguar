@@ -91,6 +91,12 @@
         font-size: 0.6rem;
     }
 
+    #dealers_edit {
+        width: 100%;
+        min-width: 240px;
+        padding: 10px;
+    }
+
     #web_links_div {
         margin-bottom: 5px;
     }
@@ -105,5 +111,15 @@
 
     .td_caption {
         width: 110px;
+    }
+
+    .dealer_edit_inputs {
+        width: 85%;
+        height: 18px;
+    }
+
+    #dealer_edit_btn {
+        width: 90%;
+        height: 27px;
     }
 }
