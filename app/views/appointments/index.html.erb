@@ -42,7 +42,7 @@
                     <% @appointments.each.with_index(1) do |appointment, index| %>
                         <tbody>
                             <tr>
-                                <td id="appt_idx_td_id" class="th_td_center_align"><%= appointment.id %></td>
+                                <td id="appt_idx_td_id" class="th_td_center_align"><%= pad_index(appointment.id) %></td>
                                 <td><%= link_to readable_date(appointment), customer_appointment_path(appointment.customer, appointment), :title => 'Appointment Details' %></td>
                                 <td><%= readable_time(appointment) %></td>
                                 <td><%= appointment.veh_model %></td>

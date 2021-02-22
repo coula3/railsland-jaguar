@@ -18,4 +18,14 @@ module ApplicationHelper
     def user_workspace
         link_to 'My Workspace', user_workspace_path
     end
+
+    def pad_index(index)
+        if index < 10
+            "00" + index.to_s
+        elsif index >= 10 && index < 100
+            "0" + index.to_s
+        else
+            index
+        end
+    end
 end
