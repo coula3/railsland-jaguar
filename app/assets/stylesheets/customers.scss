@@ -2,13 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-#customers_new_edit, #service_insurance {
+#customers_new_edit, #service_insurance, #customers_index {
     border: 1px solid #000;
     width: 400px;
     margin: auto;
     padding: 25px;
     box-sizing: border-box;
     text-align: center;
+}
+
+#customers_index {
+    width: 100%;
 }
 
 .customer_form_inputs, #customer_form_btn, #customer_form_insurance_select_p label, #insurance_select {

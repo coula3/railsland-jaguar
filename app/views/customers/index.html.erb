@@ -1,66 +1,68 @@
-<div class="main-container">
-    <div class="main-data">
-        <div>
-            <h2>Customers</h2> 
+<div class="main_container">
+    <div id="customers_index">
+        <div class="main_data">
+            <div>
+                <h2>Customers</h2>
+            </div>
+
+            <% if flash[:notice] %>
+                <div class="flash_notice_span">
+                    <%= notice %>
+                </div>
+            <% end %>
+
+            <%= form_tag customers_path, method: 'get', style: "display: inline" do %>
+                <%= text_field_tag :q, params[:q], id: "search_input", placeholder: "search text" %>
+                <%= submit_tag "Search", :name => nil %>
+            <% end %>
+
+            <%= (link_to '<button type="button">Reset</button>'.html_safe, customers_path) if params[:q] %>
+
+            <br><br>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>&nbsp</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Telephone</th>
+                        <th class="customers_idx_insurance_th">Serv. Insurance</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% @customers.each.with_index(1) do |customer, index| %>
+                        <tr>
+                            <td><%= index %></td>
+                            <td><%= link_to last_name_first_name(customer), customer_path(customer), :title => 'Customer Profile' %></td>
+                            <td><%= customer.email %></td>
+                            <td><%= customer.telephone %></td>
+
+                            <% if customer.has_service_insurance? == "Yes" %>
+                                <td class="customers_idx_insurance_td1"><%= customer.has_service_insurance? %></td>
+                            <% else %>
+                                <td class="customers_idx_insurance_td2"><%= customer.has_service_insurance? %></td>
+                            <% end %>
+
+                            <td class="customers_td_width"><%= link_to 'View', customer_path(customer) %></td>
+
+                            <td class="customers_td_width"><%= link_to 'Edit', edit_customer_path(customer) %></td>
+
+                            <% if current_user.admin %>
+                                <td class="customers_td_text_align customers_td_width"><%= link_to "Delete", customer, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                            <% end %>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
         </div>
 
-        <% if flash[:notice] %>
-            <div class="flash_notice_span">
-                <%= notice %>
-            </div>
-        <% end %>
-
-        <%= form_tag customers_path, method: 'get', style: "display: inline" do %>
-            <%= text_field_tag :q, params[:q], id: "search_input", placeholder: "search text" %>
-            <%= submit_tag "Search", :name => nil %>
-        <% end %>
-
-        <%= (link_to '<button type="button">Reset</button>'.html_safe, customers_path) if params[:q] %>
-
-        <br><br>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>&nbsp</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Telephone</th>
-                    <th class="customers_idx_insurance_th">Serv. Insurance</th>
-                </tr>
-            </thead>
-            
-            <tbody>
-                <% @customers.each.with_index(1) do |customer, index| %>
-                    <tr>
-                        <td><%= index %></td>
-                        <td><%= link_to last_name_first_name(customer), customer_path(customer), :title => 'Customer Profile' %></td>
-                        <td><%= customer.email %></td>
-                        <td><%= customer.telephone %></td>
-
-                        <% if customer.has_service_insurance? == "Yes" %>
-                            <td class="customers_idx_insurance_td1"><%= customer.has_service_insurance? %></td>
-                        <% else %>
-                            <td class="customers_idx_insurance_td2"><%= customer.has_service_insurance? %></td>
-                        <% end %>
-
-                        <td class="customers_td_width"><%= link_to 'View', customer_path(customer) %></td>
-
-                        <td class="customers_td_width"><%= link_to 'Edit', edit_customer_path(customer) %></td>
-
-                        <% if current_user.admin %>
-                            <td class="customers_td_text_align customers_td_width"><%= link_to "Delete", customer, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
-                        <% end %>
-                    </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="bottom-navs">
-        <span class="navs_span"><%= user_workspace %></span>
-        <span class="navs_span"><%= service_appointments %></span>
-        <span class="navs_span"><%= link_to 'New Customer', new_customer_path %></span>
-        <span class="navs_span"><%= link_to 'Service Customers', customers_path if params[:q] %></span>
+        <nav class="bottom_navs">
+            <span class="bottom_navs_span"><%= user_workspace %></span>
+            <span class="bottom_navs_span"><%= service_appointments %></span>
+            <span class="bottom_navs_span"><%= link_to 'New Customer', new_customer_path %></span>
+            <span class="bottom_navs_span"><%= link_to 'Service Customers', customers_path if params[:q] %></span>
+        </nav>
     </div>
 </div>
