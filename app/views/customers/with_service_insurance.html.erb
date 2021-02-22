@@ -1,36 +1,38 @@
-<div class="main-container">
-    <div class="main-data">
-        <div>
-            <h2><%= pluralize_customer(@customers_with_service_insurance) %></h2>
+<div class="main_container">
+    <div id="service_insurance">
+        <div class="main_data">
+            <div>
+                <h2><%= pluralize_customer(@customers_with_service_insurance) %></h2>
+            </div>
+
+            <table id="service_insurance_table">
+                <thead>
+                    <tr>
+                        <th>&nbsp</th>
+                        <th>Name</th>
+                        <th class="service_insurance_th_td">Appointments</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% @customers_with_service_insurance.each.with_index(1) do |customer, index| %>
+                        <tr>
+                            <td><%= index %></td>
+                            <% if customer.appointments.size > 0 %>
+                                <td><%= link_to full_name(customer), customer_appointments_path(customer), :title => 'Customer Appointments' %></td>
+                            <% else %>
+                                <td><%= full_name(customer) %></td>
+                            <% end %>
+                            <td class="service_insurance_th_td"><%= customer.appointments.count %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
         </div>
 
-        <table id="service_insurance_table">
-            <thead>
-                <tr>
-                    <th>&nbsp</th>
-                    <th>Name</th>
-                    <th class="service_insurance_th_td">Appointments</th>
-                </tr>
-            </thead>
-            
-            <tbody>
-                <% @customers_with_service_insurance.each.with_index(1) do |customer, index| %>
-                    <tr>
-                        <td><%= index %></td>
-                        <% if customer.appointments.size > 0 %>
-                            <td><%= link_to full_name(customer), customer_appointments_path(customer), :title => 'Customer Appointments' %></td>
-                        <% else %>
-                            <td><%= full_name(customer) %></td>
-                        <% end %>
-                        <td class="service_insurance_th_td"><%= customer.appointments.count %></td>
-                    </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="bottom-navs">
-        <span class="navs_span"><%= user_workspace %></span>
-        <span class="navs_span"><%= service_customers %></span>
+        <nav class="bottom_navs">
+            <span class="bottom_navs_span"><%= user_workspace %></span>
+            <span class="bottom_navs_span"><%= service_customers %></span>
+        </nav>
     </div>
 </div>
