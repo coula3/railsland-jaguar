@@ -26,7 +26,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Telephone</th>
-                    <th class="customers_insurance_th">Serv. Insurance</th>
+                    <th class="customers_idx_insurance_th">Serv. Insurance</th>
                 </tr>
             </thead>
             
@@ -39,9 +39,9 @@
                         <td><%= customer.telephone %></td>
 
                         <% if customer.has_service_insurance? == "Yes" %>
-                            <td class="customers_insurance_td1"><%= customer.has_service_insurance? %></td>
+                            <td class="customers_idx_insurance_td1"><%= customer.has_service_insurance? %></td>
                         <% else %>
-                            <td class="customers_insurance_td2"><%= customer.has_service_insurance? %></td>
+                            <td class="customers_idx_insurance_td2"><%= customer.has_service_insurance? %></td>
                         <% end %>
 
                         <td class="customers_td_width"><%= link_to 'View', customer_path(customer) %></td>
