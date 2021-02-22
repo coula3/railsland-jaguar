@@ -39,6 +39,14 @@
     text-align: center;
 }
 
+#appts_idx_table_div {
+    overflow: scroll;
+}
+
+#appts_idx_table {
+    min-width: 950px;
+}
+
 #appt_form_div {
     margin-top: 40px;
 }
