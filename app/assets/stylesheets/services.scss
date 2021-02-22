@@ -42,6 +42,19 @@
     border-radius: 15px;
 }
 
+#services_idx_table {
+    width: 50%;
+    margin: auto;
+}
+
+.services_idx_td_align {
+    text-align: center;
+}
+
+.services_idx_td_actions {
+    width: 15px;
+}
+
 @media (max-width: 600px) {
     #services_new_edit {
         width: 100%;
