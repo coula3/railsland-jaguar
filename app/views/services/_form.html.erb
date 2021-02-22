@@ -21,11 +21,11 @@
                 <% end %>
 
                 <%= form_for(@service) do |f| %>
-                    <p class="services_new_edit_p">
+                    <p>
                         <%= f.text_field :name, class: "services_inputs element_border_radius", placeholder: "enter service name" %>
                     </p>
 
-                    <p class="services_new_edit_p">
+                    <p id="services_new_edit_btn_p">
                         <%= f.submit id: "services_form_btn" %>
                     </p>
                 <% end %>

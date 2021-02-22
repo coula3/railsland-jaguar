@@ -16,7 +16,7 @@
 }
 
 #services_h2_div {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 #services_errors_ul {
@@ -40,4 +40,34 @@
     margin: 20px 0px;
     height: 35px;
     border-radius: 15px;
+}
+
+@media (max-width: 600px) {
+    #services_new_edit {
+        width: 100%;
+        min-width: 240px;
+        padding: 10px;
+    }
+
+    .services_inputs, #services_form_btn {
+        font-size: 0.8rem;
+    }
+
+    .services_inputs {
+        width: 85%;
+        height: 18px;
+    }
+
+    #services_form_btn {
+        width: 90%;
+        height: 27px;
+    }
+
+    #services_h2_div {
+        margin-bottom: 25px;
+    }
+
+    #services_new_edit_btn_p {
+        margin-top: -8px;
+    }
 }
