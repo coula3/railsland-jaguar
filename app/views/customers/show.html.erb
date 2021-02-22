@@ -1,23 +1,25 @@
-<div class="main-container">
-    <div class="main-data">
-        <div>
-            <h2>Customer - <%= link_to full_name(@customer), edit_customer_path(@customer), :title => 'Edit Customer Profile', class: "h2_link_style" %></h2>
-        </div>
-        
-        <%= render 'customer' %>
-        
-        <% if flash[:notice] %>
-            <div class="flash_notice_span">
-                <%= notice %>
+<div class="main_container">
+    <div id="customers_show">
+        <div class="main_data">
+            <div>
+                <h2>Customer - <%= link_to full_name(@customer), edit_customer_path(@customer), :title => 'Edit Customer Profile', class: "h2_link_style" %></h2>
             </div>
-        <% end %>
-    </div>
 
-    <div class="bottom-navs">
-        <span class="navs_span"><%= user_workspace %></span>
-        <span class="navs_span"><%= service_customers %></span>
-        <span class="navs_span"><%= link_to 'Edit Customer', edit_customer_path(@customer) %></span>
-        <span class="navs_span"><%= new_appointment(@customer) %></span>
-        <span class="navs_span"><%= customer_appointments(@customer) %></span>
+            <%= render 'customer' %>
+
+            <% if flash[:notice] %>
+                <div class="flash_notice_span">
+                    <%= notice %>
+                </div>
+            <% end %>
+        </div>
+
+        <nav class="bottom_navs">
+            <span class="bottom_navs_span"><%= user_workspace %></span>
+            <span class="bottom_navs_span"><%= service_customers %></span>
+            <span class="bottom_navs_span"><%= link_to 'Edit Customer', edit_customer_path(@customer) %></span>
+            <span class="bottom_navs_span"><%= new_appointment(@customer) %></span>
+            <span class="bottom_navs_span"><%= customer_appointments(@customer) %></span>
+        </nav>
     </div>
 </div>
