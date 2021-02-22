@@ -1,68 +1,70 @@
-<div class="main-container">
-    <div class="main-data">
-        <h2>Edit Dealer Info</h2>
+<div class="main_container">
+    <div id="dealers_edit">
+        <div class="main_data">
+            <h2>Edit Dealer Info</h2>
 
-        <% if @dealer.errors.any? %>
-            <div id="error_explanation">
-                <ul>
-                    <% @dealer.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                </ul>
-            </div>
-        <% end %>
-        
-        <%= form_for(@dealer) do |f| %>
-            <p class="dealer_edit_p">
-                <%= f.label :name, :class => "dealer_edit_caption" %>
-                <%= f.text_field :name, :class => "dealer_edit_inputs element_border_radius" %>
-            </p>
-            <p class="dealer_edit_p">
-                <%= f.label :address, :class => "dealer_edit_caption" %>
-                <%= f.text_field :address, :class => "dealer_edit_inputs element_border_radius" %>
-            </p>
-            <p class="dealer_edit_p">
-                <%= f.label :city, :class => "dealer_edit_caption" %>
-                <%= f.text_field :city, :class => "dealer_edit_inputs element_border_radius" %>
-            </p>
-            <p class="dealer_edit_p">
-                <%= f.label :state, :class => "dealer_edit_caption" %>
-                <%= f.text_field :state, :class => "dealer_edit_inputs element_border_radius" %>
-            </p>
-            <p class="dealer_edit_p">
-                <%= f.label :zip, :class => "dealer_edit_caption" %>
-                <%= f.text_field :zip, :class => "dealer_edit_inputs element_border_radius" %>
-            </p>
-            <p class="dealer_edit_p">
-                <%= f.label :telephone, :class => "dealer_edit_caption" %>
-                <%= f.text_field :telephone, placeholder: "555-555-5555", :class => "dealer_edit_inputs element_border_radius" %>
-            </p>
-            <p class="dealer_edit_p">
-                <%= f.label :vanity_number, 'Vanity Number', :class => "dealer_edit_caption" %>
-                <%= f.text_field :vanity_number, :class => "dealer_edit_inputs element_border_radius" %>
-            </p>
-            <p class="dealer_edit_p">
-                <%= f.label :ext_one, 'Customer Service', :class => "dealer_edit_caption" %>
-                <%= f.text_field :ext_one, :class => "dealer_edit_inputs element_border_radius" %>
-            </p>
-            <p class="dealer_edit_p">
-                <%= f.label :ext_two, 'Finance Department', :class => "dealer_edit_caption" %>
-                <%= f.text_field :ext_two, :class => "dealer_edit_inputs element_border_radius" %>
-            </p>
-            <p class="dealer_edit_p">
-                <%= f.label :ext_three, 'Service Department', :class => "dealer_edit_caption" %>
-                <%= f.text_field :ext_three, :class => "dealer_edit_inputs element_border_radius" %>
-            </p>
+            <% if @dealer.errors.any? %>
+                <div id="error_explanation">
+                    <ul>
+                        <% @dealer.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
 
-            <p class="dealer_edit_p">
-                <%= f.submit :id => "dealer_edit_btn" %>
-            </p>
-        <% end %>
-    </div>
+            <%= form_for(@dealer) do |f| %>
+                <p class="dealer_edit_p">
+                    <%= f.label :name, :class => "dealer_edit_caption" %>
+                    <%= f.text_field :name, :class => "dealer_edit_inputs element_border_radius" %>
+                </p>
+                <p class="dealer_edit_p">
+                    <%= f.label :address, :class => "dealer_edit_caption" %>
+                    <%= f.text_field :address, :class => "dealer_edit_inputs element_border_radius" %>
+                </p>
+                <p class="dealer_edit_p">
+                    <%= f.label :city, :class => "dealer_edit_caption" %>
+                    <%= f.text_field :city, :class => "dealer_edit_inputs element_border_radius" %>
+                </p>
+                <p class="dealer_edit_p">
+                    <%= f.label :state, :class => "dealer_edit_caption" %>
+                    <%= f.text_field :state, :class => "dealer_edit_inputs element_border_radius" %>
+                </p>
+                <p class="dealer_edit_p">
+                    <%= f.label :zip, :class => "dealer_edit_caption" %>
+                    <%= f.text_field :zip, :class => "dealer_edit_inputs element_border_radius" %>
+                </p>
+                <p class="dealer_edit_p">
+                    <%= f.label :telephone, :class => "dealer_edit_caption" %>
+                    <%= f.text_field :telephone, placeholder: "555-555-5555", :class => "dealer_edit_inputs element_border_radius" %>
+                </p>
+                <p class="dealer_edit_p">
+                    <%= f.label :vanity_number, 'Vanity Number', :class => "dealer_edit_caption" %>
+                    <%= f.text_field :vanity_number, :class => "dealer_edit_inputs element_border_radius" %>
+                </p>
+                <p class="dealer_edit_p">
+                    <%= f.label :ext_one, 'Customer Service', :class => "dealer_edit_caption" %>
+                    <%= f.text_field :ext_one, :class => "dealer_edit_inputs element_border_radius" %>
+                </p>
+                <p class="dealer_edit_p">
+                    <%= f.label :ext_two, 'Finance Department', :class => "dealer_edit_caption" %>
+                    <%= f.text_field :ext_two, :class => "dealer_edit_inputs element_border_radius" %>
+                </p>
+                <p class="dealer_edit_p">
+                    <%= f.label :ext_three, 'Service Department', :class => "dealer_edit_caption" %>
+                    <%= f.text_field :ext_three, :class => "dealer_edit_inputs element_border_radius" %>
+                </p>
 
-    <div class="bottom-navs">
-        <span class="navs_span"><%= user_workspace %></span>
-        <span class="navs_span"><%= service_customers %></span>
-        <span class="navs_span"><%= service_appointments %></span>
+                <p class="dealer_edit_p">
+                    <%= f.submit :id => "dealer_edit_btn" %>
+                </p>
+            <% end %>
+        </div>
+
+        <nav class="bottom_navs">
+            <span class="bottom_navs_span"><%= user_workspace %></span>
+            <span class="bottom_navs_span"><%= service_customers %></span>
+            <span class="bottom_navs_span"><%= service_appointments %></span>
+        </nav>
     </div>
 </div>
