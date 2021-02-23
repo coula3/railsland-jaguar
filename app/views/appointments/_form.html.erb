@@ -1,52 +1,54 @@
-<div class="main-container">
-    <div class="main-data">
-        <div>
-            <% if !@appointment.id %>
-                <h2>New Appointment</h2>
-            <% else %>
-                <h2>Edit Appointment</h2>
-            <% end %>
-        </div>
-       
-        <h2>Customer - <%= link_to full_name(@customer), customer_path(@customer), class: "h2_link_style"%></h2>
-
-        <%= render 'customers/append_customer_data' %>
-
-        <% if @appointment.errors.any? %>
-            <div id="error_explanation">
-                <ul>
-                    <% @appointment.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                </ul>
+<div class="main_container">
+    <div id="appointments_new_edit">
+        <div class="main_data">
+            <div>
+                <% if !@appointment.id %>
+                    <h2>New Appointment</h2>
+                <% else %>
+                    <h2>Edit Appointment</h2>
+                <% end %>
             </div>
-        <% end %>
 
-        <div id="appt_form_div">
-            <%= form_for(@appointment) do |f| %>
-                <label class="appt_form_header_label"><strong><%=!f.object.id ? "Select" : "Edit"%> Vehicle Service</strong></label>
+            <h2>Customer - <%= link_to full_name(@customer), customer_path(@customer), class: "h2_link_style"%></h2>
 
-                <div class="appt_form_sub_div">
-                    <%= collection_select(:appointment, :service_id, Service.all, :id, :name, {:include_blank => "--select vehicle service--"}, {:class => "appointment_form_select element_border_radius"} ) %>
-                </div>
+            <%= render 'customers/append_customer_data' %>
 
-                <label class="appt_form_header_label"><strong><%=!f.object.id ? "Enter" : "Edit"%> Appointment Details</strong></label>
-
-                <div class="appt_form_sub_div">
-                    <%= f.date_field :date, class: "appointment_form_inputs element_border_radius" %>
-                    <%= f.time_field :time, class: "appointment_form_inputs element_border_radius" %>
-                    <%= f.select  :veh_model, veh_models, {:include_blank => "--select vehicle model--"}, class: "appointment_form_select element_border_radius" %>
-                    <%= f.select  :model_year, model_years, {:include_blank => "--select model year--"}, class: "appointment_form_select element_border_radius" %>
-                    <%= f.select :status, select_status, {}, class: "appointment_form_select element_border_radius" %>
-                    <%= f.hidden_field :customer_id %>
-                    <%= f.submit nil, id: "appointment_form_btn", class: "element_border_radius" %>
+            <% if @appointment.errors.any? %>
+                <div id="error_explanation">
+                    <ul>
+                        <% @appointment.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
                 </div>
             <% end %>
-        </div>
-    </div>
 
-    <div class="bottom-navs">
-        <span class="navs_span"><%= user_workspace %></span>
-        <span class="navs_span"><%= customer_appointments(@appointment.customer) %></span>
+            <div id="appt_form_div">
+                <%= form_for(@appointment) do |f| %>
+                    <label class="appt_form_header_label"><strong><%=!f.object.id ? "Select" : "Edit"%> Vehicle Service</strong></label>
+
+                    <div class="appt_form_sub_div">
+                        <%= collection_select(:appointment, :service_id, Service.all, :id, :name, {:include_blank => "--select vehicle service--"}, {:class => "appointment_form_select element_border_radius"} ) %>
+                    </div>
+
+                    <label class="appt_form_header_label"><strong><%=!f.object.id ? "Enter" : "Edit"%> Appointment Details</strong></label>
+
+                    <div class="appt_form_sub_div">
+                        <%= f.date_field :date, class: "appointment_form_inputs element_border_radius" %>
+                        <%= f.time_field :time, class: "appointment_form_inputs element_border_radius" %>
+                        <%= f.select  :veh_model, veh_models, {:include_blank => "--select vehicle model--"}, class: "appointment_form_select element_border_radius" %>
+                        <%= f.select  :model_year, model_years, {:include_blank => "--select model year--"}, class: "appointment_form_select element_border_radius" %>
+                        <%= f.select :status, select_status, {}, class: "appointment_form_select element_border_radius" %>
+                        <%= f.hidden_field :customer_id %>
+                        <%= f.submit nil, id: "appointment_form_btn", class: "element_border_radius" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+
+        <nav class="bottom_navs">
+            <span class="bottom_navs_span"><%= user_workspace %></span>
+            <span class="bottom_navs_span"><%= customer_appointments(@appointment.customer) %></span>
+        </nav>
     </div>
 </div>
