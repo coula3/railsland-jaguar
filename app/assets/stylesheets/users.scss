@@ -186,17 +186,14 @@
         font-size: 0.8rem;
     }
 
-    #my_workspace, #my_profile, #user_edit {
+    #my_workspace, #my_profile, #user_edit, #admin_users_edit {
         width: 100%;
         min-width: 240px;
+        padding: 10px;
     }
 
     #users_index {
         padding: 15px;
-    }
-
-    #my_workspace, #my_profile, #user_edit {
-        padding: 10px;
     }
 
     #signup_header {
@@ -225,12 +222,12 @@
         margin-bottom: 15px;
     }
 
-    .signup_inputs {
+    .signup_inputs, .admin_edits_inputs{
         width: 230px;
         height: 18px;
     }
 
-    #user_form_btn {
+    #user_form_btn, .admin_edits_select, #admin_edits_btn {
         width: 250px;
         height: 27px;
     }
