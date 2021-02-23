@@ -7,26 +7,26 @@
                 <h2>User - <%= link_to full_name(@user), admin_edit_path, :title => 'Edit User Profile', class: "h2_link_style" %></h2>
             <% end %>
 
-            <div id="user_show_p_div">
-                <p class="user_show_p">
-                    <label class="user_show_label">Email</label>
-                    <span class="user_show_data"><%= @user.email %></span>
+            <div id="users_show_p_div">
+                <p class="users_show_p">
+                    <label class="users_show_label">Email</label>
+                    <span class="users_show_data"><%= @user.email %></span>
                 </p>
-                <p class="user_show_p">
-                    <label class="user_show_label">System Role</label>
-                    <span class="user_show_data"><%= @user.sys_role %></span>
+                <p class="users_show_p">
+                    <label class="users_show_label">System Role</label>
+                    <span class="users_show_data"><%= @user.sys_role %></span>
                 </p>
-                <p class="user_show_p">
-                    <label class="user_show_label">Admin</label>
-                    <span class="user_show_data"><%= @user.admin? %></span>
+                <p class="users_show_p">
+                    <label class="users_show_label">Admin</label>
+                    <span class="users_show_data"><%= @user.admin? %></span>
                 </p>
-                <p class="user_show_p">
-                    <label class="user_show_label">Account Status</label>
-                    <span class="user_show_data"><%= @user.status.capitalize %></span>
+                <p class="users_show_p">
+                    <label class="users_show_label">Account Status</label>
+                    <span class="users_show_data"><%= @user.status.capitalize %></span>
                 </p>
-                <p class="user_show_p">
-                    <label class="user_show_label">Created on</label>
-                    <span class="user_show_data"><%= readable_created_at(@user) %></span>
+                <p class="users_show_p">
+                    <label class="users_show_label">Created on</label>
+                    <span class="users_show_data"><%= readable_created_at(@user) %></span>
                 </p>
             </div>
         </div>
