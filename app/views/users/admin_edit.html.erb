@@ -1,41 +1,43 @@
-<div class="main-container">
-    <div class="main-data">
-        <h2>Edit User by <span style="color:red"> Sys Admin</span></h2>
+<div class="main_container">
+    <div id="admin_users_edit">
+        <div class="main_data">
+            <h2>Edit User by <span style="color:red"> Sys Admin</span></h2>
 
-        <% if @user.errors.any? %>
-            <div id="error_explanation">
-                <ul>
-                    <% @user.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                </ul>
-            </div>
-        <% end %>
-        
-        <%= form_for(@user) do |f| %>    
-            <% if @user != current_user %>
-                <%= f.text_field :full_name, class: "admin_edits_inputs admin_edits_inputs_background element_border_radius", :readonly => true %>
-                <%= f.text_field :email, class: "admin_edits_inputs admin_edits_inputs_background element_border_radius", :readonly => true %>
-            <% else %>
-                <%= f.text_field :full_name, class: "admin_edits_inputs admin_edits_inputs_background element_border_radius", :readonly => true %>
-                <%= f.text_field :email, class: "admin_edits_inputs element_border_radius" %>
+            <% if @user.errors.any? %>
+                <div id="error_explanation">
+                    <ul>
+                        <% @user.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
             <% end %>
+            
+            <%= form_for(@user) do |f| %>    
+                <% if @user != current_user %>
+                    <%= f.text_field :full_name, class: "admin_edits_inputs admin_edits_inputs_background element_border_radius", :readonly => true %>
+                    <%= f.text_field :email, class: "admin_edits_inputs admin_edits_inputs_background element_border_radius", :readonly => true %>
+                <% else %>
+                    <%= f.text_field :full_name, class: "admin_edits_inputs admin_edits_inputs_background element_border_radius", :readonly => true %>
+                    <%= f.text_field :email, class: "admin_edits_inputs element_border_radius" %>
+                <% end %>
 
-            <% if @user != current_user %>
-                <%= f.select :sys_role, user_sys_role, {}, class: "admin_edits_select element_border_radius" %>
-                <%= f.select :status, user_status, {}, class: "admin_edits_select element_border_radius" %>
-                <span id="admin_edits_check_span">
-                    <%= f.check_box :admin, style: "display: inline-block;" %>
-                    <%= f.label 'Admin', style: "font-size: 16px;"  %>
-                </span>
+                <% if @user != current_user %>
+                    <%= f.select :sys_role, user_sys_role, {}, class: "admin_edits_select element_border_radius" %>
+                    <%= f.select :status, user_status, {}, class: "admin_edits_select element_border_radius" %>
+                    <span id="admin_edits_check_span">
+                        <%= f.check_box :admin, style: "display: inline-block;" %>
+                        <%= f.label 'Admin', style: "font-size: 16px;"  %>
+                    </span>
+                <% end %>
+
+                <%= f.submit nil, id: "admin_edits_btn", class: "element_border_radius" %>
             <% end %>
+        </div>
 
-            <%= f.submit nil, id: "admin_edits_btn", class: "element_border_radius" %>
-        <% end %>
-    </div>
-
-    <div class="bottom-navs">
-        <span style="margin-right: 5px"><%= user_workspace %></span>
-        <span style="margin-right: 5px"><%= system_users_if_admin?(current_user) %></span>
+        <nav class="bottom_navs">
+            <span class="bottom_navs_span"><%= user_workspace %></span>
+            <span class="bottom_navs_span"><%= system_users_if_admin?(current_user) %></span>
+        </nav>
     </div>
 </div>
