@@ -31,14 +31,12 @@
     color: #fff;
     width: 330px;
     height: 34px;
-    font-size: 1rem;
 }
 
 .signup_inputs {
     width: 315px;
     height: 25px;
     padding: 2px 10px;
-    font-size: 1rem;
 }
 
 .signup_errors_span  {
@@ -59,6 +57,13 @@
     padding: 25px;
     box-sizing: border-box;
     text-align: center;
+}
+
+#user_form_btn, .signup_inputs, #home_link, #workspace_nav_div,
+#my_profile, #user_edit, #admin_users_edit, .admin_edits_inputs,
+.admin_edits_select,  #admin_edit_chkbox_label, #admin_edits_btn {
+    font-family: inherit;
+    font-size: 1rem;
 }
 
 #users_index {
@@ -95,7 +100,6 @@
     margin: 16px auto;
     height: 25px;
     padding: 2px 10px;
-    font-size: 1rem;
 }
 
 .admin_edits_inputs_background {
@@ -109,7 +113,6 @@
     border: solid 2px #606060;
     height: 32.5px;
     padding: 5px 6px;
-    font-size: 1rem;
 }
 
 #admin_edits_check_span {
@@ -139,7 +142,6 @@
     display: inline-block;
     width: 200px;
     padding: 3px 0px;
-    font-size: 1rem;
 }
 
 .users_show_p {
@@ -177,7 +179,10 @@
 }
 
 @media (max-width: 600px) {
-    #user_form_btn, .signup_inputs, #home_link, #workspace_nav_div, #my_profile, #user_edit {
+    #user_form_btn, .signup_inputs, #home_link, #workspace_nav_div,
+    #my_profile, #user_edit, #admin_users_edit, .admin_edits_inputs,
+    .admin_edits_select,  #admin_edit_chkbox_label, #admin_edits_btn {
+        font-size: inherit;
         font-size: 0.8rem;
     }
 

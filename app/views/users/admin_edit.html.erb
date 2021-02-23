@@ -27,7 +27,7 @@
                     <%= f.select :status, user_status, {}, class: "admin_edits_select element_border_radius" %>
                     <span id="admin_edits_check_span">
                         <%= f.check_box :admin, style: "display: inline-block;" %>
-                        <%= f.label 'Admin', style: "font-size: 16px;"  %>
+                        <%= f.label 'Admin', id: "admin_edit_chkbox_label"  %>
                     </span>
                 <% end %>
 
