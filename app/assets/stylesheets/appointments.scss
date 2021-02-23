@@ -39,6 +39,11 @@
     text-align: center;
 }
 
+.appointment_form_inputs, .appointment_form_select, #appointment_form_btn {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
 #appts_idx_table_div {
     overflow: scroll;
 }
@@ -124,6 +129,11 @@
         width: 100%;
         min-width: 240px;
         padding: 10px;
+    }
+
+    .appointment_form_inputs, .appointment_form_select, #appointment_form_btn {
+        font-family: inherit;
+        font-size: 0.8rem;
     }
 
     .appointment_form_inputs {
