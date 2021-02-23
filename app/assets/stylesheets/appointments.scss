@@ -44,11 +44,11 @@
     font-size: 1rem;
 }
 
-#appts_idx_table_div {
+#appts_idx_table_div, #appts_show_table_div {
     overflow: scroll;
 }
 
-#appts_idx_table {
+#appts_idx_table, #appts_show_table {
     min-width: 950px;
 }
 
@@ -120,12 +120,16 @@
     width: 30px;
 }
 
+#appt_show_header_div {
+    margin-bottom: 25px;
+}
+
 @media (max-width: 600px) {
     #appointments_index {
         padding: 15px;
     }
 
-    #appointments_new_edit {
+    #appointments_new_edit, #appointments_show {
         width: 100%;
         min-width: 240px;
         padding: 10px;

@@ -1,7 +1,7 @@
 <div class="main_container">
     <div id="appointments_show">
         <div class="main_data">
-            <div style="margin-bottom: 50px">
+            <div id="appt_show_header_div">
                 <h2>Customer - <%= link_to full_name(@appointment.customer), customer_path(@appointment.customer), :title => 'Customer Profile', class: "h2_link_style" %></h2>
 
                 <%= render 'customers/append_customer_data' %>
@@ -10,29 +10,31 @@
             
             <h3>Appointment</h3>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Vehicle Model</th>
-                        <th>Model Year</th>
-                        <th>Status</th>
-                        <th>Service</th>
-                    <tr>
-                </thead>
+            <div id="appts_show_table_div">
+                <table id="appts_show_table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Vehicle Model</th>
+                            <th>Model Year</th>
+                            <th>Status</th>
+                            <th>Service</th>
+                        <tr>
+                    </thead>
 
-                <tbody>
-                    <tr>
-                        <td><%= readable_date(@appointment) %></td>
-                        <td><%= readable_time(@appointment) %></td>
-                        <td><%= @appointment.veh_model %></td>
-                        <td><%= @appointment.model_year %></td>
-                        <td><%= @appointment.status %></td>
-                        <td><%= @appointment.service.name %></td>
-                    </tr>
-                </tbody>
-            </table>
+                    <tbody>
+                        <tr>
+                            <td><%= readable_date(@appointment) %></td>
+                            <td><%= readable_time(@appointment) %></td>
+                            <td><%= @appointment.veh_model %></td>
+                            <td><%= @appointment.model_year %></td>
+                            <td><%= @appointment.status %></td>
+                            <td><%= @appointment.service.name %></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <nav class="bottom_navs">
