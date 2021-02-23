@@ -119,4 +119,24 @@
     #appointments_index {
         padding: 15px;
     }
+
+    #appointments_new_edit {
+        width: 100%;
+        min-width: 240px;
+        padding: 10px;
+    }
+
+    .appointment_form_inputs {
+        width: 85%;
+        height: 18px;
+    }
+
+    .appointment_form_select, #appointment_form_btn {
+        width: 92.5%;
+        height: 27px;
+    }
+
+    .appointment_form_select {
+        padding: 2px 6px;
+    }
 }
