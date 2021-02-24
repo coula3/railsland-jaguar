@@ -88,14 +88,15 @@ body {
 }
 
 .bottom_navs {
-    text-align: center;
-    display: block;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding-bottom: 30px;
 }
 
 .bottom_navs_span {
     background-color: rgba(192, 192, 192, 0.5);
-    margin-right: 10px;
+    margin: 3px 10px 3px 0;
     padding: 2px 5px;
     border-radius: 15px;
 }
