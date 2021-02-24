@@ -16,7 +16,7 @@
                 <%= submit_tag ">>", :name => nil, id: "customers_search_btn" %>
             <% end %>
 
-            <%= (link_to '<button type="button">Reset</button>'.html_safe, customers_path, id: "reset_search_btn") if params[:q] %>
+            <%= (link_to 'Reset Customers', customers_path, id: "reset_customer_search_link") if params[:q] %>
 
             <div id="customers_idx_table_div">
                 <table id="customers_idx_table">

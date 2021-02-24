@@ -21,6 +21,25 @@
     width: 100%;
 }
 
+#search_input {
+    text-align: center;
+    width: 220px;
+    padding: 2px 0 2px 8px;
+}
+
+#customers_search_btn {
+    padding: 2px 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reset_customer_search_link {
+    border-style: solid;
+    border-width: 1px;
+    padding: 3px 6px;
+    border-radius: 5px;
+}
+
 #customers_idx_table_div {
     margin-top: 18px;
     overflow: scroll;
@@ -82,12 +101,6 @@
     padding: 0px 15px;
     background-color: #e6ffe6;
     display: inline;
-}
-
-#search_input {
-    text-align: center;
-    width: 220px;
-    padding: 2px 0 2px 8px;
 }
 
 .customers_idx_insurance_th, .customers_idx_insurance_td1, .customers_idx_insurance_td2 {
