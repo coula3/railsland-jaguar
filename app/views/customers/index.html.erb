@@ -12,7 +12,7 @@
             <% end %>
 
             <%= form_tag customers_path, method: 'get', style: "display: inline" do %>
-               <%= search_field_tag :q, params[:q], id: "search_input", placeholder: "search text" %>
+               <%= search_field_tag :q, params[:q], id: "search_input", placeholder: "search first or last name" %>
                 <%= submit_tag ">>", :name => nil %>
             <% end %>
 

@@ -18,11 +18,15 @@ class CustomersController < ApplicationController
   end
 
   def index
-    if params[:q]
-      results = Customer.search(params[:q])
+    customers = Customer.all
+
+    if params[:q] && params[:q].blank?
+      @customers = []
+    elsif params[:q]
+      @parameter = params[:q].downcase
+      results = customers.where("lower(first_name) LIKE :search", search: "%#{@parameter}%").to_a.concat(customers.where("lower(last_name) LIKE :search", search: "%#{@parameter}%")).uniq
       @customers = results.sort_by { |result| result.last_name }
     else
-      customers = Customer.all
       @customers = customers.sort_by {|customer| customer.last_name }
     end
   end
