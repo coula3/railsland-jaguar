@@ -12,12 +12,11 @@
             <% end %>
 
             <%= form_tag customers_path, method: 'get', style: "display: inline" do %>
-                <%= text_field_tag :q, params[:q], id: "search_input", placeholder: "search text" %>
-                <%= submit_tag "Search", :name => nil %>
+               <%= search_field_tag :q, params[:q], id: "search_input", placeholder: "search text" %>
+                <%= submit_tag ">>", :name => nil %>
             <% end %>
 
             <%= (link_to '<button type="button">Reset</button>'.html_safe, customers_path) if params[:q] %>
-
 
             <div id="customers_idx_table_div">
                 <table id="customers_idx_table">
