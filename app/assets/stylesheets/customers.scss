@@ -11,7 +11,8 @@
     text-align: center;
 }
 
-.customer_form_inputs, #customer_form_btn, #customer_form_insurance_select_p label, #insurance_select {
+.customer_form_inputs, #customer_form_btn, #customer_form_insurance_select_p label,
+#insurance_select, #search_input, #customers_search_btn, #reset_search_btn {
     font-family: inherit;
     font-size: 1rem;
 }
@@ -85,7 +86,7 @@
 
 #search_input {
     text-align: center;
-    width: 180px;
+    width: 220px;
     padding: 2px 0 2px 8px;
 }
 
@@ -130,7 +131,13 @@
         padding: 15px;
     }
 
-    .customer_form_inputs, #customer_form_btn, #customer_form_insurance_select_p label, #insurance_select {
+    #search_input {
+        width: 180px;
+        padding: 1px 0 1px 8px;
+    }
+
+    .customer_form_inputs, #customer_form_btn, #customer_form_insurance_select_p label,
+    #insurance_select, #search_input, #customers_search_btn, #reset_search_btn {
         font-size: 0.8rem;
     }
 
