@@ -21,6 +21,12 @@
     width: 100%;
 }
 
+#customers_search_form_div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 #customers_search_form {
     display: inline;
     margin-right: 15px;
