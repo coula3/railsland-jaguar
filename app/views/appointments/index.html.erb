@@ -33,7 +33,7 @@
                             <th id="appt_idx_th_service">Service</th>
 
                             <% if multiple_customer_appointments?(@appointments) %>
-                                <th> <%= display_customer_header(@appointments) %></th>
+                                <th id="cust_name"> <%= display_customer_header(@appointments) %></th>
                                 <th id="appt_idx_th_insurance" class="th_td_center_align"><%= display_service_insurance_header(@appointments) %></th>
                             <% end %>
                         <tr>
