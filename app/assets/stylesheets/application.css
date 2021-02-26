@@ -144,7 +144,7 @@ a {
     display: inline-block;
 }
 
-.signin_inputs, .signup_inputs, #user_form_btn, #signin_btn {
+.signin_inputs, .signup_inputs, #user_form_btn, #signin_btn, .dealers_edit_inputs {
     outline: none;
 }
 
