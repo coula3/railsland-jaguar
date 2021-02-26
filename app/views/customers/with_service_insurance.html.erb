@@ -6,29 +6,31 @@
                 <h4><%= pluralize_customer(@customers_with_service_insurance) %></h4>
             </div>
 
-            <table id="service_insurance_table">
-                <thead>
-                    <tr>
-                        <th>&nbsp</th>
-                        <th>Name</th>
-                        <th class="service_insurance_th_td">Appointments</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <% @customers_with_service_insurance.each.with_index(1) do |customer, index| %>
+            <div id="service_insurance_table_div">
+                <table id="service_insurance_table">
+                    <thead>
                         <tr>
-                            <td><%= index %></td>
-                            <% if customer.appointments.size > 0 %>
-                                <td><%= link_to full_name(customer), customer_appointments_path(customer), :title => 'Customer Appointments' %></td>
-                            <% else %>
-                                <td><%= full_name(customer) %></td>
-                            <% end %>
-                            <td class="service_insurance_th_td"><%= customer.appointments.count %></td>
+                            <th>&nbsp</th>
+                            <th>Name</th>
+                            <th class="service_insurance_th_td">Appts</th>
                         </tr>
-                    <% end %>
-                </tbody>
-            </table>
+                    </thead>
+
+                    <tbody>
+                        <% @customers_with_service_insurance.each.with_index(1) do |customer, index| %>
+                            <tr>
+                                <td><%= index %></td>
+                                <% if customer.appointments.size > 0 %>
+                                    <td><%= link_to full_name(customer), customer_appointments_path(customer), :title => 'Customer Appointments' %></td>
+                                <% else %>
+                                    <td><%= full_name(customer) %></td>
+                                <% end %>
+                                <td class="service_insurance_th_td"><%= customer.appointments.count %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <nav class="bottom_navs">

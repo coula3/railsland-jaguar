@@ -130,6 +130,11 @@
     color: nil;
 }
 
+#service_insurance_table_div {
+    max-height: 48vh;
+    overflow-y: auto;
+}
+
 #service_insurance_table {
     width: 90%;
     margin: auto;

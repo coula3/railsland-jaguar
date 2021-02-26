@@ -9,27 +9,29 @@
                 </div>
             <% end %>
         
-            <table id="service_idx_table">
-                <thead>
-                    <tr>
-                        <th>&nbsp</th>
-                        <th>Service Name</th>
-                    </tr>
-                </thead>
-
-                <% @services.each.with_index(1) do |service, index| %>
-                    <tbody>
+            <div id="services_idx_table_div">
+                <table id="service_idx_table">
+                    <thead>
                         <tr>
-                            <td class="services_idx_td_align"><%= index %></td>
-                            <td><%= service.name %></td>
-                            <% if current_user.admin %>
-                                <td class="services_idx_td_align services_idx_td_actions"><%= link_to 'Edit', edit_service_path(service) %></td>
-                                <td class="services_idx_td_align services_idx_td_actions"><%= link_to "Delete", service, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
-                            <% end %>
+                            <th>&nbsp</th>
+                            <th>Service Name</th>
                         </tr>
-                    </tbody>
-                <% end %>
-            </table>
+                    </thead>
+
+                    <% @services.each.with_index(1) do |service, index| %>
+                        <tbody>
+                            <tr>
+                                <td class="services_idx_td_align"><%= index %></td>
+                                <td><%= service.name %></td>
+                                <% if current_user.admin %>
+                                    <td class="services_idx_td_align services_idx_td_actions"><%= link_to 'Edit', edit_service_path(service) %></td>
+                                    <td class="services_idx_td_align services_idx_td_actions"><%= link_to "Delete", service, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
+                                <% end %>
+                            </tr>
+                        </tbody>
+                    <% end %>
+                </table>
+            </div>
         </div>
 
         <nav class="bottom_navs">

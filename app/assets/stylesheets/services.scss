@@ -42,6 +42,11 @@
     border-radius: 15px;
 }
 
+#services_idx_table_div {
+    max-height: 48vh;
+    overflow-y: auto;
+}
+
 #services_idx_table {
     width: 50%;
     margin: auto;
