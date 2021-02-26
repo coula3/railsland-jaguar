@@ -148,6 +148,7 @@ a {
     outline: none;
 }
 
+
 @media (max-width: 1080px) {
     body {
         font-size: 0.875rem;
@@ -163,9 +164,8 @@ a {
         font-size: 0.8rem;
     }
 
-    .dealer_name_div h1 {
-        font-size: 2.2rem;
-        padding: 10px 0 0 10px;
+    .img_container {
+        background-repeat:  round space;
     }
 
     .wrapper {
@@ -173,17 +173,14 @@ a {
        margin-top: 0;
     }
 
+    .dealer_name_div h1 {
+        font-size: 2.2rem;
+        padding: 10px 0 0 10px;
+    }
+
     #top_navs_div {
         top: 47.5px;
         right: 10px;
-    }
-
-    .top_navs_link {
-        padding: 1.5px 5px;
-    }
-
-    .top_navs_link, .bottom_navs {
-        font-size: 0.6rem;
     }
 
     #signin_dealer_info_div {
@@ -192,8 +189,12 @@ a {
         margin-top: 30px;
     }
 
-    .img_container {
-        background-repeat:  space round;
+    .top_navs_link {
+        padding: 1.5px 5px;
+    }
+
+    .top_navs_link, .bottom_navs {
+        font-size: 0.6rem;
     }
 
     .h2_link_style, .main_data h2, #my_workspace h2 {
