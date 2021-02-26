@@ -69,6 +69,13 @@
     text-align: center;
 }
 
+#dealers_edit_ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.75rem;
+    color: red;
+}
+
 .dealers_edit_p {
     width: 100%;
     margin: 10px auto;
@@ -116,6 +123,10 @@
         width: 100%;
         min-width: 240px;
         padding: 10px;
+    }
+
+    #dealers_edit_ul {
+        font-size: 0.6rem;
     }
 
     #web_links_div {
