@@ -13,42 +13,44 @@
                 </div>
             <% end %>
 
-            <%= form_for(@dealer) do |f| %>
-                <p class="dealers_edit_p">
-                    <%= f.text_field :name, :class => "dealers_edit_inputs element_border_radius", placeholder: "dealer name" %>
-                </p>
-                <p class="dealers_edit_p">
-                    <%= f.text_field :address, :class => "dealers_edit_inputs element_border_radius", placeholder: "address" %>
-                </p>
-                <p class="dealers_edit_p">
-                    <%= f.text_field :city, :class => "dealers_edit_inputs element_border_radius", placeholder: "city" %>
-                </p>
-                <p class="dealers_edit_p">
-                    <%= f.text_field :state, :class => "dealers_edit_inputs element_border_radius", placeholder: "state" %>
-                </p>
-                <p class="dealers_edit_p">
-                    <%= f.text_field :zip, :class => "dealers_edit_inputs element_border_radius", placeholder: "zip code" %>
-                </p>
-                <p class="dealers_edit_p">
-                    <%= f.text_field :telephone, placeholder: "555-555-5555", :class => "dealers_edit_inputs element_border_radius", placeholder: "telephone" %>
-                </p>
-                <p class="dealers_edit_p">
-                    <%= f.text_field :vanity_number, :class => "dealers_edit_inputs element_border_radius", placeholder: "vanity number" %>
-                </p>
-                <p class="dealers_edit_p">
-                    <%= f.text_field :ext_one, :class => "dealers_edit_inputs element_border_radius", placeholder: "customer service extension(s)" %>
-                </p>
-                <p class="dealers_edit_p">
-                    <%= f.text_field :ext_two, :class => "dealers_edit_inputs element_border_radius", placeholder: "finance department extension(s)" %>
-                </p>
-                <p class="dealers_edit_p">
-                    <%= f.text_field :ext_three, :class => "dealers_edit_inputs element_border_radius", placeholder: "service department extension(s)" %>
-                </p>
+            <div id="dealers_edit_form_div">
+                <%= form_for(@dealer) do |f| %>
+                    <p class="dealers_edit_p">
+                        <%= f.text_field :name, :class => "dealers_edit_inputs element_border_radius", placeholder: "dealer name" %>
+                    </p>
+                    <p class="dealers_edit_p">
+                        <%= f.text_field :address, :class => "dealers_edit_inputs element_border_radius", placeholder: "address" %>
+                    </p>
+                    <p class="dealers_edit_p">
+                        <%= f.text_field :city, :class => "dealers_edit_inputs element_border_radius", placeholder: "city" %>
+                    </p>
+                    <p class="dealers_edit_p">
+                        <%= f.text_field :state, :class => "dealers_edit_inputs element_border_radius", placeholder: "state" %>
+                    </p>
+                    <p class="dealers_edit_p">
+                        <%= f.text_field :zip, :class => "dealers_edit_inputs element_border_radius", placeholder: "zip code" %>
+                    </p>
+                    <p class="dealers_edit_p">
+                        <%= f.text_field :telephone, placeholder: "555-555-5555", :class => "dealers_edit_inputs element_border_radius", placeholder: "telephone" %>
+                    </p>
+                    <p class="dealers_edit_p">
+                        <%= f.text_field :vanity_number, :class => "dealers_edit_inputs element_border_radius", placeholder: "vanity number" %>
+                    </p>
+                    <p class="dealers_edit_p">
+                        <%= f.text_field :ext_one, :class => "dealers_edit_inputs element_border_radius", placeholder: "customer service extension(s)" %>
+                    </p>
+                    <p class="dealers_edit_p">
+                        <%= f.text_field :ext_two, :class => "dealers_edit_inputs element_border_radius", placeholder: "finance department extension(s)" %>
+                    </p>
+                    <p class="dealers_edit_p">
+                        <%= f.text_field :ext_three, :class => "dealers_edit_inputs element_border_radius", placeholder: "service department extension(s)" %>
+                    </p>
 
-                <p class="dealers_edit_p">
-                    <%= f.submit :id => "dealers_edit_btn" %>
-                </p>
-            <% end %>
+                    <p class="dealers_edit_p">
+                        <%= f.submit :id => "dealers_edit_btn" %>
+                    </p>
+                <% end %>
+            </div>
         </div>
 
         <nav class="bottom_navs">

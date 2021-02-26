@@ -69,6 +69,11 @@
     text-align: center;
 }
 
+#dealers_edit_form_div {
+    height: 48vh;
+    overflow-y: auto;
+}
+
 #dealers_edit_ul {
     list-style: none;
     padding-left: 0;
@@ -96,7 +101,7 @@
     width: 330px;
     height: 35px;
     border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #dealer_edit_btn, .dealer_edit_inputs {
