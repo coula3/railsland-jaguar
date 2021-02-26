@@ -29,7 +29,6 @@
 
 #customers_search_form {
     display: inline;
-    margin-right: 15px;
 }
 
 #search_input {
@@ -51,6 +50,7 @@
     padding: 3px 6px;
     border-radius: 5px;
     height: 18px;
+    margin-left: 15px;
     background-color: greenyellow;
 }
 
@@ -159,7 +159,7 @@
     }
 
     #search_input {
-        width: 180px;
+        width: 165px;
     }
 
     .customer_form_inputs, #customer_form_btn, #customer_form_insurance_select_p label,
@@ -193,5 +193,7 @@
     #reset_customers_search_link {
         height: 15px;
         padding: 2px 6px;
+        display: inline-block;
+        margin: auto;
     }
 }
