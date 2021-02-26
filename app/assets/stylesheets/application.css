@@ -14,12 +14,13 @@
  *= require_self
  */
 
-html {
-   height: 100%;
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
-    height: 100%;
     background-color: #C0C0C0;
     font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
 }
@@ -169,6 +170,7 @@ a {
 
 @media (max-width: 600px) {
     body {
+        overflow: auto;
         font-size: 0.8rem;
     }
 
