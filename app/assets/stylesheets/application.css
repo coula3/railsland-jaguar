@@ -58,7 +58,7 @@ body {
 }
 
 .main_data {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 #signin_h1_navs_div {
@@ -91,7 +91,6 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding-bottom: 30px;
 }
 
 .bottom_navs_span {
@@ -208,10 +207,6 @@ a {
 
     .h2_link_style, .main_data h2, #my_workspace h2 {
         font-size: 1.2rem;
-    }
-
-    .bottom_navs {
-        padding-bottom: 10px;
     }
 
     .bottom_navs_span {
