@@ -49,12 +49,13 @@
 }
 
 #my_workspace, #my_profile, #user_edit, #users_index, #admin_users_edit {
-    border: 1px solid #000;
     width: 400px;
     margin: auto;
     padding: 25px;
     box-sizing: border-box;
     text-align: center;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 #user_form_btn, .signup_inputs, #home_link, #workspace_nav_div,
