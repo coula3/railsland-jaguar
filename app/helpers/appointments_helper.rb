@@ -41,10 +41,10 @@ module AppointmentsHelper
     end
 
     def single_customer_appointments?(appointments)
-        true if appointments.distinct.count(:customer_id) == 1
+        appointments.distinct.count(:customer_id) == 1 ? true : false
     end
 
     def multiple_customer_appointments?(appointments)
-        true if appointments.distinct.count(:customer_id) > 1
+        appointments.distinct.count(:customer_id) > 1 ? true : false
     end
 end
