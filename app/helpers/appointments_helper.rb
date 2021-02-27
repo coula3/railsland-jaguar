@@ -32,11 +32,11 @@ module AppointmentsHelper
         link_to 'Service Appointments', appointments_path
     end
 
-    def service_appointments_by_status(appointment, single_customer)
+    def service_appointments_by_status(appointment, single_customer, link_color)
         if single_customer
             appointment.status
         else
-            link_to appointment.status, controller: "appointments", :status => appointment.status
+            link_to appointment.status, { controller: "appointments", status: appointment.status }, id: link_color
         end
     end
 

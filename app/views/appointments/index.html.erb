@@ -51,11 +51,11 @@
                                 <td><%= appointment.model_year %></td>
 
                                 <% if appointment.status == "Open" %>
-                                    <td class="appt_status_open"><%= service_appointments_by_status(appointment, @single_customer) %></td>
-                                <% elsif appointment.status == "Service completed" %>
-                                    <td class="appt_status_complete"><%= service_appointments_by_status(appointment, @single_customer) %></td>
-                                <% elsif appointment.status != "Open" || appointment.status != "Service completed" %>
-                                    <td class="appt_status_others"><%= service_appointments_by_status(appointment, @single_customer) %></td>
+                                    <td><%= service_appointments_by_status(appointment, @single_customer, "appt_status_open") %></td>
+                                <% elsif appointment.status == "Service Completed" %>
+                                    <td><%= service_appointments_by_status(appointment, @single_customer, "appt_status_complete") %></td>
+                                <% elsif appointment.status != "Open" || appointment.status != "Service Completed" %>
+                                    <td><%= service_appointments_by_status(appointment, @single_customer, "appt_status_others") %></td>
                                 <% end %>
 
                                 <td><%= appointment.service.name %></td>
