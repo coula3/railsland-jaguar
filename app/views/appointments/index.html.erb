@@ -2,7 +2,7 @@
     <div id="appointments_index">
         <div class="main_data">
             <div id="appt_idx_header">
-                <% if single_customer_appointments?(@appointments) %>
+                <% if @single_customer %>
                     <h2>Customer - <%= link_to full_name(@appointments.first.customer), customer_path(@appointments.first.customer), :title => 'Customer Profile', class: "h2_link_style" %></h2>
 
                     <%= render 'customers/append_customer_data' %>
@@ -49,11 +49,11 @@
                                 <td><%= appointment.model_year %></td>
 
                                 <% if appointment.status == "Open" %>
-                                    <td class="appt_status_open"><%= appointment.status %></td>
-                                <% elsif appointment.status == "Service Completed" %>
-                                    <td class="appt_status_complete"><%= appointment.status %></td>
-                                <% elsif appointment.status != "Open" || appointment.status != "Service Completed" %>
-                                    <td class="appt_status_others"><%= appointment.status %></td>
+                                    <td class="appt_status_open"><%= service_appointments_by_status(appointment, @single_customer) %></td>
+                                <% elsif appointment.status == "Service completed" %>
+                                    <td class="appt_status_complete"><%= service_appointments_by_status(appointment, @single_customer) %></td>
+                                <% elsif appointment.status != "Open" || appointment.status != "Service completed" %>
+                                    <td class="appt_status_others"><%= service_appointments_by_status(appointment, @single_customer) %></td>
                                 <% end %>
 
                                 <td><%= appointment.service.name %></td>

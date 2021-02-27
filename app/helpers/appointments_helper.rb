@@ -32,6 +32,14 @@ module AppointmentsHelper
         link_to 'Service Appointments', appointments_path
     end
 
+    def service_appointments_by_status(appointment, single_customer)
+        if single_customer
+            appointment.status
+        else
+            link_to appointment.status, controller: "appointments", :status => appointment.status
+        end
+    end
+
     def new_appointment(customer)
         link_to 'Create New Appointment', new_customer_appointment_path(customer)
     end
