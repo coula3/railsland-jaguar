@@ -48,7 +48,7 @@ class AppointmentsController < ApplicationController
       end
     else
       if params[:status]
-        @appointments = Appointment.where(status: params[:status])
+        @appointments = Appointment.where(status: params[:status]).order(date: :desc)
       else
         @appointments = Appointment.order(date: :desc)
       end
