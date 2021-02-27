@@ -32,7 +32,7 @@
                             <th id="appt_idx_th_status">Status</th>
                             <th id="appt_idx_th_service">Service</th>
 
-                            <% if multiple_customer_appointments?(@appointments) %>
+                            <% if !@single_customer %>
                                 <th id="cust_name"> <%= display_customer_header(@appointments) %></th>
                                 <th id="appt_idx_th_insurance" class="th_td_center_align"><%= display_service_insurance_header(@appointments) %></th>
                             <% end %>
@@ -58,7 +58,7 @@
 
                                 <td><%= appointment.service.name %></td>
 
-                                <% if multiple_customer_appointments?(@appointments) %>
+                                <% if !@single_customer %>
                                     <td><%= link_to full_name(appointment.customer), customer_appointments_path(appointment.customer), :title => 'Customer Appointments' %></td>
                                     <% if appointment.customer.has_service_insurance? == "Yes" %>
                                         <td class="th_td_center_align td_color"><%= appointment.customer.has_service_insurance? %></td>
@@ -69,7 +69,7 @@
 
                                 <td id="appt_idx_edit_link"><%= link_to 'Edit', edit_customer_appointment_path(appointment.customer, appointment) %></td>
 
-                                <% if current_user.admin && single_customer_appointments?(@appointments) %>
+                                <% if current_user.admin && @single_customer %>
                                     <td><%= link_to 'Delete', appointment, method: :delete, data: { confirm: delete_confirmation_msg } %></td>
                                 <% end %>
                             </tr>
@@ -82,7 +82,7 @@
         <nav class="bottom_navs">
             <span class="bottom_navs_span"><%= user_workspace %></span>
             <span class="bottom_navs_span"><%= service_customers %></span>
-            <% if single_customer_appointments?(@appointments) %>
+            <% if @single_customer %>
                 <span class="bottom_navs_span"><%= new_appointment(@appointments.first.customer) %></span>
                 <span class="bottom_navs_span"><%= service_appointments %></span>
             <% end %>
