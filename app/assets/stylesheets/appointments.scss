@@ -50,6 +50,17 @@
     overflow: scroll;
 }
 
+#reset_appts_idx_link {
+    border-style: solid;
+    border-width: 1px;
+    padding: 3px 6px;
+    border-radius: 5px;
+    height: 18px;
+    display: inline-block;
+    margin-bottom: 10px;
+    background-color: greenyellow;
+}
+
 #appts_idx_table, #appts_show_table {
     min-width: 1000px;
 }

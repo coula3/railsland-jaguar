@@ -20,6 +20,8 @@
             
             <h3><%= pluralize(@appointments.size, "@appointments".chop.delete_prefix('@').capitalize) %></h3>
 
+            <%= (link_to "Service Appointments", appointments_path, id: "reset_appts_idx_link") if params[:status] %>
+
             <div id="appts_idx_table_div">
                 <table id="appts_idx_table">
                     <thead>
