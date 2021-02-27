@@ -36,7 +36,7 @@ module AppointmentsHelper
         if single_customer
             appointment.status
         else
-            link_to appointment.status, { controller: "appointments", status: appointment.status }, id: link_color
+            link_to appointment.status, { controller: "appointments", status: appointment.status }, id: link_color, title: "View #{appointment.status} Appointments"
         end
     end
 
