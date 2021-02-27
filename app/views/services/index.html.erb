@@ -36,7 +36,9 @@
 
         <nav class="bottom_navs">
             <span class="bottom_navs_span"><%= user_workspace %></span>
-            <span class="bottom_navs_span"><%= link_to 'New Service', new_service_path if current_user.admin %></span>
+            <% if current_user.admin %>
+                <span class="bottom_navs_span"><%= link_to 'New Service', new_service_path %></span>
+            <% end %>
         </nav>
     </div>
 </div>
